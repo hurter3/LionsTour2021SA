@@ -1,3 +1,4 @@
+
 """
 Django settings for LionsTour project.
 
@@ -41,8 +42,6 @@ INSTALLED_APPS = [
     'accounts',
     'products',
     'cart',
-    'checkout',
-    'storages',
 ]
 
 MIDDLEWARE = [

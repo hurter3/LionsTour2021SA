@@ -51,7 +51,12 @@
         </div>
     {% endif %}
     <div class="container">
-        <!-- removed search -->
+        <div class="display">
+            <form action="{% url 'search' %}" method="get">
+                <input type="text" name="q">
+                <button type="search">Search</button>
+            </form>
+        </div>
         {% block content %} {% endblock %}
     </div>
     <footer>
