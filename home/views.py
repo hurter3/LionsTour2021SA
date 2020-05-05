@@ -1,5 +1,4 @@
 from django.shortcuts import render
 
-def index(request):
-    """A view that displays the index page"""
+def landing_page(request):
     return render(request, "index.html")
