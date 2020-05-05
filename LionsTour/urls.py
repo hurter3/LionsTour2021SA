@@ -16,6 +16,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from accounts import urls as urls_accounts
 from products import urls as urls_products
+from competition import urls as urls_competition
 from cart import urls as urls_cart
 from search import urls as urls_search
 from checkout import urls as urls_checkout
