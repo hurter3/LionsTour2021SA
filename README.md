@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/hurter3/LionsTour2021SA.svg?branch=master)](https://travis-ci.com/hurter3/LionsTour2021SA)
+[![Build Status](https://travis-ci.org/hurter3/LionsTour2021SA.svg?branch=master)](https://travis-ci.org/hurter3/LionsTour2021SA)
 
 <img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
 
