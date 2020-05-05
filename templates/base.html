@@ -28,6 +28,10 @@
                 <a class="navbar-brand" href="/">Lions Tour 2021 SA</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="{% url 'products' %}"><i class="fa fa-user-plus"></i> Shop</a></li>
+                    <li><a href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Competitions </a></li>
+                </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}
                         <li><a href="{% url 'profile' %}"><i class="fa fa-user"></i> Profile</a></li>
@@ -65,10 +69,10 @@
             </form>
         </div>
         {% block content %} {% endblock %}
-    </div>
+    </div> 
     <footer>
         <div class="container">
-            <p>Made by Code Institute bootcampers</p>
+            <p>Created by Mark Hurter (Code Institute student)</p>
         </div>
     </footer>
 </body>
