@@ -1,4 +1,5 @@
 body {
+    background-color:#c67605;
     font-family: Arial;
     padding-top: 100px;
 }
@@ -63,4 +64,41 @@ caption p {
 
 .product-description {
     min-height: 40px;
+}
+
+/*----------JUMBOTRON---------*/
+
+.jumbotron {
+    background-color:transparent;
+}
+
+.jumbotron-header {
+    text-align: center;
+    color: #08111a;
+    font-weight: bold;
+}
+
+.jumbotron-text {
+    color: #4a93e2;
+    font-weight: bold;
+}
+
+/*----------CONTAINERS---------*/
+
+.home-container {
+    height:100vh;
+    background-image: url(images/landing-page.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.content-container {
+    padding-top:75px;
+    padding-bottom:75px;
 }
