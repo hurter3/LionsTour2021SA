@@ -1,6 +1,6 @@
 from django.conf.urls import url, include
-from .views import landing_page
+from .views import home_view
 
 urlpatterns = [
-    url(r'^$', landing_page, name='index'),
+    url(r'^$', home_view, name='index'),
 ]

@@ -20,13 +20,13 @@ from competition import urls as urls_competition
 from cart import urls as urls_cart
 from search import urls as urls_search
 from checkout import urls as urls_checkout
-from home.views import landing_page
+from home.views import home_view
 from django.views import static
 from .settings import MEDIA_ROOT
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', landing_page, name='index'),
+    url(r'^$', home_view, name='index'),
     url(r'^accounts/', include(urls_accounts)),
     url(r'^products/', include(urls_products)),
     url(r'^cart/', include(urls_cart)),

@@ -1,5 +1,5 @@
 body {
-    background-color:#f8461a;
+    background-color:#f3bcc3;
     font-family: Arial;
     padding-top: 100px;
 }
@@ -32,6 +32,8 @@ footer {
 .badge-warning[href] {
     background-color: #c67605;
 }
+
+/*----------Product ---------*/
 
 .product {
     background-size: contain;
@@ -83,12 +85,11 @@ caption p {
     font-weight: bold;
 }
 
-
 /*----------CONTAINERS---------*/
 
 .home-container {
-    height:100vh;
-    background-image: url('../images/landing-page.jpg') no-repeat center center fixed; 
+    height:100%;
+    background-image: url('../images/cover-photo.jpg'); 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
