@@ -17,6 +17,9 @@
 <body>
     <!-- Fixed masthead -->
     <nav class="navbar navbar-masthead navbar-default navbar-fixed-top">
+        <a class="navbar-brand px-1 mr-md-1" href="/">
+            <img id="logo" src="{% static 'images/landing-page.png' %}" alt="Lions Tour 2021 SA">
+        </a>
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -25,12 +28,40 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">Lions Tour 2021 SA</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-left">
-                    <li><a href="{% url 'products' %}"><i class="fa fa-user-plus"></i> Shop</a></li>
-                    <li><a href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Competitions </a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              News <span class="caret"></span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="{% url 'register' %}">Photos</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'register' %}">Video</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'register' %}">Audio</a>
+                        </div>
+                    </li>
+                    <li><a href="{% url 'register' %}"> Fixtures & Tickets </a></li>
+                    <li><a href="{% url 'register' %}"> Competitions </a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Shop <span class="caret"></span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'products' %}">View All</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'products' %}">Men</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'products' %}">Woman</a>
+                            <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{% url 'products' %}">Children</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'products' %}">Souvineers</a>
+                        </div>
+                    </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}
