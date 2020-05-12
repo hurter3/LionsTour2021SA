@@ -1,7 +1,9 @@
-body {
-    background-color:#f3bcc3;
+body,html {
+    background-color: #161515;
     font-family: Arial;
     padding-top: 100px;
+    height: 100%;
+    margin: 0;
 }
 
 footer {
