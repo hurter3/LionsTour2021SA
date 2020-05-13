@@ -36,14 +36,14 @@
                               News <span class="caret"></span>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="{% url 'history' %}">History</a>
+                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{% url 'register' %}">Photos</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{% url 'register' %}">Video</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{% url 'register' %}">Audio</a>
+                            <a class="dropdown-item" href="{% url 'register' %}">Fixtures</a>
                         </div>
                     </li>
-                    <li><a href="{% url 'register' %}"> Fixtures & Tickets </a></li>
+                    <li><a href="{% url 'register' %}"> Tickets </a></li>
                     <li><a href="{% url 'register' %}"> Competitions </a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -51,15 +51,15 @@
                         Shop <span class="caret"></span>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{% url 'products' %}">View All</a>
+                            <a class="dropdown-item" href="{% url 'products' %}">All Categories</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{% url 'products' %}">Men</a>
+                            <a class="dropdown-item" href="{% url 'products' %}">Men's</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{% url 'products' %}">Woman</a>
+                            <a class="dropdown-item" href="{% url 'products' %}">Woman's</a>
                             <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{% url 'products' %}">Children</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{% url 'products' %}">Souvineers</a>
+                            <a class="dropdown-item" href="{% url 'products' %}">Souvenir's</a>
                         </div>
                     </li>
                 </ul>
@@ -105,6 +105,6 @@
         <div class="container">
             <p>Created by Mark Hurter (Code Institute student)</p>
         </div>
-    </footer>
+    </footer> 
 </body>
 </html>
