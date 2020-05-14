@@ -2,7 +2,6 @@ body {
     background-color:#af001d;
     font-family: Arial;
     height: 100px;
-    padding-top: 100px;
 }
 
 footer {
@@ -11,6 +10,34 @@ footer {
     padding-bottom: 20px;
     border-top: 1px solid #ededed;
     color: #A9A9A9;
+}
+
+.navbar {
+    background-color: #fff !important;
+}
+
+.navbar .navbar-brand{
+    color: #af001d;
+}
+
+.navbar .navbar-nav li a{
+    color: #af001d;
+}
+.navbar .nav-item .dropdown-menu .dropdown-item {
+    color: #000;
+}
+
+.navbar .nav-item .dropdown-menu .dropdown-item:hover {
+    color: #fff;
+    background-color: #af001d;
+    opacity: 0.5;
+}
+.container-fluid {
+    padding: 0px;
+}
+
+.bg-red {
+    background-color:#af001d;
 }
 
 .icon-bar {
@@ -88,17 +115,16 @@ caption p {
 
 /*----------CONTAINERS---------*/
 
+
 .home-container {
-    height:100%;
     background-image: url('../images/cover-photo.jpg'); 
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background-color: rgba(0,0,0,0.5);
 }
 
 .content-container {
