@@ -1,7 +1,12 @@
+
+/* Styles for fonts and text */
+
 body {
     background-color:#af001d;
-    font-family: Arial;
     height: 100px;
+    padding-top: 100px;
+    font-family: Arial;
+    color: #af001d;
 }
 
 footer {
@@ -16,6 +21,10 @@ footer {
     background-color: #fff !important;
 }
 
+.navbar-default {
+     background-color: #fff;
+}
+
 .navbar .navbar-brand{
     color: #af001d;
 }
@@ -28,12 +37,24 @@ footer {
 }
 
 .navbar .nav-item .dropdown-menu .dropdown-item:hover {
-    color: #fff;
-    background-color: #af001d;
+    color: #000;
+    background-color: #bbb8b8;
     opacity: 0.5;
 }
+
+#logo {
+    float: left;
+    position: relative;
+}
+
 .container-fluid {
     padding: 0px;
+}
+
+
+h1, h3, h5, h6 {
+  color: #444444;
+  text-align: center
 }
 
 .bg-red {
