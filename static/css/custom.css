@@ -2,11 +2,11 @@
 /* Styles for fonts and text */
 
 body {
-    background-color:#af001d;
-    height: 100px;
-    padding-top: 100px;
+    background-color:#cad5d8;
+    height: 100%;
     font-family: Arial;
-    color: #af001d;
+    padding-top: 100px;
+    color: #000;
 }
 
 footer {
@@ -138,7 +138,7 @@ caption p {
 
 
 .home-container {
-    background-image: url('../images/cover-photo.jpg'); 
+    background-image: url('............../images/cover-photo.jpg'); 
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;

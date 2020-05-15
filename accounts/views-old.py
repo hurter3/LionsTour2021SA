@@ -1,22 +1,12 @@
-from django.shortcuts import render, redirect
-from django.contrib import messages
-from .forms import UserRegisterForm
+from django.shortcuts import render, redirect, HttpResponseRedirect
+from django.contrib import messages, auth
+from django.core.urlresolvers import reverse
+from .forms import UserLoginForm, UserRegistrationForm
+from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
 
 
-def register(request):
-    if request.method == 'POST':
-        form = UserRegisterForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            messages.success(request, f'Account created for {username}!')
-            return redirect('home')
-    else:
-        form = UserRegisterForm()
-    return render(request, 'register.html', {'form': form})
-
-
+# Create your views here.
 def index(request):
     """A view that displays the index page"""
     return render(request, "index.html")
@@ -61,3 +51,25 @@ def profile(request):
     return render(request, 'profile.html')
 
 
+def register(request):
+    """A view that manages the registration form"""
+    if request.method == 'POST':
+        user_form = UserRegistrationForm(request.POST)
+        if user_form.is_valid():
+            user_form.save()
+
+            user = auth.authenticate(request.POST.get('email'),
+                                     password=request.POST.get('password1'))
+
+            if user:
+                auth.login(request, user)
+                messages.success(request, "You have successfully registered")
+                return redirect(reverse('index'))
+
+            else:
+                messages.error(request, "unable to log you in at this time!")
+    else:
+        user_form = UserRegistrationForm()
+
+    args = {'user_form': user_form}
+    return render(request, 'register.html', args)
