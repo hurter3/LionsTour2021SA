@@ -14,7 +14,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
 
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
 
@@ -34,7 +35,7 @@
     <div id="navbar-icons-mobile" class="d-lg-none">
         <a class="nav-link nav-link-icon" href="{% url 'register' %}" title="Shopping cart">
             <div>
-                <i class="fas fa-shopping-basket navbar-icon"></i>
+                <i class="fas fa-cart-arrow-down" title="Cart"></i>
                 {% if request.session.cart.count and request.session.cart.count != 0 %}
                 <div id="cart-counter">{% if request.session.cart.count > 9 %}9+
                     {% else %}{{ request.session.cart.count }}{% endif %}</div>
@@ -126,7 +127,7 @@
     <div id="navbar-icons-desktop" class="d-none d-lg-inline-block">
         <a class="nav-link nav-link-icon" href="{% url 'register' %}" title="Shopping cart" aria-label="View shopping cart">
             <div>
-                <i class="fas fa-shopping-basket navbar-icon"></i>
+                <i class="fas fa-cart-arrow-down" title="Cart"></i>
                 {% if request.session.cart.count and request.session.cart.count != 0 %}
                 <div id="cart-counter">{% if request.session.cart.count > 9 %}9+
                     {% else %}{{ request.session.cart.count }}{% endif %}</div>
