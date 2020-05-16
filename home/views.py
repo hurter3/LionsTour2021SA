@@ -14,3 +14,6 @@ def fixtures_view(request):
 
 def tickets_view(request):
     return render(request, "tickets.html", {"home": "tickets"})
+
+def contact_view(request):
+    return render(request, "contact.html", {"home": "contact"})

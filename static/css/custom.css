@@ -1,11 +1,12 @@
 
 /* Styles for fonts and text */
 
+
 body {
-    background-color:#cad5d8;
+    background-color:#cad5d8; 
     height: 100%;
     font-family: Arial;
-    padding-top: 100px;
+    padding-top: 65px;
     color: #000;
 }
 
@@ -72,6 +73,18 @@ h1, h3, h5, h6 {
     padding-top: 20px;
 }
 
+.contact-form-wrapper {
+  background-color: white;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.red-uppercase {
+  color: #af001d;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 1.2rem;
+}
 .badge {
     padding-left: 9px;
     padding-right: 9px;
