@@ -1,21 +1,25 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .forms import UserRegisterForm
 from django.contrib.auth.decorators import login_required
+from .forms import UserRegisterForm
 
 
-def register(request):
+def register_view(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
-            messages.success(request, f'Account created for {username}!')
-            return redirect('home')
+            messages.success(request, f'Your account has been created! You are now able to log in')
+            return redirect('login')
     else:
         form = UserRegisterForm()
     return render(request, 'register.html', {'form': form})
 
+
+@login_required
+def profile_view(request):
+    return render(request, 'profile.html')
 
 def index(request):
     """A view that displays the index page"""
@@ -27,37 +31,4 @@ def logout(request):
     auth.logout(request)
     messages.success(request, 'You have successfully logged out')
     return redirect(reverse('index'))
-
-
-def login(request):
-    """A view that manages the login form"""
-    if request.method == 'POST':
-        user_form = UserLoginForm(request.POST)
-        if user_form.is_valid():
-            user = auth.authenticate(request.POST['username_or_email'],
-                                     password=request.POST['password'])
-
-            if user:
-                auth.login(request, user)
-                messages.error(request, "You have successfully logged in")
-
-                if request.GET and request.GET['next'] !='':
-                    next = request.GET['next']
-                    return HttpResponseRedirect(next)
-                else:
-                    return redirect(reverse('index'))
-            else:
-                user_form.add_error(None, "Your username or password are incorrect")
-    else:
-        user_form = UserLoginForm()
-
-    args = {'user_form': user_form, 'next': request.GET.get('next', '')}
-    return render(request, 'login.html', args)
-
-
-@login_required
-def profile(request):
-    """A view that displays the profile page of a logged in user"""
-    return render(request, 'profile.html')
-
 

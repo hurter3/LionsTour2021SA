@@ -35,7 +35,7 @@
     <div id="navbar-icons-mobile" class="d-lg-none">
         <a class="nav-link nav-link-icon" href="{% url 'register' %}" title="Shopping cart">
             <div>
-                <i class="fas fa-cart-arrow-down" title="Cart"></i>
+                <i class="fas fa-cart-arrow-down icon-red" title="Cart"></i>
                 {% if request.session.cart.count and request.session.cart.count != 0 %}
                 <div id="cart-counter">{% if request.session.cart.count > 9 %}9+
                     {% else %}{{ request.session.cart.count }}{% endif %}</div>
@@ -100,7 +100,7 @@
 
             {% if user.is_authenticated %}
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'register' %}">Account</a>
+                <a class="nav-link" href="{% url 'profile' %}">Account</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'logout' %}">Log out</a>
@@ -127,7 +127,7 @@
     <div id="navbar-icons-desktop" class="d-none d-lg-inline-block">
         <a class="nav-link nav-link-icon" href="{% url 'register' %}" title="Shopping cart" aria-label="View shopping cart">
             <div>
-                <i class="fas fa-cart-arrow-down" title="Cart"></i>
+                <i class="fas fa-cart-arrow-down icon-red" title="Cart"></i>
                 {% if request.session.cart.count and request.session.cart.count != 0 %}
                 <div id="cart-counter">{% if request.session.cart.count > 9 %}9+
                     {% else %}{{ request.session.cart.count }}{% endif %}</div>
