@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Product
 from django.views.generic import DetailView, ListView
 
@@ -13,3 +13,12 @@ class ProductListView(ListView):
     template_name = 'products.html'
     context_object_name = 'products'
 
+class ProductDetailView(DetailView):
+    queryset = Product.objects.all()
+    model = Product
+    template_name = 'product_detail.html'
+    context_object_name = 'products'
+
+  #  def get_object(self):
+  #      id_ = self.kwargs.get("id")
+  #      return get_object_or_404(Product,id=id_)
