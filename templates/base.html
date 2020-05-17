@@ -125,7 +125,7 @@
 
     <!-- positions favs and cart icons to far right of navbar when navigation not collapsed -->
     <div id="navbar-icons-desktop" class="d-none d-lg-inline-block">
-        <a class="nav-link nav-link-icon" href="{% url 'register' %}" title="Shopping cart" aria-label="View shopping cart">
+        <a class="nav-link nav-link-icon" href="{% url 'view_cart' %}" title="Shopping cart" aria-label="View shopping cart">
             <div>
                 <i class="fas fa-cart-arrow-down icon-red" title="Cart"></i>
                 {% if request.session.cart.count and request.session.cart.count != 0 %}
