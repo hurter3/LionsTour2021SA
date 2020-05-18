@@ -168,3 +168,49 @@ caption p {
     padding-top:75px;
     padding-bottom:75px;
 }
+
+/* listing cards */
+.card-img-wrapper {
+  height: 200px;
+  min-width: 175px;
+}
+
+.card-img {
+  height: 100%;
+  border-radius: 8px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 35%;
+}
+
+.card-card {
+  max-width: 300px;
+  -webkit-transition: 0.2s all ease-in-out 0.2s;
+  transition: 0.2s all ease-in-out 0.2s;
+}
+
+.card-card-padding {
+  padding: 15px;
+}
+
+.card-info {
+  padding: 0.5rem 1rem;
+}
+
+.card-info p {
+  color: #63c4fc;
+  font-size: 1.2rem;
+  margin: 0;
+  line-height: 1.1rem;
+}
+
+.card-quantity {
+  max-width: 100px;
+  margin-bottom: 1rem;
+}
+
+.card-img-main {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
