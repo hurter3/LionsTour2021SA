@@ -4,20 +4,20 @@ from django.urls import reverse
 class Product(models.Model):
     """ Model for product instances """
 
-    MENS = "Men's"
-    WOMANS = "Woman's"
+    MEN = "Men"
+    WOMAN = "Woman"
     CHILDREN = "Children"
-    SOUVENIRS = "Souvenir's"
+    SOUVENIRS = "Souvenirs"
     CATEGORY_CHOICES = [
-        (MENS , "Men's"),
-        (WOMANS , "Woman's"),
+        (MEN , "Men"),
+        (WOMAN , "Woman"),
         (CHILDREN , "Children"),
-        (SOUVENIRS , "Souvenir's"),
+        (SOUVENIRS , "Souvenirs"),
     ]
     category = models.CharField(
         max_length=20,
         choices=CATEGORY_CHOICES,
-        default=MENS,
+        default=MEN,
     )
     title = models.CharField(max_length=100,blank=True)
     product_image1 = models.ImageField(upload_to="images", blank=True)

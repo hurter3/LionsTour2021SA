@@ -15,7 +15,25 @@ class ProductListView(ListView):
 
 
 class ProductListMenView(ListView):
-   queryset = Product.objects.all().filter(category="Men's")
+   queryset = Product.objects.all().filter(category="Men")
+   model = Product
+   template_name = 'products.html'
+   context_object_name = 'products'
+
+class ProductListWomanView(ListView):
+   queryset = Product.objects.all().filter(category="Woman")
+   model = Product
+   template_name = 'products.html'
+   context_object_name = 'products'
+
+class ProductListChildrenView(ListView):
+   queryset = Product.objects.all().filter(category="Children")
+   model = Product
+   template_name = 'products.html'
+   context_object_name = 'products'
+
+class ProductListSouvenirsView(ListView):
+   queryset = Product.objects.all().filter(category="Souvenirs")
    model = Product
    template_name = 'products.html'
    context_object_name = 'products'
