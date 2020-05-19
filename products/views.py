@@ -8,17 +8,30 @@ from django.views.generic import DetailView, ListView
 #    return render(request, "products.html", {"products": products})
 
 class ProductListView(ListView):
-    queryset = Product.objects.all()
-    model = Product
-    template_name = 'products.html'
-    context_object_name = 'products'
+   queryset = Product.objects.all()
+   model = Product
+   template_name = 'products.html'
+   context_object_name = 'products'
+
+
+class ProductListMenView(ListView):
+   queryset = Product.objects.all().filter(category="Men's")
+   model = Product
+   template_name = 'products.html'
+   context_object_name = 'products'
+   
+#class ProductListView(ListView):
+#    template_name = 'products.html'
+#    context_object_name = 'products'
+#    def get_queryset(self):
+#        if self.kwargs['category']:
+#            queryset = Product.objects.all()
+#        else:
+#            category_id = self.kwargs['category']
+#            queryset = Product.objects.all().filter(category=category_id)
 
 class ProductDetailView(DetailView):
     queryset = Product.objects.all()
     model = Product
     template_name = 'product_detail.html'
     context_object_name = 'products'
-
-  #  def get_object(self):
-  #      id_ = self.kwargs.get("id")
-  #      return get_object_or_404(Product,id=id_)
