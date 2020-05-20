@@ -11,4 +11,7 @@ urlpatterns = [
  url(r'product/souvenirs', ProductListSouvenirsView.as_view(), name='product-list-souvenirs'),
 
  url(r'(?P<pk>\d+)/', ProductDetailView.as_view(), name='product-detail'),
+
+# url(r'(?P<category>[\w\-]+)/', ProductListView.as_view(), name='product-list-view'),
+# for navbat li link <a class="dropdown-item" href="{% url 'product-list-view' category='Men' %}">Men's</a>
 ]
