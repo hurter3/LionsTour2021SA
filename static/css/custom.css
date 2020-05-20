@@ -131,6 +131,7 @@ caption p {
 
 .product-description {
     min-height: 40px;
+    text-align: center;
 }
 
 /*----------JUMBOTRON---------*/
@@ -209,8 +210,30 @@ caption p {
   margin-bottom: 1rem;
 }
 
-.card-img-main {
+.product-detail {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.detail-img-main {
   width: 100%;
+  height 100%;
   border-radius: 6px;
   margin-bottom: 15px;
+}
+.detail-img-thumbnail {
+  height: 65px;
+  width: 65px;
+  display: inline-block;
+  background-size: cover;
+  background-position: center center;
+}
+
+.detail-price {
+color: #af001d;
+  font-size: 1.5rem;
 }

@@ -1,27 +1,79 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
 <div class="row row-flex justify-content-center">
+        
+        
         <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
-        <h1> DETAIL </h1>       
             <div class="panel-body">
-                <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ object.product_image1 }}')"></div>
-
-                <h3>{{ product.name }}</h3>
+                <div class="product-detail" style="background-image: url('{{ MEDIA_URL }}{{ object.product_image1 }}')"></div>
+                <h3 class="text-center">{{ product.title }}</h3>
                 <p class="product-description">{{ object.description }}</p>
-                <p>{{ object.price }}</p>
-
+                
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-5 col-lg-3"> 
+            <div class="col-12">
+                <div class="detail-price">£{{ object.price }}</div>
+                   
+            </div>
+            <div class="col-12">
                 <form method="post" action="{% url 'add_to_cart' object.id %}">
-                    {% csrf_token %}
-                    <div class="input-group">
-                        <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
-                        <span class="input-group-btn">
-                            <button class="btn btn-success" type="submit">Add</button>
-                        </span>
-                    </div>
+                {% csrf_token %}
+                
+                <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
+                <div  style="width:200px;">
+                    <select>
+                        <option value="0">Select size:</option>
+                        <option value="1">X/S</option>
+                        <option value="2">S</option>
+                        <option value="3">M</option>
+                        <option value="4">L</option>
+                        <option value="5">XL</option>
+                        <option value="6">XXL</option>
+                        <option value="7">XXXL</option>
+                        
+                    </select>
+                </div>
+                 <div class="input-group">
+                    <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
+                    <span class="input-group-btn">
+                        <button class="btn btn-success" type="submit">Add to Cart</button>
+                    </span>
+                </div>
                 </form>
             </div>
         </div>
-</div>
-{% endblock %}
+        <!-- thumbnails -->   
+                <div class="col-12 col-lg-2 text-center">
+                    <div class="detail-img-thumbnail" style="background-image: url('{{ product.product_image1.url }}')">
+                    </div>
 
+                    {% if product.product_image2 %}
+                    <div class="detail-img-thumbnail" style="background-image: url('{{ product.product_image2.url }}')">
+                    </div>
+                    {% endif %}
+
+                    {% if product.product_image3 %}
+                    <div class="listing-img-thumbnail" style="background-image: url('{{ product.product_image3.url }}')">
+                    </div>
+                    {% endif %}
+
+                    {% if product.product_image4 %}
+                    <div class="listing-img-thumbnail" style="background-image: url('{{ product.product_image4.url }}')">
+                    </div>
+                    {% endif %}
+
+                    {% if product.product_image5 %}
+                    <div class="listing-img-thumbnail" style="background-image: url('{{ product.product_image5.url }}')">
+                    </div>
+                    {% endif %}
+
+                </div>
+            </div> 
+ 
+</div>
+    
+{% endblock %}
