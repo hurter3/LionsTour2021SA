@@ -10,7 +10,7 @@ body {
     color: #000;
 }
 
-footer {
+#footer {
     margin-top: 40px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -236,4 +236,14 @@ caption p {
 .detail-price {
 color: #af001d;
   font-size: 1.5rem;
+}
+
+.matches-outer-wrapper {
+    display: block;
+}
+
+.match-inner-wrapper {
+    display: block;
+    box-sizing: border-box;
+
 }

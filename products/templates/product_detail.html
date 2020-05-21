@@ -57,22 +57,29 @@
                     {% endif %}
 
                     {% if product.product_image3 %}
-                    <div class="listing-img-thumbnail" style="background-image: url('{{ product.product_image3.url }}')">
+                    <div class="detail-img-thumbnail" style="background-image: url('{{ product.product_image3.url }}')">
                     </div>
                     {% endif %}
 
                     {% if product.product_image4 %}
-                    <div class="listing-img-thumbnail" style="background-image: url('{{ product.product_image4.url }}')">
+                    <div class="detail-img-thumbnail" style="background-image: url('{{ product.product_image4.url }}')">
                     </div>
                     {% endif %}
 
                     {% if product.product_image5 %}
-                    <div class="listing-img-thumbnail" style="background-image: url('{{ product.product_image5.url }}')">
+                    <div class="detail-img-thumbnail" style="background-image: url('{{ product.product_image5.url }}')">
                     </div>
                     {% endif %}
 
                 </div>
             </div> 
+
+             <div id="detail-description" class="col-12 col-lg-8">
+            <h4 class="mt-3">Description</h4>
+
+            <p class="mb-3">{{ product.description }}</p>
+            <hr>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Est optio aliquam, fugit nobis tenetur deleniti voluptatibus quod cupiditate sed doloremque temporibus suscipit assumenda blanditiis perspiciatis voluptate et dolorum consectetur laudantium. </p>
  
 </div>
     
