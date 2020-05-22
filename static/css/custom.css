@@ -243,7 +243,14 @@ color: #af001d;
 }
 
 .match-inner-wrapper {
-    display: block;
     box-sizing: border-box;
 
+}
+.btn-comp-outline {
+  border: 1px solid #000 ;
+  color: #af001d;
+  margin: 0.25rem;
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+  position: relative;
 }

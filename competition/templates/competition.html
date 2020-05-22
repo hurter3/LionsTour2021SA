@@ -4,10 +4,49 @@
 
 <h1> Score predictions</h1>
 
-<form method = 'POST'>
-    {% csrf_token %}
-    {{ form.as_p}}
-    <input type="submit" value ="save">
-</form>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+            <h2 class="account-heading">{{ user.username }}</h2>
+            <!-- Contact form wrapper with solid white background to make form stand out -->
+            <div class="contact-form-wrapper my-5">
+     
+                <form method = 'POST'>
+                    {% csrf_token %}
+                    <div class="match-inner-wrapper">
+                        <h5> Match 1 - DHL STORMERS </h5> 
+                        <h6>SATURDAY 3 JULY | CAPE TOWN STADIUM | CAPE TOWN </h6>   
+                        <div> Home {{ form.sascore1}}  Lions {{ form.lionsscore1}}</div> 
+                    
+                    </div>
+                    <hr>
+                    <div class="match-inner-wrapper">
+                        <h5> Match 2 - SOUTH AFRICAN INVITATIONAL </h5> 
+                        <h6>WEDNESDAY 7TH JULY | NBM STADIUM | PORT ELIZABETH </h6>   
+                        <div> Home {{ form.sascore2}}  Lions {{ form.lionsscore2}}</div> 
+                
+                    </div>
+        <!--            <hr>
+                    <div class="match-inner-wrapper">
+                        <h5> Match 3 - CELL C SHARKS </h5> 
+                        <h6>SATURDAY 10TH JULY | JONNSON KINGS PARK | DURBAN</h6>   
+                        <div> Home {{ form.sascore3}}  Lions {{ form.lionsscore3}}</div> 
+                
+                    </div>
+                    <hr> -->
+                    <div>
+                    <input class="btn btn-primary" type="submit" value ="save">
+                    </div>
+                </form>
 
-{% endblock %}
+        </div>
+      </div>
+      
+   
+    </div>
+     
+      
+       
+
+{% endblock content %}
+
+

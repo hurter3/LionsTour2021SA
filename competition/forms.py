@@ -5,5 +5,5 @@ class CompetitionForm(forms.ModelForm):
     class Meta:
         model = Competition
         fields = [
-        'sascore1', 'lionsscore1'
+        'sascore1', 'lionsscore1','sascore2', 'lionsscore2'
         ]
