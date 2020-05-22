@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .forms import CompetitionForm
 from .models import Competition
 
@@ -17,7 +18,8 @@ def score_prediction(request):
             temp = form.save(commit=False)
             temp.customer = request.user
             temp.save()
-            return redirect('/accounts/profile/')
+            messages.success(request, f'You have successfuly updated your score predictions. GOOD LUCK!')
+            return redirect('/')
 
            
     return render(request, "competition.html", {'form': form})
@@ -31,7 +33,8 @@ def score_prediction_new(request):
             temp = form.save(commit=False)
             temp.customer = request.user
             temp.save()
-            return redirect('/accounts/profile/')
+            messages.success(request, f'You have successfuly submitted your score predictions. GOOD LUCK!')
+            return redirect('/')
         
     return render(request, "competition.html", {'form': form})
 
