@@ -3,10 +3,18 @@
 {% block content %}
 
 <h1> Score predictions</h1>
+    <div>  
+   
+    {% if points > 0 %}
+    <p> You have accrued {{points}} points!</p>
+    {% else %}
+    <p>You have accrued 0 points or have not entered yet!</p>
+    {% endif %}
 
+    </div>
     <div class="row justify-content-center">
-        <div class="col-12 col-md-6">
-            <h2 class="account-heading">{{ user.username }}</h2>
+        <div class="col-8">
+          
             <!-- Contact form wrapper with solid white background to make form stand out -->
             <div class="contact-form-wrapper my-5">
      
@@ -15,7 +23,7 @@
                     <div class="match-inner-wrapper">
                         <h5> Match 1 - DHL STORMERS </h5> 
                         <h6>SATURDAY 3 JULY | CAPE TOWN STADIUM | CAPE TOWN </h6>   
-                        <div> Home {{ form.sascore1}}  Lions {{ form.lionsscore1}}</div> 
+                        <div class="col-xs-2"> Home {{ form.sascore1}}  Lions {{ form.lionsscore1}}</div> 
                     
                     </div>
                     <hr>
@@ -69,14 +77,45 @@
                     </div>
                     <hr> 
                     <div>
-                    <input class="btn btn-primary" type="submit" value ="save">
+                    <input class="btn btn-info btn-block" type="submit" value ="save">
                     </div>
                 </form>
 
         </div>
       </div>
-      
-   
+      <div class="col-4">
+     
+      <h6> Rules </h6>
+      <hr>
+      <p> Get involved, enter our FREE score predicting competition and stand a chance of winning amazing PRIZES:<br />
+      <br />One entry per registered person over 18 which can be updated before closing midnight FRIDAY 2 JULY. 
+You need to enter:<br />
+<br />
+1.Home team score in points<br />
+2.Away team score in points<br />
+3. First scoring points <br />
+    - Home team try<br />
+    - Away team try<br />
+    - Home team Penalty<br />
+    - Away team Penalty<br />
+    - Home team drop goal<br />
+    - away team drop goal<br />
+<br />
+Points allocation:<br />
+<br />
+3   - Correct Result<br />
+10  - Correct Score<br />
+5   - Within 5 points per team<br />
+3   - Within 10 points per team<br />
+1   - Within 20 points per team<br />
+3   - Correct 1st points (try)<br />
+1   - Correct 1st points (penalty)<br />
+8   - Correct 1st points (drop goal)<br />    
+<br />
+PRIZES.<br />
+
+ </p>
+    <div>
     </div>
      
       

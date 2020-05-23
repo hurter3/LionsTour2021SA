@@ -8,6 +8,5 @@ class CompetitionForm(forms.ModelForm):
         'sascore1', 'lionsscore1','sascore2', 'lionsscore2',
         'sascore3', 'lionsscore3','sascore4', 'lionsscore4',
         'sascore5', 'lionsscore5','sascore6', 'lionsscore6',
-        'sascore7', 'lionsscore7','sascore8', 'lionsscore8',
-        'points_accrued'
+        'sascore7', 'lionsscore7','sascore8', 'lionsscore8'
         ]
