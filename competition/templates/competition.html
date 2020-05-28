@@ -4,29 +4,25 @@
 
 <h1> Score predictions</h1>
     <div>  
-    
-    {% if points > 0 %}
-    <p> You have accrued {{points}} points!</p>
-    {% else %}
-    <p>You have accrued 0 points or have not entered yet!</p>
-    {% endif %}
-
+        {% if points > 0 %}
+        <p> You have accrued {{points}} points!</p>
+        {% else %}
+        <p>You have accrued 0 points or have not entered yet!</p>
+        {% endif %}
     </div>
+
     <div class="row justify-content-center">
         <div class="col-8 col-md-6 col-sm-4">
-          
             <!-- Contact form wrapper with solid white background to make form stand out -->
             <div class="contact-form-wrapper my-5">
      
                 <form method = 'POST'>
                     {% csrf_token %}
 
-                    <div class="match-inner-wrapper">
+                    <div id="match-inner-wrapper">
                         <h5> Match 1 - DHL STORMERS </h5> 
                         <h6>SATURDAY 3 JULY | CAPE TOWN STADIUM | CAPE TOWN </h6>   
-
                         <div class="form-row">
-
                             <div class="form-group col-md-2 mb-0"> 
                             </div>
                             <div class="form-group col-md-2 mb-0">
@@ -39,14 +35,12 @@
                                 {{ form.firstpoints1|as_crispy_field }}
                             </div>
                         </div>        
-
                     </div>
                     <hr>
                     <div class="match-inner-wrapper">
                         <h5> Match 2 - SOUTH AFRICAN INVITATIONAL </h5> 
                         <h6>WEDNESDAY 7 JULY | NBM STADIUM | PORT ELIZABETH </h6>   
                         <div class="form-row">
-
                             <div class="form-group col-md-2 mb-0"> 
                             </div>
                             <div class="form-group col-md-2 mb-0">
@@ -59,14 +53,12 @@
                                 {{ form.firstpoints2|as_crispy_field }}
                             </div>
                         </div>        
-
                     </div>
                     <hr>
                     <div class="match-inner-wrapper">
                         <h5> Match 3 - CELL C SHARKS </h5> 
                         <h6>SATURDAY 10 JULY | JONNSON KINGS PARK | DURBAN</h6>   
                         <div class="form-row">
-
                             <div class="form-group col-md-2 mb-0"> 
                             </div>
                             <div class="form-group col-md-2 mb-0">
@@ -79,14 +71,12 @@
                                 {{ form.firstpoints3|as_crispy_field }}
                             </div>
                         </div>        
-
                     </div>
                     <hr> 
                     <div class="match-inner-wrapper">
                         <h5> Match 4 - SOUTH AFRICAN 'A' </h5> 
                         <h6>WEDNESDAY 14 JULY | MBOMBELA STADIUM | NELSPRUIT</h6>   
-                       <div class="form-row">
-
+                        <div class="form-row">
                             <div class="form-group col-md-2 mb-0"> 
                             </div>
                             <div class="form-group col-md-2 mb-0">
@@ -99,14 +89,12 @@
                                 {{ form.firstpoints4|as_crispy_field }}
                             </div>
                         </div>        
-
                     </div>
                     <hr> 
                     <div class="match-inner-wrapper">
                         <h5> Match 5 - VODACOM BULLS </h5> 
                         <h6>SATURDAY 17 JULY | LOFTUS VERSFELD | PRETORIA</h6>   
-                     <div class="form-row">
-
+                        <div class="form-row">
                             <div class="form-group col-md-2 mb-0"> 
                             </div>
                             <div class="form-group col-md-2 mb-0">
@@ -119,14 +107,12 @@
                                 {{ form.firstpoints5|as_crispy_field }}
                             </div>
                         </div>        
-
                     </div>
                     <hr> 
                     <div class="match-inner-wrapper">
                         <h5> Match 6 - SPRINGBOKS </h5> 
                         <h6>SATURDAY 24 JULY | FNB NATIONAL STADIUM | JOHANNESBURG</h6>   
-                     <div class="form-row">
-
+                        <div class="form-row">
                             <div class="form-group col-md-2 mb-0"> 
                             </div>
                             <div class="form-group col-md-2 mb-0">
@@ -139,14 +125,12 @@
                                 {{ form.firstpoints6|as_crispy_field }}
                             </div>
                         </div>        
-
                     </div>
                     <hr> 
                     <div class="match-inner-wrapper">
                         <h5> SPRINGBOKS </h5> 
                         <h6>SATURDAY 31 JULY | CAPE TOWN STADIUM | CAPE TOWN</h6>   
-                     <div class="form-row">
-
+                        <div class="form-row">
                             <div class="form-group col-md-2 mb-0"> 
                             </div>
                             <div class="form-group col-md-2 mb-0">
@@ -159,14 +143,12 @@
                                 {{ form.firstpoints7|as_crispy_field }}
                             </div>
                         </div>        
-
                     </div>
                     <hr> 
                     <div class="match-inner-wrapper">
                         <h5> Match 8 - SPRINGBOKS </h5> 
                         <h6>SATURDAY 7 AUGUST | EMIRATES AIRLINE PARK | JOHANNESBURG</h6>   
-                     <div class="form-row">
-
+                        <div class="form-row">
                             <div class="form-group col-md-2 mb-0"> 
                             </div>
                             <div class="form-group col-md-2 mb-0">
@@ -179,51 +161,85 @@
                                 {{ form.firstpoints8|as_crispy_field }}
                             </div>
                         </div>        
-
                     </div>
                     <hr> 
                     <div>
                     <input class="btn btn-info btn-block" type="submit" value ="save">
                     </div>
                 </form>
-
+            </div>
         </div>
-      </div>
-      <div class="col-4">
-     
-      <h6> Rules </h6>
-      <hr>
-      <p> Get involved, enter our FREE score predicting competition and stand a chance of winning amazing PRIZES:<br />
-      <br />One entry per registered person over 18 which can be updated before closing midnight FRIDAY 2 JULY. 
-You need to enter:<br />
-<br />
-1.Home team score in points<br />
-2.Away team score in points<br />
-3. First scoring points <br />
-    - Home team try<br />
-    - Away team try<br />
-    - Home team Penalty<br />
-    - Away team Penalty<br />
-    - Home team drop goal<br />
-    - away team drop goal<br />
-<br />
-Points allocation:<br />
-<br />
-3   - Correct Result<br />
-10  - Correct Score<br />
-5   - Within 5 points per team<br />
-3   - Within 10 points per team<br />
-1   - Within 20 points per team<br />
-3   - Correct 1st points (try)<br />
-1   - Correct 1st points (penalty)<br />
-8   - Correct 1st points (drop goal)<br />    
-<br />
-PRIZES.<br />
+        <div class="col-4">
+            <div class="contact-form-wrapper my-5">
+            <p> Enter our FREE competition and stand a chance of winning amazing PRIZES:<br />
+            <hr>
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h5 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                            Rules</a>
+                            </h5>
+                        </div>
+                    <div id="collapse1" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <br />
+                            <br />One entry per registered person over 18 which can be updated before closing midnight FRIDAY 2 JULY.
+                            You need to enter:<br />
+                            <br />
 
- </p>
-    <div>
+                            1.Home team score in points<br />
+                            2.Away team score in points<br />
+                            3. First scoring points <br />
+                                - Home team try<br />
+                                - Away team try<br />
+                                - Home team Penalty<br />
+                                - Away team Penalty<br />
+                                - Home team drop goal<br />
+                                - away team drop goal<br />
+                            <br />
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h5 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                        Point Allocation</a>
+                        </h5>
+                    </div>
+                    <div id="collapse2" class="panel-collapse collapse">
+                        <div class="panel-body">
+                        <br />
+                        3   - Correct Result<br />
+                        10  - Correct Score<br />
+                        5   - Within 5 points per team<br />
+                        3   - Within 10 points per team<br />
+                        1   - Within 20 points per team<br />
+                        3   - Correct 1st points (try)<br />
+                        1   - Correct 1st points (penalty)<br />
+                        8   - Correct 1st points (drop goal)<br />    
+                        <br />
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h5 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                        Prizes</a>
+                        </h5>
+                    </div>
+                    <div id="collapse3" class="panel-collapse collapse">
+                    <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-     
       
        
 

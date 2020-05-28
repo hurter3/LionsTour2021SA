@@ -242,6 +242,12 @@ color: #af001d;
     display: block;
 }
 
+#match-inner-wrapper {
+    width: 500px;
+    margin: 0 auto;
+    background-color: #af001d; 
+}
+
 .match-inner-wrapper {
     box-sizing: border-box;
 
