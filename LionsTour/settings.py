@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'checkout',
     'storages',
     'crispy_forms',
+  #  'widget_tweaks',
 ]
 
 MIDDLEWARE = [

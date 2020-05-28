@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
-
+{% load crispy_forms_tags %}
 {% block content %}
 
 <h1> Score predictions</h1>
     <div>  
-   
+    
     {% if points > 0 %}
     <p> You have accrued {{points}} points!</p>
     {% else %}
@@ -13,67 +13,173 @@
 
     </div>
     <div class="row justify-content-center">
-        <div class="col-8">
+        <div class="col-8 col-md-6 col-sm-4">
           
             <!-- Contact form wrapper with solid white background to make form stand out -->
             <div class="contact-form-wrapper my-5">
      
                 <form method = 'POST'>
                     {% csrf_token %}
+
                     <div class="match-inner-wrapper">
                         <h5> Match 1 - DHL STORMERS </h5> 
                         <h6>SATURDAY 3 JULY | CAPE TOWN STADIUM | CAPE TOWN </h6>   
-                        <div> Home {{ form.sascore1}}  Lions {{ form.lionsscore1}} First points scored {{ form.firstpoints1}}</div> 
-                    
+
+                        <div class="form-row">
+
+                            <div class="form-group col-md-2 mb-0"> 
+                            </div>
+                            <div class="form-group col-md-2 mb-0">
+                                {{ form.sascore1|as_crispy_field }}
+                            </div>
+                            <div class="form-group col-md-2 mb-0">
+                                {{ form.lionsscore1|as_crispy_field }}
+                            </div>
+                            <div class="form-group col-md-4 mb-0">
+                                {{ form.firstpoints1|as_crispy_field }}
+                            </div>
+                        </div>        
+
                     </div>
                     <hr>
                     <div class="match-inner-wrapper">
                         <h5> Match 2 - SOUTH AFRICAN INVITATIONAL </h5> 
                         <h6>WEDNESDAY 7 JULY | NBM STADIUM | PORT ELIZABETH </h6>   
-                        <div> Home {{ form.sascore2}}  Lions {{ form.lionsscore2}} First points scored {{ form.firstpoints2}}</div> 
-                
+                        <div class="form-row">
+
+                            <div class="form-group col-md-2 mb-0"> 
+                            </div>
+                            <div class="form-group col-md-2 mb-0">
+                                {{ form.sascore2|as_crispy_field }}
+                            </div>
+                            <div class="form-group col-md-2 mb-0">
+                                {{ form.lionsscore2|as_crispy_field }}
+                            </div>
+                            <div class="form-group col-md-4 mb-0">
+                                {{ form.firstpoints2|as_crispy_field }}
+                            </div>
+                        </div>        
+
                     </div>
                     <hr>
                     <div class="match-inner-wrapper">
                         <h5> Match 3 - CELL C SHARKS </h5> 
                         <h6>SATURDAY 10 JULY | JONNSON KINGS PARK | DURBAN</h6>   
-                        <div> Home {{ form.sascore3}}  Lions {{ form.lionsscore3}} First points scored {{ form.firstpoints3}}</div> 
-                
+                        <div class="form-row">
+
+                            <div class="form-group col-md-2 mb-0"> 
+                            </div>
+                            <div class="form-group col-md-2 mb-0">
+                                {{ form.sascore3|as_crispy_field }}
+                            </div>
+                            <div class="form-group col-md-2 mb-0">
+                                {{ form.lionsscore3|as_crispy_field }}
+                            </div>
+                            <div class="form-group col-md-4 mb-0">
+                                {{ form.firstpoints3|as_crispy_field }}
+                            </div>
+                        </div>        
+
                     </div>
                     <hr> 
                     <div class="match-inner-wrapper">
                         <h5> Match 4 - SOUTH AFRICAN 'A' </h5> 
                         <h6>WEDNESDAY 14 JULY | MBOMBELA STADIUM | NELSPRUIT</h6>   
-                        <div> Home {{ form.sascore4}}  Lions {{ form.lionsscore4}} First points scored {{ form.firstpoints4}}</div> 
-                
+                       <div class="form-row">
+
+                            <div class="form-group col-md-2 mb-0"> 
+                            </div>
+                            <div class="form-group col-md-2 mb-0">
+                                {{ form.sascore4|as_crispy_field }}
+                            </div>
+                            <div class="form-group col-md-2 mb-0">
+                                {{ form.lionsscore4|as_crispy_field }}
+                            </div>
+                            <div class="form-group col-md-4 mb-0">
+                                {{ form.firstpoints4|as_crispy_field }}
+                            </div>
+                        </div>        
+
                     </div>
                     <hr> 
                     <div class="match-inner-wrapper">
                         <h5> Match 5 - VODACOM BULLS </h5> 
                         <h6>SATURDAY 17 JULY | LOFTUS VERSFELD | PRETORIA</h6>   
-                        <div> Home {{ form.sascore5}}  Lions {{ form.lionsscore5}} First points scored {{ form.firstpoints5}}</div> 
-                
+                     <div class="form-row">
+
+                            <div class="form-group col-md-2 mb-0"> 
+                            </div>
+                            <div class="form-group col-md-2 mb-0">
+                                {{ form.sascore5|as_crispy_field }}
+                            </div>
+                            <div class="form-group col-md-2 mb-0">
+                                {{ form.lionsscore5|as_crispy_field }}
+                            </div>
+                            <div class="form-group col-md-4 mb-0">
+                                {{ form.firstpoints5|as_crispy_field }}
+                            </div>
+                        </div>        
+
                     </div>
                     <hr> 
                     <div class="match-inner-wrapper">
                         <h5> Match 6 - SPRINGBOKS </h5> 
                         <h6>SATURDAY 24 JULY | FNB NATIONAL STADIUM | JOHANNESBURG</h6>   
-                        <div> Home {{ form.sascore6}}  Lions {{ form.lionsscore6}} First points scored {{ form.firstpoints6}}</div> 
-                
+                     <div class="form-row">
+
+                            <div class="form-group col-md-2 mb-0"> 
+                            </div>
+                            <div class="form-group col-md-2 mb-0">
+                                {{ form.sascore6|as_crispy_field }}
+                            </div>
+                            <div class="form-group col-md-2 mb-0">
+                                {{ form.lionsscore6|as_crispy_field }}
+                            </div>
+                            <div class="form-group col-md-4 mb-0">
+                                {{ form.firstpoints6|as_crispy_field }}
+                            </div>
+                        </div>        
+
                     </div>
                     <hr> 
                     <div class="match-inner-wrapper">
                         <h5> SPRINGBOKS </h5> 
                         <h6>SATURDAY 31 JULY | CAPE TOWN STADIUM | CAPE TOWN</h6>   
-                        <div> Home {{ form.sascore7}}  Lions {{ form.lionsscore7}} First points scored {{ form.firstpoints7}}</div> 
-                
+                     <div class="form-row">
+
+                            <div class="form-group col-md-2 mb-0"> 
+                            </div>
+                            <div class="form-group col-md-2 mb-0">
+                                {{ form.sascore7|as_crispy_field }}
+                            </div>
+                            <div class="form-group col-md-2 mb-0">
+                                {{ form.lionsscore7|as_crispy_field }}
+                            </div>
+                            <div class="form-group col-md-4 mb-0">
+                                {{ form.firstpoints7|as_crispy_field }}
+                            </div>
+                        </div>        
+
                     </div>
                     <hr> 
                     <div class="match-inner-wrapper">
                         <h5> Match 8 - SPRINGBOKS </h5> 
                         <h6>SATURDAY 7 AUGUST | EMIRATES AIRLINE PARK | JOHANNESBURG</h6>   
-                        <div> Home {{ form.sascore8}}  Lions {{ form.lionsscore8}} First points scored {{ form.firstpoints8}}</div> 
-                
+                     <div class="form-row">
+
+                            <div class="form-group col-md-2 mb-0"> 
+                            </div>
+                            <div class="form-group col-md-2 mb-0">
+                                {{ form.sascore8|as_crispy_field }}
+                            </div>
+                            <div class="form-group col-md-2 mb-0">
+                                {{ form.lionsscore8|as_crispy_field }}
+                            </div>
+                            <div class="form-group col-md-4 mb-0">
+                                {{ form.firstpoints8|as_crispy_field }}
+                            </div>
+                        </div>        
+
                     </div>
                     <hr> 
                     <div>
