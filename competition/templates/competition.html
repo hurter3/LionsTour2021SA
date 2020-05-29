@@ -11,17 +11,17 @@
         {% endif %}
     </div>
 
-    <div class="row justify-content-center">
-        <div class="col-8 col-md-6 col-sm-4">
+    <div class="row no-gutters">
+        <div class="col-8">
             <!-- Contact form wrapper with solid white background to make form stand out -->
-            <div class="contact-form-wrapper my-5">
+            <div>
      
                 <form method = 'POST'>
                     {% csrf_token %}
 
                     <div id="match-inner-wrapper">
-                        <h5> Match 1 - DHL STORMERS </h5> 
-                        <h6>SATURDAY 3 JULY | CAPE TOWN STADIUM | CAPE TOWN </h6>   
+                        <h5> <span class="match-day"> Saturday </span> 3 July - DHL STORMERS </h5> 
+                        <h6> CAPE TOWN STADIUM | CAPE TOWN </h6>   
                         <div class="form-row">
                             <div class="form-group col-md-2 mb-0"> 
                             </div>
@@ -36,10 +36,10 @@
                             </div>
                         </div>        
                     </div>
-                    <hr>
-                    <div class="match-inner-wrapper">
-                        <h5> Match 2 - SOUTH AFRICAN INVITATIONAL </h5> 
-                        <h6>WEDNESDAY 7 JULY | NBM STADIUM | PORT ELIZABETH </h6>   
+                  
+                    <div id="match-inner-wrapper">
+                        <h5> <span class="match-day">Wednesday </span> 7 July - SOUTH AFRICAN INVITATIONAL </h5> 
+                        <h6> NBM STADIUM | PORT ELIZABETH </h6>   
                         <div class="form-row">
                             <div class="form-group col-md-2 mb-0"> 
                             </div>
@@ -54,10 +54,9 @@
                             </div>
                         </div>        
                     </div>
-                    <hr>
-                    <div class="match-inner-wrapper">
-                        <h5> Match 3 - CELL C SHARKS </h5> 
-                        <h6>SATURDAY 10 JULY | JONNSON KINGS PARK | DURBAN</h6>   
+                    <div id="match-inner-wrapper">
+                        <h5> <span class="match-day">Saturday </span> 10 July - CELL C SHARKS </h5> 
+                        <h6> JONNSON KINGS PARK | DURBAN</h6>   
                         <div class="form-row">
                             <div class="form-group col-md-2 mb-0"> 
                             </div>
@@ -72,10 +71,9 @@
                             </div>
                         </div>        
                     </div>
-                    <hr> 
-                    <div class="match-inner-wrapper">
-                        <h5> Match 4 - SOUTH AFRICAN 'A' </h5> 
-                        <h6>WEDNESDAY 14 JULY | MBOMBELA STADIUM | NELSPRUIT</h6>   
+                    <div id="match-inner-wrapper">
+                        <h5> <span class="match-day"> Wednesday </span> 14 July - SOUTH AFRICAN 'A' </h5> 
+                        <h6> MBOMBELA STADIUM | NELSPRUIT</h6>   
                         <div class="form-row">
                             <div class="form-group col-md-2 mb-0"> 
                             </div>
@@ -90,10 +88,9 @@
                             </div>
                         </div>        
                     </div>
-                    <hr> 
-                    <div class="match-inner-wrapper">
-                        <h5> Match 5 - VODACOM BULLS </h5> 
-                        <h6>SATURDAY 17 JULY | LOFTUS VERSFELD | PRETORIA</h6>   
+                    <div id="match-inner-wrapper">
+                        <h5> <span class="match-day"> Saturday </span> 17 July - VODACOM BULLS </h5> 
+                        <h6> LOFTUS VERSFELD | PRETORIA</h6>   
                         <div class="form-row">
                             <div class="form-group col-md-2 mb-0"> 
                             </div>
@@ -108,10 +105,9 @@
                             </div>
                         </div>        
                     </div>
-                    <hr> 
-                    <div class="match-inner-wrapper">
-                        <h5> Match 6 - SPRINGBOKS </h5> 
-                        <h6>SATURDAY 24 JULY | FNB NATIONAL STADIUM | JOHANNESBURG</h6>   
+                    <div id="match-inner-wrapper">
+                        <h5> <span class="match-day"> Saturday <span> 24 July - SPRINGBOKS </h5> 
+                        <h6> FNB NATIONAL STADIUM | JOHANNESBURG</h6>   
                         <div class="form-row">
                             <div class="form-group col-md-2 mb-0"> 
                             </div>
@@ -126,10 +122,9 @@
                             </div>
                         </div>        
                     </div>
-                    <hr> 
-                    <div class="match-inner-wrapper">
-                        <h5> SPRINGBOKS </h5> 
-                        <h6>SATURDAY 31 JULY | CAPE TOWN STADIUM | CAPE TOWN</h6>   
+                    <div id="match-inner-wrapper">
+                        <h5> <span class="match-day">Saturday </span> 31 July - SPRINGBOKS </h5> 
+                        <h6> CAPE TOWN STADIUM | CAPE TOWN</h6>   
                         <div class="form-row">
                             <div class="form-group col-md-2 mb-0"> 
                             </div>
@@ -144,10 +139,9 @@
                             </div>
                         </div>        
                     </div>
-                    <hr> 
-                    <div class="match-inner-wrapper">
-                        <h5> Match 8 - SPRINGBOKS </h5> 
-                        <h6>SATURDAY 7 AUGUST | EMIRATES AIRLINE PARK | JOHANNESBURG</h6>   
+                    <div id="match-inner-wrapper">
+                        <h5> <span class="match-day">Saturday </span> 7 August - SPRINGBOKS </h5> 
+                        <h6> EMIRATES AIRLINE PARK | JOHANNESBURG</h6>   
                         <div class="form-row">
                             <div class="form-group col-md-2 mb-0"> 
                             </div>
@@ -162,15 +156,14 @@
                             </div>
                         </div>        
                     </div>
-                    <hr> 
                     <div>
-                    <input class="btn btn-info btn-block" type="submit" value ="save">
+                    <input class="btn btn-info btn-block" type="submit" value ="Submit">
                     </div>
                 </form>
             </div>
         </div>
         <div class="col-4">
-            <div class="contact-form-wrapper my-5">
+            <div class="contact-form-wrapper mr-2">
             <p> Enter our FREE competition and stand a chance of winning amazing PRIZES:<br />
             <hr>
                 <div class="panel-group" id="accordion">

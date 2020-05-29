@@ -243,15 +243,21 @@ color: #af001d;
 }
 
 #match-inner-wrapper {
-    width: 500px;
-    margin: 0 auto;
-    background-color: #af001d; 
+    margin: 8px;
+    background-color: #e3e6e6fa; 
+    border-bottom : 2px solid #000;
+    border-radius: 25px;
 }
 
-.match-inner-wrapper {
-    box-sizing: border-box;
-
+.match-day {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
+
+.competition-bg {
+    background-color: #fa3055;
+    }
+    
 .btn-comp-outline {
   border: 1px solid #000 ;
   color: #af001d;
