@@ -17,3 +17,6 @@ def tickets_view(request):
 
 def contact_view(request):
     return render(request, "contact.html", {"home": "contact"})
+
+def competition_rules_view(request):
+    return render(request, "competition-rules.html", {"home": "competition-rules"})

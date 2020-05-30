@@ -254,6 +254,11 @@ color: #af001d;
     font-weight: bold;
 }
 
+.lions-red-bold {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #af001d;
+}
 .competition-bg {
     background-color: #fa3055;
     }

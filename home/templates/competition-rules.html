@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1> <span class="lions-red-bold">LIONS </span> Tour 2021 Competition.</h1>
+                <strong>Tour matches around South Africa.</strong>
+                <hr>
+            </div>
+        <div class="col-12 col-md-4 mb-3">
+            <img src="css/images/Lions2021-fixtures.png" alt="" class="w-100">
+        </div>
+        <div class="col-12 col-md-8">
+            <p> Think you know your rugby? <br>
+                Get involved with Predicting the scores for ALL 8 Lions matches and win some fantastic prizes.<br>
+                Login to <a href="{% url 'competition' %}">enter</a>.<br>
+                Please see <a href="{% url 'competition' %}">here</a> for the competition Terms and Conditions.
+            </p>
+
+            <p> <strong>You need to make 3 predictions per match: </strong> <br>
+                1.Home team score in points<br>
+                2.Away team score in points<br>
+                3.First team scoring points <br>
+            </p>
+
+            <p> The point allocation are as follows:<br>
+                3   - Correct Result<br>
+                10  - Correct Score<br>
+                5   - Within 5 points per team<br>
+                3   - Within 10 points per team<br>
+                1   - Within 20 points per team<br>
+                3   - Correct 1st points (try)<br>
+                1   - Correct 1st points (penalty)<br>
+                8   - Correct 1st points (drop goal)<br>    
+            </p>
+        </div>
+    </div>
+
+
+
+{% endblock %}
