@@ -8,6 +8,9 @@ from .models import Competition
 def competition_rules_view(request):
     return render(request, "competition-rules.html")
 
+def competition_terms_view(request):
+    return render(request, "competition-terms.html")
+
 @login_required
 def score_prediction(request):
     try:
