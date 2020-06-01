@@ -174,8 +174,10 @@ caption p {
     padding-bottom:75px;
 }
 
+
+/* ('../images/lions-cover.jpg')*/
 .rules-container {
-    background-image: url('../images/lions-cover.jpg'); 
+    background-image: url('../images/lions2017.jpg'); 
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
