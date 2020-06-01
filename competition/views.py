@@ -4,6 +4,10 @@ from django.contrib import messages
 from .forms import CompetitionForm
 from .models import Competition
 
+
+def competition_rules_view(request):
+    return render(request, "competition-rules.html")
+
 @login_required
 def score_prediction(request):
     try:

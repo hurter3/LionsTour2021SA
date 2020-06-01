@@ -58,7 +58,11 @@ body {
 
 h1, h3, h5, h6 {
   color: #444444;
-  text-align: center
+  text-align: center;
+}
+
+.text-align-center {
+  text-align: center;
 }
 
 .bg-red {
@@ -255,7 +259,6 @@ color: #af001d;
 }
 
 .lions-red-bold {
-    font-size: 1.5rem;
     font-weight: bold;
     color: #af001d;
 }
@@ -272,3 +275,6 @@ color: #af001d;
   position: relative;
 }
 
+.btn-rules {
+    border-radius: 25px;
+}
