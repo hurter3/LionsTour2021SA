@@ -53,4 +53,5 @@ class Competition(models.Model):
     submit_date = models.DateField(default=datetime.date.today)    
 
     def __str__(self):
-        return f'{self.id}-{self.customer.username}'
+        return self.customer.username
+#        return f'{self.id}-{self.customer.username}'
