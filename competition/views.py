@@ -26,7 +26,7 @@ def score_prediction(request):
             temp = form.save(commit=False)
             temp.customer = request.user
             temp.save()
-            messages.success(request, f'You have successfuly updated your score predictions. GOOD LUCK!')
+            messages.success(request, 'You have successfuly updated your score predictions. GOOD LUCK!')
             return redirect('/')
 
            
@@ -42,7 +42,7 @@ def score_prediction_new(request):
             temp = form.save(commit=False)
             temp.customer = request.user
             temp.save()
-            messages.success(request, f'You have successfuly submitted your score predictions. GOOD LUCK!')
+            messages.success(request, 'You have successfuly submitted your score predictions. GOOD LUCK!')
             return redirect('/')
         
     return render(request, "competition.html", {'form': form,'points':points})
