@@ -35,10 +35,9 @@
         <a class="nav-link nav-link-icon" href="{% url 'register' %}" title="Shopping cart">
             <div>
                 <i class="fas fa-cart-arrow-down icon-red" title="Cart"></i>
-                {% if request.session.cart.count and request.session.cart.count != 0 %}
-                <div id="cart-counter">{% if request.session.cart.count > 9 %}9+
-                    {% else %}{{ request.session.cart.count }}{% endif %}</div>
-                {% endif %}
+                {% if product_count > 0 %}
+                            <label class="badge badge-warning">{{ product_count }}</label>
+                            {% endif %}
             </div>
         </a>
     </div>
@@ -127,12 +126,12 @@
         <a class="nav-link nav-link-icon" href="{% url 'view_cart' %}" title="Shopping cart" aria-label="View shopping cart">
             <div>
                 <i class="fas fa-cart-arrow-down icon-red" title="Cart"></i>
-                {% if request.session.cart.count and request.session.cart.count != 0 %}
-                <div id="cart-counter">{% if request.session.cart.count > 9 %}9+
-                    {% else %}{{ request.session.cart.count }}{% endif %}</div>
-                {% endif %}
+                {% if product_count > 0 %}
+                            <label class="badge badge-warning">{{ product_count }}</label>
+                            {% endif %}
             </div>
         </a>
+        
     </div>
 </nav>
     {% if messages %}
