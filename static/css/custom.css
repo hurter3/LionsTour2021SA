@@ -334,3 +334,31 @@ color: #af001d;
 .div-padding{
     padding-top: 50px;
 }
+
+
+/* Styling for home page */
+.home-carousel-item {
+  height: 80vh;
+  width: 100vw;
+}
+
+.carousel-image {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#carousel-img-1 {
+  background-image: url('../images/thelionslive.jpg'); 
+  background-position: center 100%;
+}
+
+#carousel-img-2 {
+  background-image: url('../images/thelionslive.jpg'); 
+  background-position: center 65%;
+}
+
+#carousel-img-3 {
+  background-image: url('../images/thelionslive.jpg'); 
+  background-position: center 20%;
+}
