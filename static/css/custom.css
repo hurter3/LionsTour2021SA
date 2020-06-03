@@ -61,6 +61,14 @@ h1, h3, h5, h6 {
   text-align: center;
 }
 
+h5 {
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: 0.1rem;
+}
+
+
 .text-align-center {
   text-align: center;
 }
@@ -200,42 +208,59 @@ caption p {
     -o-background-size: cover;
 }
 
-/* listing cards */
-.card-img-wrapper {
-  height: 200px;
-  min-width: 175px;
+/* item cards */
+.item-img-wrapper {
+    height: 200px;
+    min-width: 175px;
 }
 
-.card-img {
-  height: 100%;
-  border-radius: 8px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center 35%;
+.item-card-padding {
+    padding: 15px;
 }
 
-.card-card {
-  max-width: 300px;
+.item-img {
+    height: 100%;
+    background-size: contain;
+    border-radius: 8px;
+    background-repeat: no-repeat;
+    background-position: center 35%;
+}
+
+.item-card {
+
+
+
+  max-width: 180px;
   -webkit-transition: 0.2s all ease-in-out 0.2s;
   transition: 0.2s all ease-in-out 0.2s;
 }
 
-.card-card-padding {
+.item-padding {
   padding: 15px;
 }
 
-.card-info {
+.item-info {
   padding: 0.5rem 1rem;
 }
 
-.card-info p {
-  color: #63c4fc;
+.item-info p {
+     color: rgb(205, 187, 241);
   font-size: 1.2rem;
   margin: 0;
   line-height: 1.1rem;
 }
 
-.card-quantity {
+.item-card h5 {
+  color: #373737;
+  -webkit-transition: 0.2s all ease-in-out 0.2s;
+  transition: 0.2s all ease-in-out 0.2s;
+}
+
+.item-card h5:hover {
+  color: #af001d;
+}
+
+.item-quantity {
   max-width: 100px;
   margin-bottom: 1rem;
 }
