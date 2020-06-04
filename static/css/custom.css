@@ -387,3 +387,10 @@ color: #af001d;
   background-image: url('../images/thelionslive.jpg'); 
   background-position: center 20%;
 }
+
+h6.total {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+}
