@@ -23,7 +23,7 @@
                             <h4>{{ item.product.title }}</h4>
                         </div>
                         <div class="col-4 text-center">
-                         <a href="{% url 'checkout' %}" role="button"><i class="far fa-times-circle icon-red" title="Delete {{ item.product.title }} from cart"></i></a>
+                         <a href="{% url 'delete_item_in_cart' item.id %}" role="button"><i class="far fa-times-circle icon-red" title="Delete {{ item.product.title }} from cart"></i></a>
                                 <p>
                                     <form class="form-block" method="post" action="{% url 'adjust_cart' item.id %}">
                                         {% csrf_token %}
