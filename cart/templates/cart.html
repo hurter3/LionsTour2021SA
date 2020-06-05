@@ -5,11 +5,11 @@
 
 {% block content %}
 
-<h1> Cart Summary </h1>
-
-<div class="container mb-5">
+<div class="container my-5">
     <div class="row justify-content-center">
         <div class="col-11 col-md-8 col-lg-6 ">
+         <h3> Your Shopping cart </h3>
+    <hr>
             <div class="row">
                 {% for item in cart_items %}
                 <div class="col-4">
@@ -21,7 +21,7 @@
                     <div class="row">
                         <div class="col-8">
                             <h4>{{ item.product.title }}</h4>
-                            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis officiis eos quidem architecto qui odit veritatis aperiam sapiente facilis, dolores, nostrum doloribus, minima minus ipsum repellat ut esse voluptatum sequi?</p>
+                            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
                         </div>
                         <div class="col-4 text-center">
                          <a href="{% url 'delete_item_in_cart' item.id %}" role="button"><i class="far fa-times-circle icon-red" title="Delete {{ item.product.title }} from cart"></i></a>
