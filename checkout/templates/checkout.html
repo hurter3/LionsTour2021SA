@@ -16,73 +16,53 @@
 
 {% block content %}
 
-    <div class="row">
-  <div class="col-75">
-    <div class="container">
+<div class="row">
+    <div class="col-75">
+        <div class="container">
 
             <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
                 <div class="row">
-          <div class="col-50">
+                    <div class="col-50">
                 
-                <legend>Billing Details</legend>
+                        <legend>Billing Details</legend>
 
-                <div id="credit-card-errors" style="display: none;">
-                    <div class="alert-message block-message error" id="stripe-error-message"></div>
-                </div>
+                        <div id="credit-card-errors" style="display: none;">
+                            <div class="alert-message block-message error" id="stripe-error-message"></div>
+                        </div>
 
-                <div class="form-group">
-                    {{ order_form | crispy }}
-                </div>
-                </div>
-                <div class="col-50">
+                        <div class="form-group">
+                            {{ order_form | crispy }}
+                        </div>
+                    </div>
+
+                    <div class="col-50">                
+                        <legend>Payment Details</legend>
+                        <div class="form-group">
+                            {{ payment_form | crispy }}
+                        </div>
+
+                    {% csrf_token %}
                 
-                <legend>Payment Details</legend>
-                <div class="form-group">
-                    {{ payment_form | crispy }}
-                </div>
-
-                {% csrf_token %}
-                
-                </div>
-                <div class="form-group">
-                    <input class=" btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
-                </div>
+                    </div>
+                    <div class="form-group">
+                        <input class=" btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
+                    </div>
                 </div>
             </form>
 
         </div>
-        <div class="col-4">
-    {% for item in cart_items %}
-        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
-            <div class="panel-body">
-                <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.product_image1 }}')"></div>
-
-                <div class="caption">
-                    <h3>{{ item.product.name }}</h3>
-                    <p class="product-description">{{ item.product.description }}</p>
-                    <p>{{ item.quantity }}</p>
-                    <p>{{item.product.price}}</p>
-                </div>
-            </div>
-        </div>
-    {% endfor %}
-</div> 
-<h6 class="total"> Total: £ {{ total }} </h6>
-</div>
-
- <div class="col-25">
-    <div class="container my-5">
-
-        <p class="justify-content-center"><i class="fa fa-shopping-cart"></i></p>
        
-        {% for item in cart_items %}
-            <p>{{ item.quantity }} {{ item.product.description }} <span class="price">£ {{item.product.price}}</span></p>
-        {% endfor %}
-           <p>Total: <span class="price">£ {{ total }}</span></p>
-         
+    </div>
 
-    <div>       
-  </div>
+    <div class="col-25">
+        <div class="container my-5">
+            <p class="justify-content-center"><i class="fa fa-shopping-cart"></i></p>
+            {% for item in cart_items %}
+                <p>{{ item.quantity }} {{ item.product.description }} <span class="price">£ {{item.product.price}}</span></p>
+            {% endfor %}
+            <p>Total: <span class="price">£ {{ total }}</span></p>
+        <div>       
+    </div>
 </div>
 
 {% endblock %}
