@@ -28,7 +28,7 @@
             <tr>
                   <td><img src="{{MEDIA_URL}}{{item.product.product_image1}}" class="product-image" alt="{{product.name}}" style="width: 3em;" /></td>
                   <td>{{ item.product.title }}</td>
-                  <td>£ {{ item.product.price }}</td>
+                  <td>£{{ item.product.price }}</td>
                   <td> {{ item.quantity }} </td>
                   <td><form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
                             {% csrf_token %}
@@ -47,7 +47,7 @@
     
     <div class="p-3 mb-2 text-dark justify-content-end checkout-right">
         <p>Shipping and Tax included. </p>
-        <p class="price">Total: <strong>£  {{ total }} </strong></p>
+        <p class="price">Total: <strong>£{{ total }} </strong></p>
         <a href="{% url 'checkout' %}" class="btn btn-dark" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
     </div>
     

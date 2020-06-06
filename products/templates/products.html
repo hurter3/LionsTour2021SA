@@ -41,4 +41,33 @@
             
     {% endfor %}
 </div>
+
+<section class="products-showcase">
+	   <div class="container">
+           <div class="row row-header card-columns justify-content-center">
+           <div class="card-deck">
+        {% if not products %} 
+                  <div>
+                     <p>No Products found</p>
+                  </div>
+            {% else %}
+              {% for product in products %}
+                    <div class="col-xs-12 col-md-6 col-lg-3">
+                    <a href="{{ product.get_absolute_url }}">
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="{{MEDIA_URL}}{{product.product_image1}}" class="card-img-top product-image" alt="{{product.name}}" />
+                            <div class="card-body">
+                                <h5 class="card-title product-name"><a href="#"  class="title-product-link">{{ product.title }}</a></h5>
+                            <!-- <p class="card-text product-description">{{ product.description }}</p> -->
+                                <p class="product-price">£ {{ product.price }}</p>
+                            </div>
+                            
+                        </div>
+                        </a>
+                    </div>
+              {% endfor %} 
+             {% endif %}
+           </div>
+        </div>    
+	</section>
 {% endblock %}
