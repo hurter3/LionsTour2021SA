@@ -216,6 +216,17 @@ caption p {
     -o-background-size: cover;
 }
 
+.account-container {
+    background-image: url('../images/lions-account.jpg'); 
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
 /* item cards */
 .item-img-wrapper {
     height: 200px;
@@ -235,6 +246,7 @@ caption p {
 }
 
 .item-card {
+    
 
 
 
@@ -536,13 +548,4 @@ span.price {
     /* align-items: flex-end; */
 }
 
-.col-container {
-    display: table; /* Make the container element behave like a table */
-    width: 100%; /* Set full-width to expand the whole page */
-
-}
-
-.col {
-    display: table-cell /* Make elements inside the container behave like table cells */
-}
 

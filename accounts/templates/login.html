@@ -3,35 +3,38 @@
 {% block content %}
    
 <!-- Inner container to center the form -->
-<div class="container mx-auto">
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-6">
+             
+<div class ="account-container">
+    <div class="container mx-auto">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
 
-            <!-- Contact form wrapper with solid white background to make form stand out -->
-            <div class="contact-form-wrapper my-5">
+                <!-- Contact form wrapper with solid white background to make form stand out -->
+                <div class="contact-form-wrapper my-5">
 
-                <h4 class="red-uppercase">Sign In</h4>
-                <p>You must be signed in to view your cart.</p>
-                <p class="text-muted mb-3 border-bottom">Need an account? <a href="{% url 'register' %}"
-                        class="blue-link">Register here.</a></p>
+                    <h4 class="red-uppercase">Sign In</h4>
+                    <p>You must be signed in to view your cart.</p>
+                    <p class="text-muted mb-3 border-bottom">Need an account? <a href="{% url 'register' %}"
+                            class="blue-link">Register here.</a></p>
 
-                <form method="POST">
-                {% csrf_token %}
-                <fieldset class="form-group">
-                    <legend class="border-bottom mb-4">Log In</legend>
-                    {{ form|crispy }}
-                </fieldset>
-                <div class="form-group">
-                    <button class="btn btn-outline-info" type="submit">Login</button>
+                    <form method="POST">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4">Log In</legend>
+                        {{ form|crispy }}
+                    </fieldset>
+                    <div class="form-group">
+                        <button class="btn btn-outline-info" type="submit">Login</button>
+                    </div>
+                    </form>
+                    <div class="border-top pt-3">
+                        <small class="text-muted">
+                            Need An Account? <a class="ml-2" href="{% url 'register' %}">Sign Up Now</a>
+                        </small>
+                    </div>
                 </div>
-                </form>
-                <div class="border-top pt-3">
-                    <small class="text-muted">
-                        Need An Account? <a class="ml-2" href="{% url 'register' %}">Sign Up Now</a>
-                    </small>
-                </div>
+
             </div>
-
         </div>
     </div>
 </div>
