@@ -546,13 +546,3 @@ span.price {
     display: table-cell /* Make elements inside the container behave like table cells */
 }
 
-
-.cards {
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: space-between;
-}
- 
-.card {
-    flex: 0 1 24%;
-}
