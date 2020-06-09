@@ -1,13 +1,16 @@
 
 /* Styles for fonts and text */
 
+class { 
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+}
 
 body {
     background-color:#cad5d8; 
     height: 100%;
-    font-family: Arial;
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
     padding-top: 65px;
-    color: #000;
+    color: #000
 }
 
 #footer {
@@ -62,15 +65,14 @@ body {
 
 
 h1, h3, h5, h6 {
-  color: #af001d;
   text-align: center;
 }
 
 h5 {
-  font-family: "Lato", sans-serif;
-  text-transform: uppercase;
-  font-size: 1.1rem;
-  letter-spacing: 0.1rem;
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    letter-spacing: 0.1rem;
 }
 
 
@@ -103,16 +105,16 @@ h5 {
   font-size: 1.2rem;
 }
 .badge {
-    padding-left: 9px;
-    padding-right: 9px;
-    -webkit-border-radius: 9px;
-    -moz-border-radius: 9px;
-    border-radius: 9px;
+    padding-left: 7px;
+    padding-right: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
 }
 
 .label-warning[href],
 .badge-warning[href] {
-    background-color: #c67605;
+    background-color: #f0c68c;
 }
 
 /*----------Product ---------*/
@@ -185,6 +187,7 @@ caption p {
     -o-background-size: cover;
 }
 
+
 .content-container {
     padding-top:75px;
     padding-bottom:75px;
@@ -247,7 +250,7 @@ caption p {
 
 .item-card {
     
-
+     border-top: 3px solid #000000;
 
 
   max-width: 180px;
@@ -547,5 +550,4 @@ span.price {
     justify-content: space-between;
     /* align-items: flex-end; */
 }
-
 

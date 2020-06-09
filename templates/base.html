@@ -32,7 +32,7 @@
 
     <!-- positions favs and cart icons to left of toggler on mobiles (2nd one for desktop below) -->
     <div id="navbar-icons-mobile" class="d-lg-none">
-        <a class="nav-link nav-link-icon" href="{% url 'register' %}" title="Shopping cart">
+        <a class="nav-link nav-link-icon" href="{% url 'view_cart' %}" title="Shopping cart">
             <div>
                 <i class="fas fa-cart-arrow-down icon-red" title="Cart"></i>
                 {% if product_count > 0 %}
@@ -122,16 +122,16 @@
     </div>
 
     <!-- positions favs and cart icons to far right of navbar when navigation not collapsed -->
-    <div id="navbar-icons-desktop" class="d-none d-lg-inline-block">
+    <div class="d-none d-lg-inline-block">
         <a class="nav-link nav-link-icon" href="{% url 'view_cart' %}" title="Shopping cart" aria-label="View shopping cart">
             <div>
-                <i class="fas fa-cart-arrow-down icon-red" title="Cart"></i>
+               
+                <i class="fas fa-cart-arrow-down icon-red"></i>
                 {% if product_count > 0 %}
                             <label class="badge badge-warning">{{ product_count }}</label>
                             {% endif %}
             </div>
         </a>
-        
     </div>
 </nav>
     {% if messages %}
