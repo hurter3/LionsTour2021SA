@@ -1,39 +1,36 @@
 {% extends "base.html" %}
-{% load crispy_forms_tags %}
+
 {% block content %}
-
    <div class="container mb-5">
-      <div class="py-5 text-center">
-        <h3>Welcome {{ user.username }}, your Order history</h3>
-      </div>
-
-
-    <table class="table">
-    <thead class="thead-dark">
-        <tr>
-        
-          <th scope="col">Date ordered</th>
-          <th scope="col"></th>
-          <th scope="col">Order No</th>
-          <th scope="col">Items Ordered</th>
-          <th scope="col">Paid</th>
-          <th scope="col"></th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for order in orders %}  
-            <tr>
-                  <td>{{ order.date_ordered }}</td>
-                  <td> </td>
-                   <td> {{ order.id }} </td>
+        <div class="py-5 text-center">
+            <h3>Welcome {{ user.username }}, your Order history</h3>
+        </div>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col"></th>
+                    <th scope="col">Reference</th>
+                    <th scope="col">Items Ordered</th>
+                    <th scope="col">Paid</th>
+                    <th scope="col">Status</th>
+                    <th scope="col"></th> 
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}  
+                <tr>
+                    <td>{{ order.date_ordered }}</td>
+                    <td> </td>
+                    <td> {{ order.id }} </td>
                     <td> {{ order.total_quantity }} </td>
-                  <td>£{{order.total_cost}}</td>
-                  <td><a href="{% url 'order-detail' order.id %}"
+                    <td>£{{order.total_cost}}</td>
+                    <td> {{ order.status }} </td>
+                    <td><a href="{% url 'order-detail' order.id %}"
                             class="blue-link">View</a></td>
-            </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
-
 {% endblock content %}
