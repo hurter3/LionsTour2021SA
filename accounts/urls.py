@@ -7,6 +7,6 @@ urlpatterns = [
     url('login/', auth_views.LoginView.as_view(template_name='login.html', redirect_authenticated_user=True), name="login"),
     url('logout/', auth_views.LogoutView.as_view(template_name='logout.html'), name="logout"),
     url('profile/', profile_view, name="profile"),
-    url('profile/order-detail/', order_detail_view, name="order-detail"),
+    url(r'^order-detail/(?P<id>\d+)', order_detail_view, name='order-detail'),
 ]
 
