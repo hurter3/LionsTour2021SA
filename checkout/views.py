@@ -20,17 +20,23 @@ def checkout(request):
 
         if order_form.is_valid() and payment_form.is_valid():
             order = order_form.save(commit=False)
-            order.customer = request.user
-            order.date_ordered = timezone.now()
-            order.total_quantity = {{quantity}}
-            order.total_cost = {{total}}
-            order.save()
-
+            
             cart = request.session.get('cart', {})
-            total = 0
+            total_qty = 0
+            total_cost = 0
             for id, quantity in cart.items():
                 product = get_object_or_404(Product, pk=id)
-                total += quantity * product.price
+                total_cost += quantity * product.price
+                total_qty += quantity 
+
+            order.customer = request.user
+            order.date_ordered = timezone.now()
+            order.total_quantity = total_qty
+            order.total_cost = total_cost
+            order.save()
+           
+            for id, quantity in cart.items():
+                product = get_object_or_404(Product, pk=id)
                 order_line_item = OrderLineItem(
                     order=order,
                     product=product,
@@ -40,7 +46,7 @@ def checkout(request):
             
             try:
                 customer = stripe.Charge.create(
-                    amount=int(total * 100),
+                    amount=int(total_cost * 100),
                     currency="GBP",
                     description=request.user.email,
                     card=payment_form.cleaned_data['stripe_id']
