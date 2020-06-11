@@ -20,7 +20,7 @@ def checkout(request):
 
         if order_form.is_valid() and payment_form.is_valid():
             order = order_form.save(commit=False)
-            
+
             cart = request.session.get('cart', {})
             total_qty = 0
             total_cost = 0
@@ -46,7 +46,7 @@ def checkout(request):
             
             try:
                 customer = stripe.Charge.create(
-                    amount=int(total_cost * 100),
+                    amount= int(total_cost * 100),
                     currency="GBP",
                     description=request.user.email,
                     card=payment_form.cleaned_data['stripe_id']

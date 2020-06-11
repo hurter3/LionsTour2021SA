@@ -19,7 +19,7 @@ def register_view(request):
 
 @login_required
 def profile_view(request):
-    orders = Order.objects.filter(customer=request.user)
+    orders = Order.objects.filter(customer=request.user).order_by('-id')
     print(orders)
     return render(request, 'profile.html', {'orders': orders})
 
@@ -36,10 +36,7 @@ def logout(request):
     return redirect(reverse('index'))
 
 
-#def order_details(request, order_id, template_name="registration/order_details.html"):
-## order = get_object_or_404(Order, id=order_id, user=request.user)
- #page_title = 'Order Details for Order #' + order_id
- #order_items = OrderItem.objects.filter(order=order)
- #return render_to_response(template_name, locals(),
- #context_instance=RequestContext(request)) 
-
+@login_required
+def order_detail_view(request):
+    order_items = OrderLineItems.objects.filter(order=order.id)
+    return render(request, 'order_detail.html', {'order_items': order_items})

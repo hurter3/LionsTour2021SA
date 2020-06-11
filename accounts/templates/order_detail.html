@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% load bootstrap_tags %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container mb-5">
+      <div class="py-5 text-center">
+        <h3>Your Shopping Cart</h3>
+      </div>
+
+
+    <table class="table">
+    <thead class="thead-dark">
+        <tr>
+        
+          <th scope="col">Item</th>
+          <th scope="col"></th>
+          <th scope="col">Price</th>
+          <th scope="col">Qty Added</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for order_item in order_items %}  
+            <tr>
+                  <td><img src="{{MEDIA_URL}}{{order_item.product.product_image1}}" class="product-image" alt="{{product.name}}" style="width: 3em;" /></td>
+                  <td>{{ order_item.product.title }}</td>
+                  <td>£{{ order_item.product.price }}</td>
+                  <td> {{ order_item.quantity }} </td>
+                   </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+   
+   
+</div>                         
+{% endblock %}
