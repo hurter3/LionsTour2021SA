@@ -39,4 +39,4 @@ def logout(request):
 @login_required
 def order_detail_view(request,id):
     order_items = OrderLineItem.objects.filter(order=id)
-    return render(request, 'order_detail.html', {'order_items': order_items})
+    return render(request, 'order_detail.html', {'order_items': order_items, 'id' : id})
