@@ -1,14 +1,38 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-    <div class="content-section">
-      <div class="media">
-        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
-        <div class="media-body">
-          <h2 class="account-heading">{{ user.username }}</h2>
-          <p class="text-secondary">{{ user.email }}</p>
-        </div>
+
+   <div class="container mb-5">
+      <div class="py-5 text-center">
+        <h3>Welcome {{ user.username }}, your Order history</h3>
       </div>
-      <!-- FORM HERE -->
+
+
+    <table class="table">
+    <thead class="thead-dark">
+        <tr>
+        
+          <th scope="col">Date ordered</th>
+          <th scope="col"></th>
+          <th scope="col">Order No</th>
+          <th scope="col">Items Ordered</th>
+          <th scope="col">Total Price</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for order in orders %}  
+            <tr>
+                  <td>{{ order.date_ordered }}</td>
+                  <td> </td>
+                   <td> {{ order.order_id }} </td>
+                    <td> {{ order.total_quantity }} </td>
+                  <td>£{{order.total_cost}}</td>
+                  <td> <a href="" role="button">View</a></td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
     </div>
+
 {% endblock content %}

@@ -29,11 +29,15 @@ class Order(models.Model):
     street_address2 = models.CharField(max_length=40, blank=False)
     county = models.CharField(max_length=40, blank=False)
     date_ordered = models.DateField(default=datetime.date.today, null=True)
+    total_quantity = models.IntegerField(blank=False)
+    total_cost = models.IntegerField(blank=False)
     status = models.CharField(max_length=15,choices=STATUS_CHOICES,default=SUBMITTED)
 
     def __str__(self):
         return "{0}-{1}-{2}".format(self.id, self.customer, self.date_ordered)
 
+    def get_absolute_url(self):
+        return ('order_details', (), { 'order_id': self.id }) 
 
 class OrderLineItem(models.Model):
     order = models.ForeignKey(Order, null=False)

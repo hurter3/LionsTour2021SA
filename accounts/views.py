@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm
-
+from checkout.models import Order, OrderLineItem
 
 def register_view(request):
     if request.method == 'POST':
@@ -19,7 +19,10 @@ def register_view(request):
 
 @login_required
 def profile_view(request):
-    return render(request, 'profile.html')
+    orders = Order.objects.filter(customer=request.user)
+    print(orders)
+    return render(request, 'profile.html', {'orders': orders})
+
 
 def index(request):
     """A view that displays the index page"""
@@ -31,4 +34,12 @@ def logout(request):
     auth.logout(request)
     messages.success(request, 'You have successfully logged out')
     return redirect(reverse('index'))
+
+
+#def order_details(request, order_id, template_name="registration/order_details.html"):
+## order = get_object_or_404(Order, id=order_id, user=request.user)
+ #page_title = 'Order Details for Order #' + order_id
+ #order_items = OrderItem.objects.filter(order=order)
+ #return render_to_response(template_name, locals(),
+ #context_instance=RequestContext(request)) 
 

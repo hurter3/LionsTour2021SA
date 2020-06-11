@@ -22,6 +22,8 @@ def checkout(request):
             order = order_form.save(commit=False)
             order.customer = request.user
             order.date_ordered = timezone.now()
+            order.total_quantity = {{quantity}}
+            order.total_cost = {{total}}
             order.save()
 
             cart = request.session.get('cart', {})
