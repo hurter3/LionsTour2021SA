@@ -28,7 +28,7 @@ class Order(models.Model):
     street_address1 = models.CharField(max_length=40, blank=False)
     street_address2 = models.CharField(max_length=40, blank=False)
     county = models.CharField(max_length=40, blank=False)
-    date_ordered = models.DateField(default=datetime.date.today, null=True)
+    date_ordered = models.DateTimeField(default=datetime.datetime.today, null=True)
     total_quantity = models.IntegerField(blank=False)
     total_cost = models.IntegerField(blank=False)
     status = models.CharField(max_length=15,choices=STATUS_CHOICES,default=SUBMITTED)

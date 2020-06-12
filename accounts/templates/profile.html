@@ -20,7 +20,7 @@
             <tbody>
                 {% for order in orders %}  
                 <tr>
-                    <td>{{ order.date_ordered }}</td>
+                    <td>{{ order.date_ordered |date:"d M Y " }}, {{ order.date_ordered|time:"H:i" }}</td>
                     <td> </td>
                     <td> {{ order.id }} </td>
                     <td> {{ order.total_quantity }} </td>

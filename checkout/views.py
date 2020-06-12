@@ -7,6 +7,7 @@ from django.conf import settings
 from django.utils import timezone
 from products.models import Product
 import stripe
+import datetime
 
 # Create your views here.
 stripe.api_key = settings.STRIPE_SECRET
@@ -30,7 +31,8 @@ def checkout(request):
                 total_qty += quantity 
 
             order.customer = request.user
-            order.date_ordered = timezone.now()
+       #     order.date_ordered = timezone.now()
+            order.date_ordered = datetime.datetime.now()
             order.total_quantity = total_qty
             order.total_cost = total_cost
             order.save()

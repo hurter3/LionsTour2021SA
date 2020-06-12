@@ -7,7 +7,9 @@
 
 <div class="container mb-5">
       <div class="py-5 text-center">
-        <h3>Details of Order # {{id}} </h3>
+        {% for sel_order in order %}
+        <h4>Details of Order # {{sel_order.id}} placed on {{ sel_order.date_ordered |date:"d M Y " }}, {{ sel_order.date_ordered|time:"H:i" }}  </h4>
+        {% endfor %}
       </div>
 
 
@@ -33,7 +35,12 @@
         {% endfor %}
       </tbody>
     </table>
-   
+    <div class="p-3 mb-2 text-dark justify-content-end checkout-right">
+        {% for sel_order in order %}
+        <p class="price">Total: <strong>£{{ sel_order.total_cost }} </strong></p>
+                 <p>  <a href="{% url 'profile' %}" class="btn btn-light" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Back to Orders</a></p>
+        {% endfor %}  
+    </div>
    
 </div>                         
 {% endblock %}
