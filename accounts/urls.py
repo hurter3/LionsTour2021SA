@@ -1,6 +1,7 @@
 from django.contrib.auth import views as auth_views
 from django.conf.urls import url, include
 from .views import register_view, profile_view, order_detail_view, change_email_view
+from accounts import urls_reset
 
 urlpatterns = [
     url('register/', register_view, name="register"),
@@ -9,5 +10,6 @@ urlpatterns = [
     url('profile/change-email/', change_email_view, name="change-email"),
     url('profile', profile_view, name="profile"),
     url(r'^order-detail/(?P<id>\d+)', order_detail_view, name='order-detail'),
+    url(r'^password-reset/', include(urls_reset)),
 ]
 
