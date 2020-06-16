@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegisterForm
+from .forms import UserRegisterForm, UserChangeEmailForm
 from checkout.models import Order, OrderLineItem
+
 
 def register_view(request):
     if request.method == 'POST':
@@ -19,26 +20,49 @@ def register_view(request):
 
 @login_required
 def profile_view(request):
+    print("I am here")
     orders = Order.objects.filter(customer=request.user).order_by('-id')
-    print(orders)
     return render(request, 'profile.html', {'orders': orders})
 
 
-def index(request):
-    """A view that displays the index page"""
-    return render(request, "index.html")
+#def index(request):
+#    """A view that displays the index page"""
+#    return render(request, "index.html")
 
 
 def logout(request):
-    """A view that logs the user out and redirects back to the index page"""
+    """A view that logs the user out and redirects back to the home page"""
     auth.logout(request)
     messages.success(request, 'You have successfully logged out')
-    return redirect(reverse('index'))
+    return redirect('home')
 
 
 @login_required
 def order_detail_view(request,id):
     order = Order.objects.filter(id=id)
-    print(order)
     order_items = OrderLineItem.objects.filter(order=id)
     return render(request, 'order_detail.html', {'order_items': order_items, 'id': id, 'order': order})
+
+
+#@login_required
+#def change_email_view(request):
+#    print("*************** TESTING STUFF **************")
+#    return render(request, "profile_change_email.html")
+
+
+
+@login_required
+def change_email_view(request):
+    print('in change_email_view')
+    if request.method == 'POST':
+        form = UserChangeEmailForm(request.POST)
+        if form.is_valid():
+            print('email form is valid')
+            form.save()
+            username = form.cleaned_data.get('username')
+            messages.success(request, 'Your email has successfully been updated')
+            return redirect('profile')
+    else:
+        form = UserChangeEmailForm()
+        print('email else')
+    return render(request, 'profile_change_email.html', {'form': form})
