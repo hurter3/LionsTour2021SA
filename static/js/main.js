@@ -7,3 +7,4 @@ $(document).ready(function () {
             $('.chevron').addClass('fa-chevron-down').removeClass('fa-chevron-up');
         }
     }
+})

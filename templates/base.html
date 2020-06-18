@@ -108,12 +108,12 @@
                 <a class="nav-link" href="{% url 'login' %}">Login</a>
             </li>
             {% endif  %}
-            <li class="nav-item {% if page == 'search' %}active{% endif %}">
+<!--            <li class="nav-item {% if page == 'search' %}active{% endif %}">
                 <a class="nav-link" href="{% url 'search' %}">
                     <i class="fas fa-search navbar-search-icon" title="Search"></i>
                     {% if page == "search" %}<span class="sr-only">(current)</span>{% endif %}
                 </a>
-            </li>
+            </li> -->
         </ul>
 
     </div>
@@ -148,12 +148,63 @@
             </form> 
         </div> -->
         {% block content %} {% endblock %}
-    </div> 
-    <footer>
-        <div class="container">
-            <p>Created by Mark Hurter (Code Institute student)</p>
+    </div>
+    <footer class="container-fluid my-5">
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <div class="container mx-auto">
+                <div class="row">
+                    
+                    <div class="col-12 col-sm-6 col-lg-8">
+                        
+                        <div class="row">
+                            <div class="col-12 col-lg-4">
+                                <ul id="footer-list-1">
+                                    <li><a href="{% url 'product-list-all' %}">All Categories</a></li>
+                                    <li><a href="{% url 'product-list-men' %}">Men</a></li>
+                                    <li><a href="{% url 'product-list-woman' %}">Women</a></li>
+                                    <li><a href="{% url 'product-list-children' %}">Children</a></li>
+                                    <li><a href="{% url 'product-list-souvenirs' %}">Souvenirs</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-lg-8">
+                                <ul>
+                                    <li><a href="{% url 'competition' %}">Competition</a></li>
+                                    <li><a href="{% url 'competition-rules' %}">Rules</a></li>
+                                    <li><a href="{% url 'competition-rules' %}">Terms & Conditions</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4">
+                       
+                        <ul>
+                            <li><a href="{% url 'history' %}">History</a></li>
+                            <li><a href="{% url 'fixtures' %}">Fixtures</a></li>
+                            <li><a href="{% url 'tickets' %}">Tickets</a></li>
+                            <li><a href="https://www.youtube.com/channel/UC5Pw6iUW8Dgmb_JSEqzXH3w">Media</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 text-center">
+                  		<a href="https://www.facebook.com/thelionscall2021/" class="facebook"
+								target="_blank"><i class="fab fa-facebook-square"></i></a>
+						<a href="https://twitter.com/lionsofficial" class="twitter"
+								target="_blank"><i class="fab fa-twitter-square"></i></a>
+						<a href="https://www.youtube.com/watch?v=OMdmfDNmnLE" class="youtube"
+								target="_blank"><i class="fab fa-youtube-square"></i></a>
+
+                    </div>
+                    <div class="col-12 text-center">
+                        <small>Lions 2021 SA - Created by Mark Hurter (Code Institute) </small>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer> 
+    </div>
+
+</footer> 
+    
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -8,9 +8,9 @@
         <div class="mb-3">
             <p><strong>Profile</strong></p>
             
-            <p> Current Email : {{user.email}} <a href="{% url 'change-email' %}">Change Email</a> </p>
-         
-            <p><a href="{% url 'profile' %}" class="blue-link">Change Password</a> </p>
+            <p> Email: {{user.email}} </p>
+            <p><a href="{% url 'change-email' %}">Change Email</a> </p>
+            <p><a href="{% url 'password_reset' %}" class="blue-link">Change Password</a> </p>
         </div>
         <hr>
         <div class="mb-3">
