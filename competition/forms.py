@@ -8,9 +8,9 @@ class CompetitionForm(forms.ModelForm):
         labels = {
         "sascore1": "SA Score","sascore2": "SA Score","sascore3": "SA Score","sascore4": "SA Score",
         "sascore5": "SA Score","sascore6": "SA Score","sascore7": "SA Score","sascore8": "SA Score",
-        "lionsscore1": "Lion's Score" ,"lionsscore2": "Lion's Score" ,"lionsscore3": "Lion's Score", 
-        "lionsscore4": "Lion's Score" ,"lionsscore5": "Lion's Score" ,"lionsscore6": "Lion's Score",
-        "lionsscore7": "Lion's Score" ,"lionsscore8": "Lion's Score", 
+        "lionsscore1": "Lions Score" ,"lionsscore2": "Lions Score" ,"lionsscore3": "Lions Score", 
+        "lionsscore4": "Lions Score" ,"lionsscore5": "Lions Score" ,"lionsscore6": "Lions Score",
+        "lionsscore7": "Lions Score" ,"lionsscore8": "Lions Score", 
         "firstpoints1" : "First Points Scored", "firstpoints2" : "First Points Scored",
         "firstpoints3" : "First Points Scored","firstpoints4" : "First Points Scored",
         "firstpoints5" : "First Points Scored","firstpoints6" : "First Points Scored",
