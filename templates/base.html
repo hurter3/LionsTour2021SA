@@ -162,10 +162,11 @@
                         <div class="row">
                             <div class="col-12 col-lg-4">
                                 <ul id="footer-list-1">
-                                  
-     <!--                             
-         -->                        
-                                  
+                                    <li><a  href="{% url 'product-list-view' category='All' %}">All Categories</a></li>
+                                    <li><a href="{% url 'product-list-view' category='Men' %}">Men's</a></li>
+                                    <li><a href="{% url 'product-list-view' category='Woman' %}">Woman's</a></li>
+                                    <li><a href="{% url 'product-list-view' category='Children' %}">Children</a></li>
+                                    <li><a href="{% url 'product-list-view' category='Souvenirs' %}">Souvenir's</a></li>
                                 </ul>
                             </div>
                             <div class="col-12 col-lg-8">
