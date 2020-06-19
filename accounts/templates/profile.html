@@ -9,9 +9,10 @@
             <p><strong>Profile</strong></p>
             
             <p> Email: {{user.email}} </p>
-            <p><a href="{% url 'change-email' %}">Change Email</a> </p>
-            <p><a href="{% url 'password_reset' %}" class="blue-link">Change Password</a> </p>
+            <p><a href="{% url 'change-email' %}"><i class="fa fa-key fa-fw" aria-hidden="true"></i> Change Email</a> </p>
+            <p><a href="{% url 'password_reset' %}" class="blue-link"><i class="fa fa-key fa-fw" aria-hidden="true"></i> Change Password</a> </p>
         </div>
+
         <hr>
         <div class="mb-3">
             <p><strong>Order history</strong></p>

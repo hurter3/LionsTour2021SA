@@ -3,26 +3,43 @@
 {% block content %}
 <div class="container">
     <div class="row row-flex">
-        {% for product in products %}
+        {% for product in page_obj %}
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 item-card-padding">
-                           
-                                <div class="item-card mx-auto bg-light">
-                                    
-                                    <div class="item-img-wrapper">
-                                        <div class="item-img d-flex justify-content-end"
-                                            style="background-image: url('{{ MEDIA_URL }}{{ product.product_image1 }}')">
-                                        </div>
-                                    </div>
-                                    <div class="card-body bg-light">
-                                    <h5 class="card-title product-name"><a href="{{ product.get_absolute_url }}"  class="title-product-link">{{ product.title }}</a></h5>
-                                    <p class="text-align-center">£ {{ product.price }}</p>
-                                </div>
-                                </div>
-                          
-                </div> 
-                
+                <div class="item-card mx-auto bg-light">
+                    <div class="item-img-wrapper">
+                        <div class="item-img d-flex justify-content-end"
+                            style="background-image: url('{{ MEDIA_URL }}{{ product.product_image1 }}')">
+                        </div>
+                    </div>
+                    <div class="card-body bg-light">
+                    <h5 class="card-title product-name"><a href="{{ product.get_absolute_url }}"  class="title-product-link">{{ product.title }}</a></h5>
+                    <p class="text-align-center">£ {{ product.price }}</p>
+                    </div>
+                </div>          
+            </div>      
         {% endfor %}
+        
+    </div>
+    
+</div>
+<div class="col-12 mt-3">
+    <div class="pagination justify-content-center">
+        <span class="step-links">
+        
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
     </div>
 </div>
-
 {% endblock %}

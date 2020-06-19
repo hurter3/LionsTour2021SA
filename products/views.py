@@ -3,10 +3,11 @@ from .models import Product
 from django.views.generic import DetailView, ListView
 
 class ProductListView(ListView):
-   queryset = Product.objects.all()
-   model = Product
-   template_name = 'products.html'
-   context_object_name = 'products'
+    paginate_by = 4
+    queryset = Product.objects.all()
+    model = Product
+    template_name = 'products.html'
+    context_object_name = 'products'
 
 
 class ProductListMenView(ListView):
