@@ -74,15 +74,15 @@
                         Shop <span class="caret"></span>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{% url 'product-list-all' %}">All Categories</a>
+                            <a class="dropdown-item" href="{% url 'product-list-view' category='All' %}">All Categories</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{% url 'product-list-men' %}">Men's</a>
+                            <a class="dropdown-item" href="{% url 'product-list-view' category='Men' %}">Men's</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{% url 'product-list-woman' %}">Woman's</a>
+                            <a class="dropdown-item" href="{% url 'product-list-view' category='Woman' %}">Woman's</a>
                             <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{% url 'product-list-children' %}">Children</a>
+                                <a class="dropdown-item" href="{% url 'product-list-view' category='Children' %}">Children</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{% url 'product-list-souvenirs' %}">Souvenir's</a> 
+                            <a class="dropdown-item" href="{% url 'product-list-view' category='Souvenirs' %}">Souvenir's</a> 
                         </div>
             </li>
             <li class="nav-item">
@@ -162,11 +162,10 @@
                         <div class="row">
                             <div class="col-12 col-lg-4">
                                 <ul id="footer-list-1">
-                                    <li><a href="{% url 'product-list-all' %}">All Categories</a></li>
-                                    <li><a href="{% url 'product-list-men' %}">Men</a></li>
-                                    <li><a href="{% url 'product-list-woman' %}">Women</a></li>
-                                    <li><a href="{% url 'product-list-children' %}">Children</a></li>
-                                    <li><a href="{% url 'product-list-souvenirs' %}">Souvenirs</a></li>
+                                  
+     <!--                             
+         -->                        
+                                  
                                 </ul>
                             </div>
                             <div class="col-12 col-lg-8">
