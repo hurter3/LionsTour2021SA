@@ -2,12 +2,12 @@ from django.shortcuts import render
 from .models import Product
 from django.views.generic import DetailView, ListView
 
-#class ProductListView(ListView):
-#    paginate_by = 4
-#    queryset = Product.objects.all()
-#    model = Product
-#    template_name = 'products.html'
-#    context_object_name = 'products'
+class ProductListAll(ListView):
+    paginate_by = 4
+    queryset = list(Product.objects.all())
+    model = Product
+    template_name = 'products.html'
+    context_object_name = 'products'
 
 
 #class ProductListMenView(ListView):
@@ -53,7 +53,7 @@ class ProductListView(ListView):
 
     def get_queryset(self):
         if self.kwargs['category'] == 'All':
-            return Product.objects.all()
+            return list(Product.objects.all())
         else:
-            return Product.objects.filter(category=self.kwargs['category'])
+            return list(Product.objects.filter(category=self.kwargs['category']))
 

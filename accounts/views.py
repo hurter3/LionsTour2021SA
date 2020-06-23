@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegisterForm, UserChangeEmailForm
+from .forms import UserRegisterForm, UserChangeEmailForm, UserDeleteForm
 from checkout.models import Order, OrderLineItem
 
 
@@ -20,14 +20,10 @@ def register_view(request):
 
 @login_required
 def profile_view(request):
-    print("I am here")
     orders = Order.objects.filter(customer=request.user).order_by('-id')
     return render(request, 'profile.html', {'orders': orders})
 
 
-#def index(request):
-#    """A view that displays the index page"""
-#    return render(request, "index.html")
 
 
 def logout(request):
@@ -44,10 +40,6 @@ def order_detail_view(request,id):
     return render(request, 'order_detail.html', {'order_items': order_items, 'id': id, 'order': order})
 
 
-#@login_required
-#def change_email_view(request):
-#    print("*************** TESTING STUFF **************")
-#    return render(request, "profile_change_email.html")
 
 
 
@@ -66,3 +58,14 @@ def change_email_view(request):
         form = UserChangeEmailForm()
         print('email else')
     return render(request, 'profile_change_email.html', {'form': form})
+
+@login_required
+def confirm_delete_view(request):
+    delete_form = UserDeleteForm(request.POST,instance=request.user)
+    user = request.user
+    user.delete()
+    messages.success(request, "The user is deleted")            
+    return redirect('home')
+ 
+
+

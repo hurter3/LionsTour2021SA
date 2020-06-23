@@ -6,7 +6,8 @@
             <h3>Welcome {{ user.username }} !</h3>
         </div>
         <div class="mb-3">
-            <p><strong>Profile </strong><a href="{% url 'profile' %}" role="button"><i class="far fa-times-circle icon-red" title="Delete Profile"></i></a></p>
+            <p><strong>Profile </strong> <a data-toggle="modal" data-target="#DeleteConfirmModal" href="/">
+                <i class="far fa-times-circle icon-red" title="Delete Profile"></i></a></p>
             <p> Email: {{user.email}} </p>
             <p><a href="{% url 'change-email' %}"><i class="fa fa-edit" aria-hidden="true"></i> Change Email</a> </p>
             <p><a href="{% url 'password_reset' %}" class="blue-link"><i class="fa fa-key fa-fw" aria-hidden="true"></i> Change Password</a> </p>
@@ -44,4 +45,38 @@
             </tbody>
         </table>
     </div>
+
+    <!-- modal start -->
+    <div class="modal" tabindex="-1" role="dialog" id="DeleteConfirmModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-xs-4">
+                                <h2 id="delete-confirm-head">Confirm Profile Delete?</h2>
+                                 <form action="{% url 'confirm-delete' %}" method="POST">
+                                     {% csrf_token %}
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="Username" placeholder=" {{user.username}}" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="Email" placeholder= "{{user.email}}" readonly>
+                                    </div>
+                                    <button type="submit" class="btn btn-danger" >Delete</button>
+                                  
+                                </form>
+    
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
 {% endblock content %}

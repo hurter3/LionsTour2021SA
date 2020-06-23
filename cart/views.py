@@ -11,7 +11,6 @@ def view_cart(request):
     else:
         messages.info(request, 'Your CART is empty, let''s go shopping!')
         return redirect('product-list-all')
-    
 
 def add_to_cart(request, id):
     """Add a quantity of the specified product to the cart"""

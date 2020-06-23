@@ -1,10 +1,11 @@
 from django.conf.urls import url, include
 #from .views import all_products, ProductListView
-from .views import ProductListView, ProductDetailView
+from .views import ProductListView, ProductDetailView, ProductListAll
 
 urlpatterns = [
 # url(r'^$', all_products, name='products'),
- url(r'^$', ProductListView.as_view(), name='product-list-all'),
+# url(r'^$', ProductListView.as_view(), name='product-list-all'),
+ url(r'^$', ProductListAll.as_view(), name='product-list-all'),
 # url(r'men/', ProductListView.as_view(), name='product-list-view'),
 #  url(r'men/', ProductListMenView.as_view(), name='product-list-men'),
 # url(r'woman/', ProductListWomanView.as_view(), name='product-list-woman'),

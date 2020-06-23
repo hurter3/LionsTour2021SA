@@ -16,3 +16,10 @@ class UserChangeEmailForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['email']
+
+
+class UserDeleteForm(forms.ModelForm):
+    
+    class Meta:
+        model = User
+        fields = []
