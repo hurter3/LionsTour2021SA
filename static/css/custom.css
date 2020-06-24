@@ -7,12 +7,11 @@ class {
 body {
     background-color:#cad5d8; 
     height: 100%;
-    
 	font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
     color: #000
 }
 
-#container-pad-top{
+.container-pad-top{
     padding-top: 56px;
 }
 
