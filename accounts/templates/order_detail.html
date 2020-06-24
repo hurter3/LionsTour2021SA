@@ -38,9 +38,14 @@
     <div class="p-3 mb-2 text-dark justify-content-end checkout-right">
         {% for sel_order in order %}
         <p class="price">Total: <strong>£{{ sel_order.total_cost }} </strong></p>
-                 <p>  <a href="{% url 'profile' %}" class="btn btn-light" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Back to Orders</a></p>
-        {% endfor %}  
+            {% endfor %}
+    
     </div>
+    <div class="p-3 mb-2 text-dark justify-content-end checkout-right">
+        <p>  <a href="{% url 'profile' %}" class="btn btn-light" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Back to Orders</a></p>
+    </div>  
+
+
    
 </div>                         
 {% endblock %}
