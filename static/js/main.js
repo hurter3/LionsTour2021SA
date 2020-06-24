@@ -1,5 +1,12 @@
 $(document).ready(function () {
 
+    /**
+     * Changes direction of chevron when clicked
+     */
+    $('.chevron').click(function () {
+        changeChevronDirection();
+    });
+
     function changeChevronDirection() {
         if ($('.chevron').hasClass('fa-chevron-down')) {
             $('.chevron').addClass('fa-chevron-up').removeClass('fa-chevron-down');
@@ -7,14 +14,4 @@ $(document).ready(function () {
             $('.chevron').addClass('fa-chevron-down').removeClass('fa-chevron-up');
         }
     }
-})
-
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+});
