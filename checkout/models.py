@@ -19,7 +19,7 @@ class Order(models.Model):
         (CANCELLED, 'Cancelled'),
     ]    
 
-    customer = models.ForeignKey(User, on_delete=models.PROTECT)
+    customer = models.ForeignKey(User, on_delete=models.CASCADE)
     full_name = models.CharField(max_length=50, blank=False)
     phone_number = models.CharField(max_length=20, blank=False)
     country = models.CharField(max_length=40, blank=False)

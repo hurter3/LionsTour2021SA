@@ -90,8 +90,7 @@
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item mr-2"><a class="nav-link" data-toggle="modal" data-target="#ContactUsModal" href="/">Contact Us</a></li>
-             
+            <a class="nav-link" href="{% url 'contact' %}">Contact Us</a> 
             {% if user.is_authenticated %}
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'profile' %}">Account</a>
@@ -203,7 +202,7 @@
         </div> 
 </footer> 
 
-<!-- modal start -->
+<!-- modal start 
     <div class="modal" tabindex="-1" role="dialog" id="ContactUsModal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -211,7 +210,7 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-xs-4">
-                                <h2 id="contact-head">Contact</h2>
+                                <h2 id="contact-head">Contact Form</h2>
                                 <form>
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="FirstName" placeholder="FirstName" required>
@@ -238,7 +237,7 @@
             </div>
         </div>
     </div>
-
+-->
 
 
     <!-- modal end -->    
@@ -251,6 +250,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>        
     <!-- custom js -->
     <script src="{% static 'js/main.js' %}"></script>
+   
     {% block head_js %}
     {% endblock head_js %}
   </body>
