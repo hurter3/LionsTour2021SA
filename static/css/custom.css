@@ -76,6 +76,10 @@ h5 {
   text-align: center;
 }
 
+.text-align-left {
+  text-align: left;
+}
+
 .bg-red {
     background-color:#af001d;
 }
@@ -560,6 +564,7 @@ label {
   padding: 16px;
   text-align: center;
 }
+
 
 
 /* Styling for footer */
