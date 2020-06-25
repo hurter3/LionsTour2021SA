@@ -3,7 +3,10 @@ from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import ContactForm
 from django.contrib import messages
+from django.conf import settings
 
+
+email_host = settings.EMAIL_HOST_USER
 
 def home_view(request):
     return render(request, "home.html")
@@ -36,7 +39,7 @@ def contact_view(request):
             contact_message = form.cleaned_data['contact_message']
             try:
                 print('in try')
-                send_mail(contact_name, contact_message, contact_email, ['lionssa33@gmail.com'])
+                send_mail(contact_name, contact_message, contact_email, [email_host])
             except BadHeaderError:
                 print('in BadHeader')
                 return HttpResponse('Invalid header found.')
