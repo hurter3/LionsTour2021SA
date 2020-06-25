@@ -15,7 +15,7 @@ FIRST_POINTS_SELECT = (
 
 class Competition(models.Model):
 
-    customer = models.ForeignKey(User, on_delete=models.PROTECT)
+    customer = models.ForeignKey(User, on_delete=models.CASCADE)
     sascore1 = models.PositiveSmallIntegerField(default=0)
     lionsscore1 = models.PositiveSmallIntegerField(default=0)
     firstpoints1 = models.CharField(max_length=20, choices=FIRST_POINTS_SELECT)

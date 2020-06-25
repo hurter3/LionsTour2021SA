@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import MakePaymentForm, OrderForm
-from .models import OrderLineItem
+from .models import OrderLineItem, Order
 from django.conf import settings
 from django.utils import timezone
 from products.models import Product
@@ -31,7 +31,6 @@ def checkout(request):
                 total_qty += quantity 
 
             order.customer = request.user
-       #     order.date_ordered = timezone.now()
             order.date_ordered = datetime.datetime.now()
             order.total_quantity = total_qty
             order.total_cost = total_cost
@@ -66,7 +65,13 @@ def checkout(request):
             print(payment_form.errors)
             messages.error(request, "We were unable to take a payment with that card!")
     else:
-        payment_form = MakePaymentForm()
-        order_form = OrderForm()
-    
+        any_orders = Order.objects.filter(customer=request.user)
+        if any_orders:
+            last_order = Order.objects.filter(customer=request.user).order_by('-id')[0]
+            order_form = OrderForm(instance=last_order)
+            payment_form = MakePaymentForm()
+        else:
+            payment_form = MakePaymentForm()
+            order_form = OrderForm()
+            
     return render(request, "checkout.html", {"order_form": order_form, "payment_form": payment_form, "publishable": settings.STRIPE_PUBLISHABLE})
