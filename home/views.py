@@ -25,23 +25,17 @@ def tickets_view(request):
 
 
 def contact_view(request):
-    print('in contact_view')
     if request.method == 'GET':
-        print('in GET')
         form = ContactForm()
     else:
         form = ContactForm(request.POST)
-        print('in POST')
         if form.is_valid():
-            print('in is_valid')
             contact_name = form.cleaned_data['contact_name']
             contact_email = form.cleaned_data['contact_email']
             contact_message = form.cleaned_data['contact_message']
             try:
-                print('in try')
-                send_mail(contact_name, contact_message, contact_email, [email_host])
+                send_mail(contact_name, contact_message + " was sent from " +contact_email, contact_email, [email_host])
             except BadHeaderError:
-                print('in BadHeader')
                 return HttpResponse('Invalid header found.')
             messages.success(request, 'Thank you for your message, we will contact you shortly.')
             return redirect('home')
