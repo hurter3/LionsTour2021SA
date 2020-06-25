@@ -46,37 +46,35 @@
         </table>
     </div>
 
-    <!-- modal start -->
-    <div class="modal" tabindex="-1" role="dialog" id="DeleteConfirmModal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-xs-4">
-                                <h2 id="delete-confirm-head">Confirm Profile Delete?</h2>
-                                 <form action="{% url 'confirm-delete' %}" method="POST">
-                                     {% csrf_token %}
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="Username" placeholder=" {{user.username}}" readonly>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="Email" placeholder= "{{user.email}}" readonly>
-                                    </div>
-                                    <button type="submit" class="btn btn-danger" >Delete</button>
-                                  
-                                </form>
-    
+<!-- Modal Start-->
+<div id="DeleteConfirmModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
 
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="delete-confirm-head" class="justify-content-center">Confirm Profile Delete?</h3>
+            </div>
+       
+            <div class="container">
+                <div class="col-xs-4">
+                    <div class="modal-body">
+                        <form action="{% url 'confirm-delete' %}" method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="Username" placeholder=" {{user.username}}" readonly>
                             </div>
-                        </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="Email" placeholder= "{{user.email}}" readonly>
+                            </div>
+                            <button type="submit" class="btn btn-danger" >Delete</button>
+                        </form>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-
+</div>
 
 {% endblock content %}
