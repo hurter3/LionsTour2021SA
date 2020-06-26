@@ -13,6 +13,9 @@ def competition_terms_view(request):
 
 @login_required
 def score_prediction(request):
+    highest_points = Competition.objects.order_by('-points_accrued').first()
+    total_entries = Competition.objects.count()
+
     try:
         entry_form = Competition.objects.get(customer=request.user)
         points = entry_form.points_accrued
@@ -30,10 +33,12 @@ def score_prediction(request):
             return redirect('/')
 
            
-    return render(request, "competition.html", {'form': form, 'points':points})
+    return render(request, "competition.html",
+        {'form': form, 'points':points,'highest_points':highest_points,'total_entries':total_entries})
 
 def score_prediction_new(request):
-    
+    highest_points = Competition.objects.order_by('-points_accrued').first()
+    total_entries = Competition.objects.count()
     form = CompetitionForm()
     points = 0
     if request.method == "POST":
@@ -45,5 +50,5 @@ def score_prediction_new(request):
             messages.success(request, 'You have successfuly submitted your score predictions. GOOD LUCK!')
             return redirect('/')
         
-    return render(request, "competition.html", {'form': form,'points':points})
+    return render(request, "competition.html", {'form': form,'points':points,'highest_points':highest_points,'total_entries':total_entries})
 
