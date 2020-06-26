@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import CompetitionForm
 from .models import Competition
+import datetime
 
 
 def competition_rules_view(request):
@@ -23,32 +24,44 @@ def score_prediction(request):
     except Competition.DoesNotExist:
         return redirect(score_prediction_new)
     
-    if request.method == "POST":
-        form = CompetitionForm(request.POST, instance=entry_form)
-        if form.is_valid():
-            temp = form.save(commit=False)
-            temp.customer = request.user
-            temp.save()
-            messages.success(request, 'You have successfuly updated your score predictions. GOOD LUCK!')
-            return redirect('/')
+    submit_date = datetime.date.today()
+    closing_date = datetime.date(2020, 6, 27)
+    if submit_date > closing_date:
+        messages.warning(request, 'Competition date closed')
+        return render(request, "competition.html",
+            {'form': form, 'points':points,'highest_points':highest_points,'total_entries':total_entries})
+    else:    
+        if request.method == "POST":
+            form = CompetitionForm(request.POST, instance=entry_form)
+            if form.is_valid():
+                temp = form.save(commit=False)
+                temp.customer = request.user
+                temp.save()
+                messages.success(request, 'You have successfuly updated your score predictions. GOOD LUCK!')
+                return redirect('/')
 
-           
-    return render(request, "competition.html",
-        {'form': form, 'points':points,'highest_points':highest_points,'total_entries':total_entries})
+            
+        return render(request, "competition.html",
+            {'form': form, 'points':points,'highest_points':highest_points,'total_entries':total_entries})
 
 def score_prediction_new(request):
     highest_points = Competition.objects.order_by('-points_accrued').first()
     total_entries = Competition.objects.count()
     form = CompetitionForm()
     points = 0
-    if request.method == "POST":
-        form = CompetitionForm(request.POST)
-        if form.is_valid():
-            temp = form.save(commit=False)
-            temp.customer = request.user
-            temp.save()
-            messages.success(request, 'You have successfuly submitted your score predictions. GOOD LUCK!')
-            return redirect('/')
+    submit_date = datetime.date.today()
+    closing_date = datetime.date(2020, 6, 27)
+    if submit_date > closing_date:
+        messages.warning(request, 'Competition date closed')
+    else:    
+        if request.method == "POST":
+            form = CompetitionForm(request.POST)
+            if form.is_valid():
+                temp = form.save(commit=False)
+                temp.customer = request.user
+                temp.save()
+                messages.success(request, 'You have successfuly submitted your score predictions. GOOD LUCK!')
+                return redirect('/')
         
     return render(request, "competition.html", {'form': form,'points':points,'highest_points':highest_points,'total_entries':total_entries})
 

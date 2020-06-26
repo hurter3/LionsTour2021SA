@@ -129,15 +129,19 @@
         </a>
     </div>
 </nav>
-    {% if messages %}
+
+    {% for message in messages %}
+    {% if message.tags == 'success' %}
         <div class="alert alert-success">
-            <div class="messages">
-                {% for message in messages %}
-                    {{ message }}
-                {% endfor %}
-            </div>
+        {{ message }}
+        </div>
+    {% elif message.tags == 'warning' %}
+        <div class="alert alert-warning">
+        {{ message }}
         </div>
     {% endif %}
+    {% endfor %}
+ 
     <div class="container-fluid">
  <!--     <div class="display">
             <form action="{% url 'search' %}" method="get">
