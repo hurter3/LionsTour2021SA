@@ -2,13 +2,12 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<div class="container my-5">
-    <h1> Score predictions</h1>
-    <div>  
+<div class="container my-5 mb-3">
+    <div class="text-align-left">  
         {% if points > 0 %}
-        <p> You have accrued {{points}} points!</p>
+        <b> You have accrued {{points}} Competition points! </b>
         {% else %}
-        <p>You have accrued 0 points or have not entered yet!</p>
+        <b>You have accrued 0 points or have not entered the Competition yet!</b>
         {% endif %}
     </div>
 
@@ -165,21 +164,29 @@
         </div>
         <div class="col-md-4">
             
-            <div class="list-group-item d-flex justify-content-between align-items-center">
-                <span class="match-day"> Competition Statistics</span>
-            </div>
-            <div class="list-group-item d-flex justify-content-between align-items-center">
+            
+
+            <div id="match-inner-wrapper">
+                        <span class="match-day"> Competition Statistics</span>
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
                 <span> Leader        :</span>
             </div>
             <div class="list-group-item d-flex justify-content-between align-items-center">
-                <span> Your position :</span>
+                <span> Leaders Points:</span>
+            </div>
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+                <span> Your Position :</span>
+            </div>
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+                <span> Your Points   :</span>
             </div>
             <div class="list-group-item d-flex justify-content-between align-items-center">
                 <span> Total entries :</span>
             </div>
             <div style="text-align:center;">
-                <button><a href="{% url 'competition-rules' %}" class="blue-link">Rules</a></button>
-            </div>
+                <a href="{% url 'competition-rules' %}" class="btn btn-info">Point Allocation</a>
+            </div>        
+                    </div>
         
         </div>
     </div>
