@@ -157,7 +157,7 @@
                         </div>        
                     </div>
                     <div>
-                    <input id="SubmitCompetition" class="btn btn-info btn-block" type="submit" value ="Submit">
+                    <input class="btn btn-info btn-block" type="submit" value ="Submit">
                     </div>
                 </form>
             </div>
@@ -169,16 +169,16 @@
             <div id="match-inner-wrapper">
                         <span class="match-day"> Competition Statistics</span>
                         <div class="list-group-item d-flex justify-content-between align-items-center">
-                Leader <span class="justify-content-end checkout-right">{{highest_points.customer}}</span>
+                Leader: <span class="justify-content-end checkout-right">{{highest_points.customer}}</span>
             </div>
             <div class="list-group-item d-flex justify-content-between align-items-center">
-                Leaders Points<span class="justify-content-end checkout-right">{{highest_points.points_accrued}}</span>
+                Leaders Points:<span class="justify-content-end checkout-right">{{highest_points.points_accrued}}</span>
             </div>
             <div class="list-group-item d-flex justify-content-between align-items-center">
-                Your Points  <span class="justify-content-end checkout-right"> {{points}}</span>
+                Your Points:  <span class="justify-content-end checkout-right"> {{points}}</span>
             </div>
             <div class="list-group-item d-flex justify-content-between align-items-center">
-               Total entries <span class="justify-content-end checkout-right">{{total_entries}}</span>
+               Total entries: <span class="justify-content-end checkout-right">{{total_entries}}</span>
             </div>
             <div style="text-align:center;">
                 <a href="{% url 'competition-rules' %}" class="btn btn-info">Points Explained</a>

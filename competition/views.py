@@ -25,7 +25,7 @@ def score_prediction(request):
         return redirect(score_prediction_new)
     
     submit_date = datetime.date.today()
-    closing_date = datetime.date(2020, 6, 27)
+    closing_date = datetime.date(2021, 7, 2)
     if submit_date > closing_date:
         messages.warning(request, 'Competition date closed')
         return render(request, "competition.html",
@@ -38,7 +38,7 @@ def score_prediction(request):
                 temp.customer = request.user
                 temp.save()
                 messages.success(request, 'You have successfuly updated your score predictions. GOOD LUCK!')
-                return redirect('/')
+           #     return redirect('/')
 
             
         return render(request, "competition.html",
@@ -50,7 +50,7 @@ def score_prediction_new(request):
     form = CompetitionForm()
     points = 0
     submit_date = datetime.date.today()
-    closing_date = datetime.date(2020, 6, 27)
+    closing_date = datetime.date(2021, 7, 2)
     if submit_date > closing_date:
         messages.warning(request, 'Competition date closed')
     else:    
@@ -61,7 +61,7 @@ def score_prediction_new(request):
                 temp.customer = request.user
                 temp.save()
                 messages.success(request, 'You have successfuly submitted your score predictions. GOOD LUCK!')
-                return redirect('/')
+               
         
     return render(request, "competition.html", {'form': form,'points':points,'highest_points':highest_points,'total_entries':total_entries})
 

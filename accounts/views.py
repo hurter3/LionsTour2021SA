@@ -11,8 +11,8 @@ def register_view(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
-            messages.success(request, 'Your account has been created! You are now able to log in')
-            return redirect('login')
+            messages.success(request, 'Your account has been created!')
+            return redirect('product-list-all')
     else:
         form = UserRegisterForm()
     return render(request, 'register.html', {'form': form})
@@ -38,20 +38,16 @@ def order_detail_view(request,id):
 
 @login_required
 def change_email_view(request):
-    print('in change_email_view')
     if request.method == 'POST':
         form = UserChangeEmailForm(request.POST)
         if form.is_valid():
-            print('email form is valid')
             user = request.user
             user.email = form.cleaned_data['email']
             user.save()
-            print('email changed')
             messages.success(request, 'Your email has successfully been updated')
             return redirect('profile')
     else:
         form = UserChangeEmailForm(instance=request.user)
-        print('email else')
     return render(request, 'profile_change_email.html', {'form': form})
 
 @login_required
@@ -59,8 +55,8 @@ def confirm_delete_view(request):
     delete_form = UserDeleteForm(request.POST,instance=request.user)
     user = request.user
     user.delete()
-    messages.success(request, "The user has been deleted")            
-    return redirect('home')
+    messages.success(request, "Your profile has been deleted.")            
+    return redirect('product-list-all')
  
 
 
