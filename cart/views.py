@@ -9,7 +9,7 @@ def view_cart(request):
         cart = request.session.get('cart')
         return render(request, "cart.html")
     else:
-        messages.info(request, 'Your CART is empty, let''s go shopping!')
+        messages.warning(request, 'Your CART is empty, let''s go shopping!')
         return redirect('product-list-all')
 
 def add_to_cart(request, id):
