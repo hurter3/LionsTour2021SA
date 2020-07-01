@@ -12,6 +12,14 @@ body {
     color: #000
 }
 
+.text-align-center {
+    text-align: center;
+}
+
+.text-align-left {
+    text-align: left;
+}
+
 /* Navbar styling*/
 
 .navbar {
@@ -73,6 +81,21 @@ body {
     padding: 0;
 }
 
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    margin: 0 -16px;
+}
+
+.container-wrapper {
+    background-color: #f2f2f2;
+    padding: 5px 20px 15px 20px;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+}
+
 .content-container {
     padding-top:75px;
     padding-bottom:75px;
@@ -131,19 +154,7 @@ h5 {
     letter-spacing: 0.1rem;
 }
 
-/* General styling*/
-
-.text-align-center {
-    text-align: center;
-}
-
-.text-align-left {
-    text-align: left;
-}
-
-.icon-bar {
-    background-color: #fff;
-}
+/* Form styling*/
 
 .accountform {
     padding-top: 20px;
@@ -155,31 +166,10 @@ h5 {
     padding: 1rem;
 }
 
-.red-uppercase {
-    color: #af001d;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-    font-size: 1.2rem;
-}
-
-
 /*----------Product ---------*/
 
 .card-image-top{
     max-height: 140px;
-}
-
-.product {
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
-    width: 150px;
-    height: 150px;
-    margin: 0 auto;
-}
-
-#caption p {
-    word-wrap: break-word;
 }
 
 .row.row-flex {
@@ -195,11 +185,6 @@ h5 {
 
 .panel-body {
     height: 100%;
-}
-
-.product-description {
-    min-height: 40px;
-    text-align: center;
 }
 
 /* item cards */
@@ -225,6 +210,32 @@ h5 {
     max-width: 180px;
     -webkit-transition: 0.2s all ease-in-out 0.2s;
     transition: 0.2s all ease-in-out 0.2s;
+}
+
+.price {
+    float: right;
+    color: grey;
+}
+
+.total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.checkout-right {
+    text-align: right;
+    padding-right: 3em;
+}
+
+.add-checkout-div {
+    padding-right: 1em;
+    padding-left: 1em;
+}
+
+.input-cart {
+    width:45px;
 }
 
 /* Competition app styling */
@@ -254,12 +265,8 @@ h5 {
     position: relative;
 }
 
-.display-img {
-    visibility: visible;
-    height:100px;
-    width:100px;
-}
-
+/* Fixtures table and styling  */
+/* I tried renaming the customers id to fixtures but it never rendered */
 
 .fix-tbl-de#customers {
     font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -325,21 +332,6 @@ h5 {
     background-position: center 30%;
 }
 
-.total {
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin: 0;
-}
-
-.row {
-    display: -ms-flexbox; /* IE10 */
-    display: flex;
-    -ms-flex-wrap: wrap; /* IE10 */
-    flex-wrap: wrap;
-    margin: 0 -16px;
-}
-
 /* Billing and Payment Form styling on checkout */
 
 .col-25 {
@@ -366,13 +358,6 @@ h5 {
     padding: 0 16px;
 }
 
-.container-wrapper {
-    background-color: #f2f2f2;
-    padding: 5px 20px 15px 20px;
-    border: 1px solid lightgrey;
-    border-radius: 3px;
-}
-
 input[type=text] {
     width: 100%;
     margin-bottom: 20px;
@@ -384,21 +369,6 @@ label {
     display: block;
 }
 
-.icon-container {
-    margin-bottom: 20px;
-    padding: 7px 0;
-    font-size: 24px;
-}
-
-
-.price {
-    float: right;
-    color: grey;
-}
-
-.input-cart {
-    width:45px;
-}
 
 /* pushes footer down to bottom of the page on larger screens. 
 Footer height on larger screens is 516px, navbar is 55px */
@@ -416,30 +386,18 @@ Footer height on larger screens is 516px, navbar is 55px */
   }
 }
 
-/*  check if not required */
-#cart-img {
-    width: 100%;
-    border-top-left-radius: calc(.25rem - 1px);
-    border-top-right-radius: calc(.25rem - 1px);
-}
-
-.checkout-right {
-    text-align: right;
-    padding-right: 3em;
-}
-
-.add-checkout-div {
-    padding-right: 1em;
-    padding-left: 1em;
-}
-
-
 /* Styling for footer */
 
 footer li{
     list-style-type: none;
-
 }
+
+.icon-container {
+    margin-bottom: 20px;
+    padding: 7px 0;
+    font-size: 24px;
+}
+
 
 /* The Modal (background) */
 #modal {
