@@ -5,6 +5,8 @@
 
 {% block content %}
 
+<!-- The detailed header will match the details of the selected order and list the orderlineitems with
+        the same feel as the cart display -->
 <div class="container mb-5">
       <div class="py-5 text-center">
         {% for sel_order in order %}
@@ -12,40 +14,36 @@
         {% endfor %}
       </div>
 
-
     <table class="table">
-    <thead class="thead-dark">
-        <tr>
-        
-          <th scope="col">Item</th>
-          <th scope="col"></th>
-          <th scope="col">Price</th>
-          <th scope="col">Quantity</th>
-         
-        </tr>
-      </thead>
-      <tbody>
-        {% for order_item in order_items %}  
+        <thead class="thead-dark">
             <tr>
-                  <td><img src="{{MEDIA_URL}}{{order_item.product.product_image1}}" class="product-image" alt="{{product.name}}" style="width: 3em;" /></td>
-                  <td>{{ order_item.product.title }}</td>
-                  <td>£{{ order_item.product.price }}</td>
-                  <td> {{ order_item.quantity }} </td>
-                   </tr>
-        {% endfor %}
-      </tbody>
+                <th scope="col">Item</th>
+                <th scope="col"></th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order_item in order_items %}  
+            <tr>
+                <td><img src="{{MEDIA_URL}}{{order_item.product.product_image1}}" class="product-image" alt="{{product.name}}" style="width: 3em;" /></td>
+                <td>{{ order_item.product.title }}</td>
+                <td>£{{ order_item.product.price }}</td>
+                <td> {{ order_item.quantity }} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
     </table>
+    
     <div class="p-3 mb-2 text-dark justify-content-end checkout-right">
         {% for sel_order in order %}
-        <p class="price">Total: <strong>£{{ sel_order.total_cost }} </strong></p>
-            {% endfor %}
-    
+            <p class="price">Total: <strong>£{{ sel_order.total_cost }} </strong></p>
+        {% endfor %}
     </div>
+
     <div class="p-3 mb-2 text-dark justify-content-end checkout-right">
         <p>  <a href="{% url 'profile' %}" class="btn btn-light" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Back to Orders</a></p>
     </div>  
 
-
-   
 </div>                         
 {% endblock %}

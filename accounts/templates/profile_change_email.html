@@ -2,16 +2,16 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
+<!-- Inner to center the form and have the same background as register and login -->
+
 <div class="account-container">
-<!-- Inner container to center the form -->
     <div class="container mx-auto">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6">
-
-                <!-- Contact form wrapper with solid white background to make form stand out -->
+                <!-- Contact form wrapper to make it stand out -->
                 <div class="contact-form-wrapper my-5">
-
                     <h4 class="red-uppercase">Welcome!</h4>
+
                         <form class="form-block" method="post" action="{% url 'change-email'%}">
                             {% csrf_token %}
                             <div>
@@ -26,8 +26,9 @@
                             <div class="form-group">
                                 <button class="btn btn-outline-info" type="submit">Update</button>
                                 <p>  <a href="{% url 'profile' %}" class="btn btn-light" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Cancel</a></p>
-      </div>
+                            </div>
                         </form>
+                        
                 </div>          
             </div>
         </div>

@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+    <!-- The account nav tab will render the users profile and any existing order history.
+            The user has the ability to update their email and password as well as delete their profile
+            from the user model and cascade the order orderlineitem and competition models -->  
+
    <div class="mb-5">
         <div class="py-5 text-center">
             <h3>Welcome {{ user.username }} !</h3>
@@ -12,6 +17,8 @@
             <p><a href="{% url 'change-email' %}"><i class="fa fa-edit" aria-hidden="true"></i> Change Email</a> </p>
             <p><a href="{% url 'password_reset' %}" class="blue-link"><i class="fa fa-key fa-fw" aria-hidden="true"></i> Change Password</a> </p>
         </div>
+
+        <!-- The order history has the same feel as the cart and they can expand on any order -->  
 
         <hr>
         <div class="mb-3 ml-5">
@@ -46,7 +53,8 @@
         </table>
     </div>
 
-<!-- Modal Start-->
+<!-- Modal Start - For the delete confirmation before the profile is accidentally deleted -->
+
 <div id="DeleteConfirmModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 

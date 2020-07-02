@@ -2,16 +2,15 @@
 {% load crispy_forms_tags %}
 {% block content %}
    
-<!-- Inner container to center the form -->
+<!-- container to center the form and have the same background as register -->
              
 <div class ="account-container">
     <div class="container mx-auto">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6">
 
-                <!-- Contact form wrapper with solid white background to make form stand out -->
+                <!-- Contact form wrapper to make it stand out -->
                 <div class="contact-form-wrapper my-5">
-
                     <h4 class="red-uppercase">Sign In</h4>
                     <p>You must be signed in.</p>
                     <p class="text-muted mb-3 border-bottom">Need an account? <a href="{% url 'register' %}"
@@ -27,6 +26,7 @@
                         <button class="btn btn-outline-info" type="submit">Login</button>
                     </div>
                     </form>
+
                     <div class="border-top pt-3">
                         <small class="text-muted">
                             Forgotten Password? <a class="ml-2" href="{% url 'password_reset' %}">Reset</a>

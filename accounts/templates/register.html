@@ -2,18 +2,18 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
+<!-- container to center the form and have the same background as login -->
 <div class="account-container">
-<!-- Inner container to center the form -->
     <div class="container mx-auto">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6">
 
-                <!-- Contact form wrapper with solid white background to make form stand out -->
+                <!-- Contact form wrapper to make it stand out -->
                 <div class="contact-form-wrapper my-5">
-
                     <h4 class="red-uppercase">Welcome!</h4>
                     <p class="text-muted mb-3 border-bottom">Already have an account? <a
                             href="{% url 'login' %}" class="blue-link">Log in</a></p>
+                    
                     <form method="POST">
                         {% csrf_token %}
                         <fieldset class="form-group">
@@ -24,7 +24,6 @@
                             <button class="btn btn-outline-info" type="submit">Sign Up</button>
                         </div>
                     </form> 
-
                 </div>
                         
             </div>
