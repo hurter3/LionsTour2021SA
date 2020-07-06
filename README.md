@@ -115,7 +115,7 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
 
 ### Pages
 
-- There are 12 pages to the project.
+- There are 18 pages to the project.
 
   - **Navigation**
     - The same Navbar and feel is used for all the pages
@@ -137,51 +137,57 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
             - Although tickets are not available this is the latest update of the current status.
         - Media page (Extenal link with a new tab) 
             - An external link to build the ecitment of the up and coming tour.
-    - *** Contact Us page (contact.html) ***
+    - ***Contact Us page (contact.html)***
         - A form that sends an email to lionssa33@gmail.com (and it works).
         - Same background and form styling as register, login and change email pages. 
-    - *** Register page (register.html) ***
-        - A form that captures username, email and password.
-        - This tab is only displayed when the user has not logged in.
-        - Same background and form styling as login, change email & contact us pages. 
-   - *** Login page (login,html) ***
-        - A form to enter your username and password.
-        - This tab is only displayed when the user has not logged in.
-        - Same background and form styling as register, change email and contact us pages. 
-    - *** Account (profile.html) ***
-        - A profile where the user can change their email and password. It will also list their order history which they can expand on. There is also a profile delete option which will CASCADE and delete any order, order items and competitions details.
-        - This tab is only displayed when the user is logged in.
-    - *** Change Email (profile_change_email.html) ***
-        -  Same background and form styling as register, login and contact us pages.     
-    - *** Order detail (order_detail.html) ***
-        - This expands on an order with the order item listing.   
-    - *** Logout ***
-        - Logs the user out and presents them with a screen similiar to the home page.
-        - This tab is only displayed when the user is logged in.
+    
+    - **Accounts app.**
+        - ***Register page (register.html)***
+            - A form that captures username, email and password.
+            - This tab is only displayed when the user has not logged in.
+            - Same background and form styling as login, change email & contact us pages. 
+        - ***Login page (login,html)***
+            - A form to enter your username and password.
+            - This tab is only displayed when the user has not logged in.
+            - Same background and form styling as register, change email and contact us pages. 
+        - ***Account (profile.html)***
+            - A profile where the user can change their email and password. It will also list their order history which they can expand on. There is also a profile delete option which will CASCADE and delete any order, order items and competitions details.
+            - This tab is only displayed when the user is logged in.
+        - ***Change Email (profile_change_email.html)***
+            -  Same background and form styling as register, login and contact us pages.     
+        - ***Order detail (order_detail.html)***
+            - This expands on an order with the order item listing.   
+        - ***Logout***
+            - Logs the user out and presents them with a screen similiar to the home page.
+            - This tab is only displayed when the user is logged in.
 
-  - **Add page (addreview.html)**
-    - The username and movie title will be prepopulated and read only fields.
-    - The Genre and rating selection boxes are mongoDB collections.
-    - The Add review will add the review to the reviews collections and display the reviews screen.
-    - When the user navigates to the home page the movie they reviewed will be the FIRST in the listing and badge count will be incremented.
+    - **Cart app**
+        - ***cart.html***
+            - The listing of intended items to purchase.
+            - The user can update or delete any item before going to checkout.
+            - If the cart is clicked when empty then it will provide a user mesage and take them to a listing of all the products.
 
-  - **Edit page (editreview.html)**
-    - This presents the user with the ability of changing their review or rating.
+    - **Checkout app**
+        - ***checkout.html***
+            - This take billing and card details to be processed by stripe to finalise the purchase.
+            - In this transaction, the order and order line items models are populated if athe correct details are provided otherwise the relavent error messages are displayed. 
 
-  - **Delete page (deletereview.html)**
-    - The user can only delete their own review and will be presented a confirm / cancel modal **still to be built**.
+    - **Competition App (the fun zone to attract users to enter with the incentive to make a purchase)**
+        - ***competition-rules.html***
+            - This is the competition main page that describes what the user needs to do to complete an entry form and how point are allocated with links to the terms and conditions and the entry form.
+        - ***competition-terms.html***
+            - This contains the terms and conditions of the competition.
+        - ***competition.html***
+            - The user will need to have egistered and logged in to enter the competition.
+            - If they have not entered before they will be presented with an empty form to add their score predictions.
+            - If they have enter the competition they wil be presented with their predictions form which they can update until the day before the 1st match is played.
 
-  - **Delete Confirm page (deletconfirm.html)**
-    - Confirm or cancel the delete functionality.
-  
-  - **Search page (search.html)**
-    - The user can search for a title or part of a tile / person that does a API get to TMDB (The Movie Data Base - open) and present the user with a listing. If they select a movie that has is has reviews in the mongoDB collection then they will be presented the reviews page otherwise they will be display the addreview screen to entice the user to write a review.
-  
-  - **Login page (login.html)**
-    - Displays the login screen for a username and password that has appropriate flash messages.
-
-  - **Register page (register.html)**
-    - Displays a basic register page username,password and confirm password that has appropriate flash messages but the password is just a visible string in the users collection and merely used to control the ability for users to add, edit or delete reviews.
+    - **Products App**
+        - ***products.html (wgich is the listView)***
+            - This is generic code that takes a category argument and filters on All products or Men products or Women products or Children products or Souviners.
+        - ***product_detail.html (wgich is the DetailView)***
+            - This is expands on the selected item which the user can add to the cart.
+    
 
 
 <hr />
