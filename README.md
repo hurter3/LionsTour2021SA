@@ -34,6 +34,7 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
 
 - **Main Technologies**
     ## Utilised Technologies
+
 ### Languages
 - HTML5: As mark-up language
 - CSS3: For styling
@@ -41,7 +42,7 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
 - Python3: Back-end processing
 
 ### Frameworks
-- Django 1.11.24
+- Django 1.11.29
 - Bootstrap 4 
 
 ### Database
@@ -49,7 +50,7 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
 - SQLite3: Test Database from Django
 
 ### API
-- Stripe: For payment processing
+- Stripe - 2.47.0 : For payment processing
 
 
 ### Other Tools
@@ -57,20 +58,17 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
 - Github: hosts the website
 - Git: version control
 - Heroku: app Deployment
-- Gunicorn: runs Python applications
+- Gunicorn - 20.0.4 : runs Python applications
 - Travis CI: continuous integration
 - AWS S3 Bucket: cloud storage
-- Boto3: for the usage of Amazon S3
-- Psycopg2-Binary: to connect Python to the database
-- Pillow: stores images with the usage of django on the website
-- Crispy Forms
+- Boto3 - 1.13.1: for the usage of Amazon S3
+- botocore - 1.16.1
+- Psycopg2 - 2.8.5: to connect Python to the database
+- Pillow  - 5.4.1: stores images with the usage of django on the website
+- Crispy Forms - 1.9.0 to style django forms
 - [Favicon converter](https://favicon.io/favicon-converter/)
 
-### Validators
-- [PEP8 Validator](http://pep8online.com/)
-- [JavaScript Validator](https://jshint.com/)
-- [CSS Validator](http://csslint.net/)
-- [HTML Validator](https://www.freeformatter.com/html-validator.html)
+
 
 - **Mandatory Requirements**
   - Django Full Stack Project: Build a Django project backend by a relational database to create a website that allows users to store and manipulate data records about a particular domain.
@@ -92,7 +90,7 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
 
 ## **UX**
 
-*With the Covid-19 vius taking over our lives, sport has been forgotten. This project is designed to get the user involved with the Lions 2021 tour.*
+*With the Covid-19 virus taking over our lives, sport has been forgotten. This project is designed to get the user involved with the Lions 2021 tour.*
 *The user,*<br>
 *does not need to register or login to explore the website.*<br>
 *does not need to register or login to shop or add items to their cart.*<br>
@@ -183,9 +181,10 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
             - If they have enter the competition they wil be presented with their predictions form which they can update until the day before the 1st match is played.
 
     - **Products App**
-        - ***products.html (wgich is the listView)***
+        - ***products.html (which is the listView)***
             - This is generic code that takes a category argument and filters on All products or Men products or Women products or Children products or Souviners.
-        - ***product_detail.html (wgich is the DetailView)***
+            - Pagination is used for the user to navigate through the products.
+        - ***product_detail.html (which is the DetailView)***
             - This is expands on the selected item which the user can add to the cart.
     
 
@@ -209,7 +208,13 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
     The most complex function has a cyclomatic complexity value of 7 while the median is 1.
     26 warnings.
 
-#### Navigational Testing
+    ### Validators
+- [PEP8 Validator](http://pep8online.com/)
+- [JavaScript Validator](https://jshint.com/)
+- [CSS Validator](http://csslint.net/)
+- [HTML Validator](https://www.freeformatter.com/html-validator.html)
+
+#### Functional Testing
 
 <table>
     <tr>
@@ -217,7 +222,7 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
         <th>Status</th>
     </tr>
     <tr>
-        <td>Clicking on Movie Review Hub title takes user to homepage</td>
+        <td>Clicking on badge on the left of the navbar takes user to homepage</td>
         <td>Successful</td>
     </tr>
     <tr>
@@ -225,92 +230,175 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
         <td>Successful</td>
     </tr>
     <tr>
-        <td>Clicking on Search takes user to search form</td>
+        <td>Clicking on the Fan Zone tab will display a menu list</td>
         <td>Successful</td>
     </tr>
     <tr>
-        <td>Click on Access provides the Login and Register dropdown to relevant pages.</td>
+        <td>Click on Shop will display a list of categories to choose from.</td>
         <td>Successful</td>
     </tr>
     <tr>
-        <td>On home page clicking on any movie will take you to the reviews page.</td>
+        <td>Pagination will display First, Previous, Page counter, Next and Last for the appropriate page.</td>
         <td>Successful</td>
     </tr>
     <tr>
-        <td>On reviews page clicking on 'add' will take you to add review page with 2 buttons.</td>
+        <td>Selecting the title link of an item take you to the detail view.</td>
         <td>Successful</td>
     </tr>
     <tr>
-        <td>On reviews page there will be a edit and delete button for all reviews made by the user and NOT for any other user.</td>
+        <td>If the user adds an item to the cart there will be a badge counter on the right of the cart.</td>
         <td>Successful</td>
     </tr>
     <tr>
-        <td>The delete button will take you to a delete confirmation screen.</td>
+        <td>The badge counter is adjusted when the user make any updates to their cart.</td>
+        <td>Successful</td>
+    </tr>
+     <tr>
+        <td>The checkout button will display a form to capture billing and card details.</td>
+        <td>Successful</td>
+    </tr>
+     <tr>
+      <tr>
+        <td>The continue button will take the user back to shopping.</td>
+        <td>Successful</td>
+    </tr>
+     <tr>
+        <td>Once the user has placed their order they will receive an appropriate message and if successful they will see the order listed in their account.</td>
+        <td>Successful</td>
+    </tr>
+    <tr>
+        <td>At any time if the cart is clicked it will display the items in the shopping cart otherwise provide a message that the basket is empty and display a product listing.</td>
+        <td>Successful</td>
+    </tr>
+        <td>The badge counter is adjusted when the user make any updates to their cart.</td>
+        <td>Successful</td>
+    </tr>
+     <tr>
+        <td>When the competition tab is clicked the user will be displayed the rules about entering with 2 links, 1 being terms and conditions and the other the entry form.</td>
+        <td>Successful</td>
+    </tr>
+    <tr>
+        <td>The entry form has required fields which must be filled in and submitted.</td>
+        <td>Successful</td>
+    </tr>
+    <tr>
+        <td>If a user has entered the competition they will be presented with their predicted scores which they can change an re-submit.</td>
+        <td>Successful</td>
+    </tr>
+    <tr>
+        <td>The accounts tab will display the users profile with a list of past orders with links to expand on the details.</td>
+        <td>Successful</td>
+    </tr>
+    <tr>
+        <td>The delete profile button will delete the user / competition entry and any order history but with a conrirmation modal.</td>
+        <td>Successful</td>
+    </tr>
+    <tr>
+        <td>The 'Contact us' tab will display a form for the urer to email the company.</td>
         <td>Successful</td>
     </tr>
 </table>
 
-#### Database updates
+#### Database updates (CRUD)
 
 <table>
     <tr>
-        <th>Collections</th>
-        <th>Movie</th>
-        <th>Reviews</th>
-        <th>Users</th>
-        <th>Categories</th>
-        <th>Ratings</th>
+        <th>Models</th>
+        <th>User</th>
+        <th>Order</th>
+        <th>OrderLineItem</th>
+        <th>Competition</th>
+        <th></th>
     </tr>
     <tr>
         <td>Initial DB data</td>
+        <td> Superuser and backend users </td>
         <td> - </td>
         <td> - </td>
         <td> - </td>
-        <td>Selection List</td>
-        <td>Selection List</td>
+        <td></td>
     </tr>
     <tr>
         <td>Register</td>
+        <td> Insert </td>
         <td> - </td>
+        <td> - </td>
+        <td> - </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Login</td>
+        <td>Retrieve user and check credientials</td>
+        <td> - </td>
+        <td> - </td>
+        <td> - </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Checkout</td>
         <td> - </td>
         <td>Insert</td>
-        <td> - </td>
-        <td> - </td>
-    </tr>
-    <tr>
-        <td>Add review</td>
-        <td>Insert reviews_count set to 1</td>
         <td>Insert</td>
-        <td>Update review_made incremented</td>
         <td> - </td>
-        <td> - </td>
+        <td></td>
     </tr>
     <tr>
-        <td>Add 2nd review</td>
-        <td>Update reviews_count incremented</td>
-        <td>Insert</td>
-        <td>Update review_made incremented</td>
+        <td>View Account</td>
+        <td>Retrieve and display user details</td>
+        <td>Retrieve and list order history</td>
         <td> - </td>
         <td> - </td>
+        <td></td>
     </tr>
     <tr>
-        <td>Delete review</td>
-        <td>Update reviews_count decreased</td>
-        <td>Delete</td>
-        <td>Update review_made decreased</td>
+        <td>View order</td>
         <td> - </td>
+        <td>Retrieve and display details</td>
+        <td>Retrieve and display details</td>
         <td> - </td>
+        <td></td>
     </tr>
     <tr>
-        <td>Delete 2nd review</td>
-        <td>Delete</td>
-        <td>Delete</td>
-        <td>Update review_made decreased</td>
+        <td>Change Email address</td>
+        <td> Update </td>
         <td> - </td>
         <td> - </td>
+        <td> - </td>
+        <td></td>
+    </tr>
+     <tr>
+        <td>Change Password</td>
+        <td> Update </td>
+        <td> - </td>
+        <td> - </td>
+        <td> - </td>
+        <td></td>
+    </tr>
+     <tr>
+        <td>Submit Competition Entry</td>
+        <td> Need to be registered </td>
+        <td> - </td>
+        <td> - </td>
+        <td> Insert </td>
+        <td></td>
+    </tr>
+     <tr>
+        <td>Modify Competition Entry</td>
+        <td> Need to be registered </td>
+        <td> - </td>
+        <td> - </td>
+        <td> Update </td>
+        <td></td>
+    </tr>
+     <tr>
+        <td>Delete Profile</td>
+        <td> Delete </td>
+        <td> Delete </td>
+        <td> Delete </td>
+        <td> Delete </td>
+        <td></td>
     </tr>
 </table>
-
 
 #### General Testing
 
