@@ -10,8 +10,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 from os import path
 if path.exists("env.py"):
-  import env 
-import dj_database_url
+    import env 
+    import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,12 +24,18 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
 
 if path.exists("env.py"):
-  ALLOWED_HOSTS = []
+    ALLOWED_HOSTS = []
+    DEBUG = True
 else:
-  ALLOWED_HOSTS = ['lionstour2021sa.herokuapp.com']
+    ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOSTS')]
+    DEBUG = False
+
+print('debug mode')
+print(DEBUG)
+
 
 # Application definition
 
