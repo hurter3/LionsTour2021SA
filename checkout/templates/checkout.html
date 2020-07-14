@@ -5,64 +5,64 @@
 {% load bootstrap_tags %}
 
 {% block head_js %}
-<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-<script type="text/javascript">
+<script src="https://js.stripe.com/v2/"></script>
+<script>
     //<![CDATA[
         Stripe.publishableKey = '{{ publishable }}';
     //]]>
 </script>
-<script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
+<script src="{% static 'js/stripe.js' %}"></script>
 {% endblock head_js%}
 
 {% block content %}
 
 <div class="row">
-    <div class="col-75">
-        <div class="container container-wrapper my-5">
+            <div class="col-75">
+                <div class="container container-wrapper my-5">
 
-            <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
-                <div class="row">
-                    <div class="col-50">
-                
-                        <legend>Billing Details</legend>
+                    <form method="post" id="payment-form" action="{% url 'checkout' %}">
+                        <div class="row">
+                            <div class="col-50">
+                        
+                                <h5>Billing Details</h5>
 
-                        <div id="credit-card-errors" style="display: none;">
-                            <div class="alert-message block-message error" id="stripe-error-message"></div>
+                                <div id="credit-card-errors" style="display: none;">
+                                    <div class="alert-message block-message error" id="stripe-error-message"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    {{ order_form | crispy }}
+                                </div>
+                            </div>
+
+                            <div class="col-50">                
+                                <h5>Payment Details</h5>
+                                <div class="form-group">
+                                    {{ payment_form | crispy }}
+                                </div>
+
+                            {% csrf_token %}
+                        
+                            </div>
+                            <div class="form-group">
+                                <input class="btn btn-dark" id="submit_payment_btn" name="commit" type="submit" value="Submit">
+                            </div>
                         </div>
+                    </form>
 
-                        <div class="form-group">
-                            {{ order_form | crispy }}
-                        </div>
-                    </div>
-
-                    <div class="col-50">                
-                        <legend>Payment Details</legend>
-                        <div class="form-group">
-                            {{ payment_form | crispy }}
-                        </div>
-
-                    {% csrf_token %}
-                
-                    </div>
-                    <div class="form-group">
-                        <input class="btn btn-dark" id="submit_payment_btn" name="commit" type="submit" value="Submit">
-                    </div>
                 </div>
-            </form>
+            </div>
 
+            <div class="col-25">
+                <div class="container container-wrapper my-5">
+                    <p class="text-align-center"><i class="fa fa-shopping-cart"></i></p>
+                    {% for item in cart_items %}
+                        <p>{{ item.quantity }} {{ item.product.description }} <span class="price">£ {{item.product.price}}</span></p>
+                    {% endfor %}
+                    <p>Total: <span class="price">£ {{ total }}</span></p>
+                <div>       
+            </div>
         </div>
-       
-    </div>
-
-    <div class="col-25">
-        <div class="container container-wrapper my-5">
-            <p class="text-align-center"><i class="fa fa-shopping-cart"></i></p>
-            {% for item in cart_items %}
-                <p>{{ item.quantity }} {{ item.product.description }} <span class="price">£ {{item.product.price}}</span></p>
-            {% endfor %}
-            <p>Total: <span class="price">£ {{ total }}</span></p>
-        <div>       
     </div>
 </div>
-
 {% endblock %}
