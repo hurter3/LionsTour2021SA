@@ -1,6 +1,5 @@
 $(document).ready(function () {
- console.log('js ready');
-    /**
+     /**
      * Changes direction of chevron when clicked
      */
     $('.chevron').click(function () {

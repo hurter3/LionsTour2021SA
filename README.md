@@ -118,7 +118,7 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
   - **Navigation**
     - The same Navbar and feel is used for all the pages
     - The user does not need to register or login to explore the website.
-    - The user will need to register and login if they ish to enter the competition and make a purchase.
+    - The user will need to register and login if they wish to enter the competition and make a purchase.
     - The same background image and form styling is used to register, login, Contact Us or change their email
     - Every page uses the base.html extended capability.
     
@@ -140,6 +140,7 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
         - Same background and form styling as register, login and change email pages. 
     
     - **Accounts app.**
+        This app was cloned from the e-commerce mini-project and tailored accordingly. 
         - ***Register page (register.html)***
             - A form that captures username, email and password.
             - This tab is only displayed when the user has not logged in.
@@ -161,9 +162,9 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
 
     - **Cart app**
         - ***cart.html***
-            - The listing of intended items to purchase.
+            - The listing of intended items to be purchased. This is held in the users session memory and accessible from any page until they power down.
             - The user can update or delete any item before going to checkout.
-            - If the cart is clicked when empty then it will provide a user mesage and take them to a listing of all the products.
+            - If the cart is clicked when empty then it will provide a user message and take them to a listing of all the products.
 
     - **Checkout app**
         - ***checkout.html***
@@ -195,24 +196,26 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
 
 ### Code inspection 
 
-  - [W3C Markup Validation Service](https://validator.w3.org/)
-    Due to using Flask I needed to run the app and then view the page source to cut and paste the code into the validator to check. 
+- [W3C Markup Validation Service](https://validator.w3.org/)
+    Due to Django being used I needed to run the app and then view the page source to cut and paste the code into the validator to check. 
     - Output : Document checking completed. No errors or warnings to show.
 
-  - [JSHint](https://jshint.com/) 
+- [JSHint](https://jshint.com/) 
     - Output :
+        - stripe.js file
+            - There are 3 functions in this file.
+            - Function with the largest signature take 2 arguments, while the median is 0.
+            - Largest function has 11 statements in it, while the median is 4.
+            - The most complex function has a cyclomatic complexity value of 2 while the median is 1..
+        - main.js file    
+            - There are 3 functions in this file.
+            - Function with the largest signature take 0 arguments, while the median is 0.
+            - Largest function has 3 statements in it, while the median is 2.
+            - The most complex function has a cyclomatic complexity value of 2 while the median is 1.
 
-    There are 5 functions in main.js.
-    Function with the largest signature take 1 arguments, while the median is 1.
-    Largest function has 26 statements in it, while the median is 4.
-    The most complex function has a cyclomatic complexity value of 7 while the median is 1.
-    26 warnings.
-
-    ### Validators
-- [PEP8 Validator](http://pep8online.com/)
-- [JavaScript Validator](https://jshint.com/)
 - [CSS Validator](http://csslint.net/)
-- [HTML Validator](https://www.freeformatter.com/html-validator.html)
+    - Output - CSS lint found 0 errors and 17 warnings for "Disallow IDs in selectors" but they were working so have been left.
+
 
 #### Functional Testing
 
@@ -336,7 +339,7 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
     </tr>
     <tr>
         <td>Checkout</td>
-        <td> - </td>
+        <td>Need to be registered</td>
         <td>Insert</td>
         <td>Insert</td>
         <td> - </td>
@@ -414,20 +417,28 @@ Tested with different input data and selections to ensure the appropriate FLASH 
 
 ## **Deployment**
 
-In your Heroku account, create a new app.
-GitHub has been used throughout this project to maintain version control as feature are added. After adding a new feature, the code is pushed to GitHub.
-The site has been deployed using Heroku. The process for deploying to Heroku is as follows:
+This project was developed in Gitpod with the committed code being pushed to Github to maintain version control as features were developed.
+The project is hosted on [Heroku](https://heroku.com) which was linked to Github for automatic updated:
 
-  - created [requirements.txt](https://github.com/Hurter3/MovieReviewHub/requirements.txt) that **Heroku** knows which packages are required for the application to run and install them.
-  - created [Procfile](https://github.com/Hurter3/MovieReviewHub/master/Procfile) that **Heroku**  knows what kind of application is this.
+  - created [requirements.txt](https://github.com/Hurter3/LionsTour2021SA/requirements.txt) that **Heroku** knows which packages are required for the application to run and install them.
+  - created [Procfile](https://github.com/Hurter3/LionsTour2021SA/master/Procfile) that **Heroku**  knows what kind of application it is.
 
   - **Settings**
     - Added **Config Vars**
       - IP `0.0.0.0`
-      - PORT `5000`
-      - MONGO_URI
+      - PORT `8000`
+      - STRIPE_PUBLISHABLE
+      - STRIPE_SECRET
       - SECRET_KEY
-      - APIKEY
+      - DATABASE_URL
+      - AWS_STORAGE_BUCKET_NAME
+      - AWS_S3_REGION_NAME
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+      - EMAIL_HOST
+      - EMAIL_HOST_USER
+      - EMAIL_PASSWORD
+      - EMAIL_PORT
 
     - **Deploy**
 
@@ -444,7 +455,7 @@ Run the app with $ python3 manage.py runserver
 
 ## **Future Enhancments**
 
-ERROR handling and introduce TV programs.
+Expand on the detail view to incorporate size selection and addition product views.
 
 <hr />
 
@@ -453,7 +464,7 @@ ERROR handling and introduce TV programs.
 
 ## **Credits**
 
-The code instute tutors must be mentioned for their valuable recomendations and patience.<br>
+The code institute tutors must be mentioned for their valuable recomendations and patience.<br>
 Appreciation must also be said to The Movie DataBase (TMDB) for their open API data which was used for this project.
 I used www.w3schools.com and www.stackoverflow in conjuction with the CI Task manager mini project for the accordian effect.
 The favicon was generated by using https://www.favicon-generator.org/.
