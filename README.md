@@ -198,7 +198,7 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
 
 - [W3C Markup Validation Service](https://validator.w3.org/)
     Due to Django being used I needed to run the app and then view the page source to cut and paste the code into the validator to check. 
-    - Output : Document checking completed. No errors or warnings to show.
+    - All Output : Document checking completed. No errors or warnings to show.
 
 - [JSHint](https://jshint.com/) 
     - Output :
