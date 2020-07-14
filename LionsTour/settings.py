@@ -26,7 +26,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
 
 if path.exists("env.py"):
     ALLOWED_HOSTS = []
@@ -34,10 +33,6 @@ if path.exists("env.py"):
 else:
     ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOSTS')]
     DEBUG = False
-
-print('debug mode')
-print(DEBUG)
-
 
 # Application definition
 
@@ -57,7 +52,6 @@ INSTALLED_APPS = [
     'checkout',
     'storages',
     'crispy_forms',
-  #  'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -148,15 +142,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-# If env.py exists use local Static files 
+# If env.py exists use local Static files otherwise AWS S3 
 if path.exists("env.py"):
-    print('using local static files')
     MEDIA_URL = '/media/'
     STATIC_URL = '/static/'
 
 else:
-    print('using AWS S3 static files')
-
     AWS_S3_OBJECT_PARAMETERS = {
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
         'CacheControl': 'max-age=94608000'
@@ -193,7 +184,7 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-#EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+# smtp replaces console to actually send an email
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
 EMAIL_USE_TLS = True
