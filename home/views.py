@@ -14,9 +14,6 @@ def home_view(request):
 def history_view(request):
     return render(request, "history.html", {"home": "history"})
 
-def photos_view(request):
-    return render(request, "photos.html", {"home": "photos"})
-
 def fixtures_view(request):
     return render(request, "fixtures.html", {"home": "fixtures"})
 
