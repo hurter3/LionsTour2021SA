@@ -7,13 +7,13 @@ import datetime
 
 
 def competition_rules_view(request):
-    return render(request, "competition-rules.html")
+    return render(request, "competition_rules.html")
 
 def competition_terms_view(request):
-    return render(request, "competition-terms.html")
+    return render(request, "competition_terms.html")
 
 @login_required
-def score_prediction(request):
+def competition(request):
     highest_points = Competition.objects.order_by('-points_accrued').first()
     total_entries = Competition.objects.count()
 
@@ -22,7 +22,7 @@ def score_prediction(request):
         points = entry_form.points_accrued
         form = CompetitionForm(instance=entry_form)
     except Competition.DoesNotExist:
-        return redirect(score_prediction_new)
+        return redirect(competition_new)
     
     submit_date = datetime.date.today()
     closing_date = datetime.date(2021, 7, 2)
@@ -44,7 +44,7 @@ def score_prediction(request):
         return render(request, "competition.html",
             {'form': form, 'points':points,'highest_points':highest_points,'total_entries':total_entries})
 
-def score_prediction_new(request):
+def competition_new(request):
     highest_points = Competition.objects.order_by('-points_accrued').first()
     total_entries = Competition.objects.count()
     form = CompetitionForm()
