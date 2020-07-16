@@ -1,0 +1,9 @@
+from django.test import SimpleTestCase
+from django.urls import reverse, resolve
+from products.views import ProductListView, ProductDetailView, ProductListAll
+
+class TestUrls(SimpleTestCase):
+
+    def test_all_products_url_is_resolved(self):
+        url = reverse('product-list-all')
+        self.assertEqual(resolve(url).func.view_class, ProductListAll)

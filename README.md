@@ -10,13 +10,15 @@
 	- [**Project Requirement**](#project-requirement)
 	- [**UX**](#ux)
 	- [**Project Overview**](#project-overview)
-			- [Database](#database)
-			- [Pages](#pages)
+        - [Utilised Technologies](#utilised-technologies)
+        - [Pages](#pages)
+        - [Database updates](#database-updates)
     - [**Testing**](#testing)
-			- [Code inspection](#code-inspection)
-			- [Functional testing](#functional-testing)
-            - [Database updates](#database-updates)
-			- [General Testing](#general-testing)
+        - [Code inspection](#code-inspection)
+        - [Python testing](#python-testing)
+        - [Travis testing](#travis-testing)
+        - [Functional testing](#functional-testing)
+        - [General Testing](#general-testing)
      - [**Deployment**](#deployment)
      - [**Future Enhancements**](#future-enhancements)
      - [**Credits**](#credits)
@@ -32,45 +34,15 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
 
 ## **Project Requirements**
 
-- **Main Technologies**
-    ## Utilised Technologies
+- **Main Technologies to be used**
 
-### Languages
-- HTML5: As mark-up language
-- CSS3: For styling
-- JavaScript: To add functionality the front-end
-- Python3: Back-end processing
-
-### Frameworks
-- Django 1.11.29
-- Bootstrap 4 
-
-### Database
-- PostgresSql: Production Database from Heroku
-- SQLite3: Test Database from Django
-
-### API
-- Stripe - 2.47.0 : For payment processing
-
-
-### Other Tools
-- jQuery: JavaScript library
-- Github: hosts the website
-- Git: version control
-- Heroku: app Deployment
-- Gunicorn - 20.0.4 : runs Python applications
-- Travis CI: continuous integration
-- AWS S3 Bucket: cloud storage
-- Boto3 - 1.13.1: for the usage of Amazon S3
-- botocore - 1.16.1
-- Psycopg2 - 2.8.5: to connect Python to the database
-- Pillow  - 5.4.1: stores images with the usage of django on the website
-- Crispy Forms - 1.9.0 to style django forms
-- [Favicon converter](https://favicon.io/favicon-converter/)
-
-
+    - HTML, CSS, JavaScript, Python+Django
+    - Relational database (recommending MySQL or Postgres)
+    - Stripe payments
+    - Additional libraries and APIs
 
 - **Mandatory Requirements**
+
   - Django Full Stack Project: Build a Django project backend by a relational database to create a website that allows users to store and manipulate data records about a particular domain.
   - Multiple Apps: The project must be a brand new Django project, composed of multiple apps (an app for each potentially reusable component in your project).
   - Data Modeling: Put some effort into designing a relational database schema well-suited for your domain. Make sure to put some thought into the relationships between entities. Create at least 2 custom django models beyond the examples shown on the course
@@ -110,6 +82,44 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
 *The landing page has a carousel of 4 images.*<br>
 *This project offers CRUD capability where the user can register, login, update their profile or even delete their profile which will CASCADE accross the competition and order models.*
 *There are 6 apps : accounts, cart, checkout, competition, home & products.*
+*The products are added via the Django admin panel and not accessed by any user other than viewing the items through the website.
+
+
+### Utilised Technologies
+
+#### Languages
+- HTML5: As mark-up language
+- CSS3: For styling
+- JavaScript: To add functionality the front-end
+- Python3: Back-end processing
+
+#### Frameworks
+- Django 1.11.29
+- Bootstrap 4 
+
+#### Database
+- PostgresSql: Production Database from Heroku
+- SQLite3: Test Database from Django
+
+#### API
+- Stripe - 2.47.0 : For payment processing
+
+
+#### Other Tools
+- jQuery: JavaScript library
+- Github: hosts the website
+- Git: version control
+- Heroku: app Deployment
+- Gunicorn - 20.0.4 : runs Python applications
+- Travis CI: continuous integration
+- AWS S3 Bucket: cloud storage
+- Boto3 - 1.13.1: for the usage of Amazon S3
+- botocore - 1.16.1
+- Psycopg2 - 2.8.5: to connect Python to the database
+- Pillow  - 5.4.1: stores images with the usage of django on the website
+- Crispy Forms - 1.9.0 to style django forms
+- [Favicon converter](https://favicon.io/favicon-converter/)
+
 
 ### Pages
 
@@ -118,11 +128,11 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
   - **Navigation**
     - The same Navbar and feel is used for all the pages
     - The user does not need to register or login to explore the website.
-    - The user will need to register and login if they wish to enter the competition and make a purchase.
+    - The user will need to register and login if they wish to enter the competition or make a purchase.
     - The same background image and form styling is used to register, login, Contact Us or change their email
     - Every page uses the base.html extended capability.
     
-  - **Home app.**
+- **Home app.**
     - ***Landing page (home.html)***
         - The user is presented a carousel of 4 images to remind them of the passion the lions tour encompasses. 
    
@@ -134,12 +144,13 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
         - Tickets page (tickets.html)
             - Although tickets are not available this is the latest update of the current status.
         - Media page (Extenal link with a new tab) 
-            - An external link to build the ecitment of the up and coming tour.
+            - An external link to build the excitment of the up and coming tour.
+
     - ***Contact Us page (contact.html)***
         - A form that sends an email to lionssa33@gmail.com (and it works).
         - Same background and form styling as register, login and change email pages. 
     
-    - **Accounts app.**
+- **Accounts app.**
         This app was cloned from the e-commerce mini-project and tailored accordingly. 
         - ***Register page (register.html)***
             - A form that captures username, email and password.
@@ -177,9 +188,20 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
         - ***competition-terms.html***
             - This contains the terms and conditions of the competition.
         - ***competition.html***
-            - The user will need to have egistered and logged in to enter the competition.
+            - The user will need to have registered and logged in to enter the competition.
             - If they have not entered before they will be presented with an empty form to add their score predictions.
-            - If they have enter the competition they wil be presented with their predictions form which they can update until the day before the 1st match is played.
+            - If they have enter the competition they will be presented with their predictions form which they can update until the day before the 1st match is played.
+            - There is date restriction by which all competition entries and changes need to be submitted by.<br>
+                (Midnight 2 July 2021)
+
+                    submit_date = datetime.date.today()
+                    closing_date = datetime.date(2021, 7, 2)
+                    if submit_date > closing_date:
+                        messages.warning(request, 'Competition date closed')
+                        return render(request, "competition.html",
+                            {'form': form, 'points':points,'highest_points':highest_points,'total_entries':total_entries})
+                    else:    
+                        if request.method == "POST":
 
     - **Products App**
         - ***products.html (which is the listView)***
@@ -187,157 +209,10 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
             - Pagination is used for the user to navigate through the products.
         - ***product_detail.html (which is the DetailView)***
             - This is expands on the selected item which the user can add to the cart.
+
+        When a succesful order is placed it has a status of submitted. Pocessed, shipped and cancelled will be manually updated on the backend when staff process the orders. 
+
     
-
-
-<hr />
-
-## **Testing**
-
-### Code inspection 
-
-- [W3C Markup Validation Service](https://validator.w3.org/)
-    Due to Django being used I needed to run the app and then view the page source to cut and paste the code into the validator to check. 
-    - All HTML page Output checked : Document checking completed. No errors or warnings to show.
-
-- [JSHint](https://jshint.com/) 
-    - Output :
-        - stripe.js file
-            - There are 3 functions in this file.
-            - Function with the largest signature take 2 arguments, while the median is 0.
-            - Largest function has 11 statements in it, while the median is 4.
-            - The most complex function has a cyclomatic complexity value of 2 while the median is 1..
-        - main.js file    
-            - There are 3 functions in this file.
-            - Function with the largest signature take 0 arguments, while the median is 0.
-            - Largest function has 3 statements in it, while the median is 2.
-            - The most complex function has a cyclomatic complexity value of 2 while the median is 1.
-
-- [CSS Validator](http://csslint.net/)
-    - Output - CSS lint found 0 errors and 15 warnings for "Disallow IDs in selectors" but they were working so have been left.
-
-### Python Testing
-
-#### How to run Python tests
-
-To run the existing Python tests:
-1. Activate your virtual environment.
-2. In the terminal enter the following command:
-
-python manage.py test
-
-3. If you wish to run the tests within a specific app only you can specify: 
-
-python manage.py test <app name here>
-
-4. The test results will be shown within the terminal.
-
-
-### Coverage
-
-[Coverage.py](https://coverage.readthedocs.io/en/v4.5.x/) was used to provide feedback during testing to check that enough of my code had been tested.
-
-#### How to run coverage
-
-1. Activate your virtual environment.
-2. In the terminal enter the following command:
-
-coverage html
-
-3. Open the newly created `htmlcov` directory in the root of your project folder. 
-4. Open the `index.html` file inside it.
-5. Run the file in the browser to see the output.
-
-### Travis
-
-- [Travis](https://travis-ci.org/) was used throughout the unit testing of this project to provide continuous integration with the deployed site. The [Travis Documentation](https://docs.travis-ci.com/) provides all the info needed to set it up.
-- I set the heroku deployment settings for this project to only allow deployment when the travis had passed the latest push to the master branch on GitHub.
-
-### Functional Testing
-
-<table>
-    <tr>
-        <th>Action</th>
-        <th>Status</th>
-    </tr>
-    <tr>
-        <td>Clicking on badge on the left of the navbar takes user to homepage</td>
-        <td>Successful</td>
-    </tr>
-    <tr>
-        <td>Clicking on Home tab takes user to homepage</td>
-        <td>Successful</td>
-    </tr>
-    <tr>
-        <td>Clicking on the Fan Zone tab will display a menu list</td>
-        <td>Successful</td>
-    </tr>
-    <tr>
-        <td>Click on Shop will display a list of categories to choose from.</td>
-        <td>Successful</td>
-    </tr>
-    <tr>
-        <td>Pagination will display First, Previous, Page counter, Next and Last for the appropriate page.</td>
-        <td>Successful</td>
-    </tr>
-    <tr>
-        <td>Selecting the title link of an item take you to the detail view.</td>
-        <td>Successful</td>
-    </tr>
-    <tr>
-        <td>If the user adds an item to the cart there will be a badge counter on the right of the cart.</td>
-        <td>Successful</td>
-    </tr>
-    <tr>
-        <td>The badge counter is adjusted when the user make any updates to their cart.</td>
-        <td>Successful</td>
-    </tr>
-     <tr>
-        <td>The checkout button will display a form to capture billing and card details.</td>
-        <td>Successful</td>
-    </tr>
-     <tr>
-      <tr>
-        <td>The continue button will take the user back to shopping.</td>
-        <td>Successful</td>
-    </tr>
-     <tr>
-        <td>Once the user has placed their order they will receive an appropriate message and if successful they will see the order listed in their account.</td>
-        <td>Successful</td>
-    </tr>
-    <tr>
-        <td>At any time if the cart is clicked it will display the items in the shopping cart otherwise provide a message that the basket is empty and display a product listing.</td>
-        <td>Successful</td>
-    </tr>
-        <td>The badge counter is adjusted when the user make any updates to their cart.</td>
-        <td>Successful</td>
-    </tr>
-     <tr>
-        <td>When the competition tab is clicked the user will be displayed the rules about entering with 2 links, 1 being terms and conditions and the other the entry form.</td>
-        <td>Successful</td>
-    </tr>
-    <tr>
-        <td>The entry form has required fields which must be filled in and submitted.</td>
-        <td>Successful</td>
-    </tr>
-    <tr>
-        <td>If a user has entered the competition they will be presented with their predicted scores which they can change an re-submit.</td>
-        <td>Successful</td>
-    </tr>
-    <tr>
-        <td>The accounts tab will display the users profile with a list of past orders with links to expand on the details.</td>
-        <td>Successful</td>
-    </tr>
-    <tr>
-        <td>The delete profile button will delete the user / competition entry and any order history but with a conrirmation modal.</td>
-        <td>Successful</td>
-    </tr>
-    <tr>
-        <td>The 'Contact us' tab will display a form for the urer to email the company.</td>
-        <td>Successful</td>
-    </tr>
-</table>
-
 ### Database updates (CRUD)
 
 <table>
@@ -439,6 +314,152 @@ coverage html
     </tr>
 </table>
 
+<hr />
+
+## **Testing**
+
+### Code inspection 
+
+- [W3C Markup Validation Service](https://validator.w3.org/)
+    Due to Django being used I needed to run the app and then view the page source to cut and paste the code into the validator to check. 
+    - All HTML page Output checked : Document checking completed. No errors or warnings to show.
+
+- [JSHint](https://jshint.com/) 
+    - Output :
+        - stripe.js file
+            - There are 3 functions in this file.
+            - Function with the largest signature take 2 arguments, while the median is 0.
+            - Largest function has 11 statements in it, while the median is 4.
+            - The most complex function has a cyclomatic complexity value of 2 while the median is 1..
+        - main.js file    
+            - There are 3 functions in this file.
+            - Function with the largest signature take 0 arguments, while the median is 0.
+            - Largest function has 3 statements in it, while the median is 2.
+            - The most complex function has a cyclomatic complexity value of 2 while the median is 1.
+
+- [CSS Validator](http://csslint.net/)
+    - Output - CSS lint found 0 errors and 15 warnings for "Disallow IDs in selectors" but they were working so have been left.
+
+### Python Testing
+
+#### How to run Python tests
+
+To run the existing Python tests:
+1. Activate your virtual environment.
+2. In the terminal enter the following command:
+
+python manage.py test
+
+3. If you wish to run the tests within a specific app only you can specify: 
+
+python manage.py test <app name here>
+
+4. The test results will be shown within the terminal.
+
+    I wrote tests to resolve all the Views and URLS, here are the results:
+  
+        gitpod /workspace/LionsTour2021SA $ python3 manage.py test
+        Database URL not found. Using SQLite instead
+        Creating test database for alias 'default'...
+        System check identified no issues (0 silenced).
+        Ran 35 tests in 0.271s
+
+        OK 
+        Destroying test database for alias 'default'...
+
+
+
+### Travis
+
+- [Travis](https://travis-ci.org/) was used throughout the unit testing of this project to provide continuous integration with the deployed site. The [Travis Documentation](https://docs.travis-ci.com/) provides all the info needed to set it up.
+- I set the heroku deployment settings for this project to only allow deployment when the travis had passed the latest push to the master branch on GitHub.
+
+### Functional Testing
+
+<table>
+    <tr>
+        <th>Action</th>
+        <th>Status</th>
+    </tr>
+    <tr>
+        <td>Clicking on badge on the left of the navbar takes user to homepage</td>
+        <td>Successful</td>
+    </tr>
+    <tr>
+        <td>Clicking on Home tab takes user to homepage</td>
+        <td>Successful</td>
+    </tr>
+    <tr>
+        <td>Clicking on the Fan Zone tab will display a menu list</td>
+        <td>Successful</td>
+    </tr>
+    <tr>
+        <td>Click on Shop will display a list of categories to choose from.</td>
+        <td>Successful</td>
+    </tr>
+    <tr>
+        <td>Pagination will display First, Previous, Page counter, Next and Last for the appropriate page.</td>
+        <td>Successful</td>
+    </tr>
+    <tr>
+        <td>Selecting the title link of an item take you to the detail view.</td>
+        <td>Successful</td>
+    </tr>
+    <tr>
+        <td>If the user adds an item to the cart there will be a badge counter on the right of the cart.</td>
+        <td>Successful</td>
+    </tr>
+    <tr>
+        <td>The badge counter is adjusted when the user make any updates to their cart.</td>
+        <td>Successful</td>
+    </tr>
+     <tr>
+        <td>The checkout button will display a form to capture billing and card details.</td>
+        <td>Successful</td>
+    </tr>
+     <tr>
+      <tr>
+        <td>The continue button will take the user back to shopping.</td>
+        <td>Successful</td>
+    </tr>
+     <tr>
+        <td>Once the user has placed their order they will receive an appropriate message and if successful they will see the order listed in their account.</td>
+        <td>Successful</td>
+    </tr>
+    <tr>
+        <td>At any time if the cart is clicked it will display the items in the shopping cart otherwise provide a message that the basket is empty and display a product listing.</td>
+        <td>Successful</td>
+    </tr>
+        <td>The badge counter is adjusted when the user make any updates to their cart.</td>
+        <td>Successful</td>
+    </tr>
+     <tr>
+        <td>When the competition tab is clicked the user will be displayed the rules about entering with 2 links, 1 being terms and conditions and the other the entry form.</td>
+        <td>Successful</td>
+    </tr>
+    <tr>
+        <td>The entry form has required fields which must be filled in and submitted.</td>
+        <td>Successful</td>
+    </tr>
+    <tr>
+        <td>If a user has entered the competition they will be presented with their predicted scores which they can change an re-submit.</td>
+        <td>Successful</td>
+    </tr>
+    <tr>
+        <td>The accounts tab will display the users profile with a list of past orders with links to expand on the details.</td>
+        <td>Successful</td>
+    </tr>
+    <tr>
+        <td>The delete profile button will delete the user / competition entry and any order history but with a conrirmation modal.</td>
+        <td>Successful</td>
+    </tr>
+    <tr>
+        <td>The 'Contact us' tab will display a form for the urer to email the company.</td>
+        <td>Successful</td>
+    </tr>
+</table>
+
+
 ### General Testing
 
 While developing I used DEBUG=TRUE to help iron out all the routing and undefined issues.
@@ -456,13 +477,13 @@ Tested with different input data and selections to ensure the appropriate messag
 This project was developed in Gitpod with the committed code being pushed to Github to maintain version control as features were developed.
 The project is hosted on [Heroku](https://heroku.com) which was linked to Github for automatic updated:
 
-  - created [requirements.txt](https://github.com/Hurter3/LionsTour2021SA/requirements.txt) that **Heroku** knows which packages are required for the application to run and install them.
-  - created [Procfile](https://github.com/Hurter3/LionsTour2021SA/master/Procfile) that **Heroku**  knows what kind of application it is.
+  - created requirements.txt (https://github.com/Hurter3/LionsTour2021SA/requirements.txt) that **Heroku** knows which packages are required for the application to run and install them.
+  - created Procfile (https://github.com/Hurter3/LionsTour2021SA/master/Procfile) that **Heroku**  knows what kind of application it is.
 
   - **Settings**
     - Added **Config Vars**
-      - IP `0.0.0.0`
-      - PORT `8000`
+      - IP
+      - PORT
       - STRIPE_PUBLISHABLE
       - STRIPE_SECRET
       - SECRET_KEY
@@ -491,7 +512,8 @@ Run the app with $ python3 manage.py runserver
 
 ## **Future Enhancments**
 
-Expand on the detail view to incorporate size selection and addition product views.
+Expand on the product detail view to incorporate size selection and add additional thumbnails.
+Incorporate stock management and control.
 
 <hr />
 
@@ -500,8 +522,9 @@ Expand on the detail view to incorporate size selection and addition product vie
 
 ## **Credits**
 
-The code institute tutors must be mentioned for their valuable recomendations and patience.<br>
-I used www.w3schools.com ,www.stackoverflow in conjuction with the CI mini projects.
+The code institute tutors must be mentioned for their valuable recomendations and patience. The guidance from my mentor Aaron Sinnott was valuable.<br>
+I used www.w3schools.com , www.stackoverflow and youtube tutorials in conjuction with the CI mini projects.
+The product images where sourced from google image search with no copyright restictions. I emailed Cantebury the official suppliers explaining I request permission to use the images for a CI project and I would not be selling the items. In turn I would mention them in my project, however they never responded.
 
 
 <hr />
