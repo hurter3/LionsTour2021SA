@@ -4,6 +4,10 @@
 
 # **British and Irish Lions tour of South Africa 2021**<br>
 
+<div align="center">
+    <img src="static/images/readme-header.png" alt="Readme header pic" aria-label="readme header pic" />
+</div>
+
 
 - [**Table of Contents**](#table-of-contents)
 	- [**Lions Tour 2021 SA**](#lionstour2021sa)
@@ -151,7 +155,7 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
         - Same background and form styling as register, login and change email pages. 
     
 - **Accounts app.**
-        This app was cloned from the e-commerce mini-project and tailored accordingly. 
+    -    This app was cloned from the e-commerce mini-project and tailored accordingly. 
         - ***Register page (register.html)***
             - A form that captures username, email and password.
             - This tab is only displayed when the user has not logged in.
