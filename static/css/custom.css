@@ -268,28 +268,27 @@ h5 {
 }
 
 /* Fixtures table and styling  */
-/* I tried renaming the customers id to fixtures but it never rendered */
 
-.fix-tbl-de#customers {
+.fix-tbl-de#fixtures {
     font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
     border-collapse: collapse;
     width: 100%;
 }
 
-#customers td, #customers th {
+#fixtures td, #fixtures th {
     border: 1px solid #ddd;
     padding: 8px;
 }
 
-#customers tr:nth-child(even){
+#fixtures tr:nth-child(even){
     background-color: #f2f2f2;
 }
 
-#customers tr:hover {
+#fixtures tr:hover {
     background-color: #ddd;
 }
 
-#customers th {
+#fixtures th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
