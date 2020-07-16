@@ -107,12 +107,7 @@
                 <a class="nav-link" href="{% url 'login' %}">Login</a>
             </li>
             {% endif  %}
-<!--            <li class="nav-item {% if page == 'search' %}active{% endif %}">
-                <a class="nav-link" href="{% url 'search' %}">
-                    <i class="fas fa-search navbar-search-icon" title="Search"></i>
-                    {% if page == "search" %}<span class="sr-only">(current)</span>{% endif %}
-                </a>
-            </li> -->
+
         </ul>
 
     </div>
@@ -152,12 +147,6 @@
     {% endfor %}
  
     <div class="container-fluid">
- <!--     <div class="display">
-            <form action="{% url 'search' %}" method="get">
-                <input type="text" name="q">
-                <button type="search">Search</button>
-            </form> 
-        </div> -->
         {% block content %} {% endblock %}
     </div>
     
@@ -167,7 +156,7 @@
             <div class="container mx-auto"> 
                 <div class="row">
                    
-                        <div class="col-12 col-sm-6 col-lg-8">
+                    <div class="col-12 col-sm-6 col-lg-8">
                         
                         <div class="row">
                             <div class="col-12 col-lg-4">

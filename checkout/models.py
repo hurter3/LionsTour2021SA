@@ -3,8 +3,6 @@ from products.models import Product
 from django.contrib.auth.models import User
 import datetime
 
-
-# 
 class Order(models.Model):
     
     SUBMITTED = 'Submitted'
