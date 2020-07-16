@@ -19,7 +19,7 @@
                 <form method = "POST">
                     {% csrf_token %}
 
-                    <div id="match-inner-wrapper">
+                    <div class="match-inner-wrapper">
                         <h5> <span class="match-day"> Saturday </span> 3 July - DHL STORMERS </h5> 
                         <h6> CAPE TOWN STADIUM | CAPE TOWN </h6>   
                         <div class="form-row">
@@ -37,7 +37,7 @@
                         </div>        
                     </div>
                   
-                    <div id="match-inner-wrapper">
+                    <div class="match-inner-wrapper">
                         <h5> <span class="match-day">Wednesday </span> 7 July - SOUTH AFRICAN INVITATIONAL </h5> 
                         <h6> NBM STADIUM | PORT ELIZABETH </h6>   
                         <div class="form-row">
@@ -54,7 +54,7 @@
                             </div>
                         </div>        
                     </div>
-                    <div id="match-inner-wrapper">
+                    <div class="match-inner-wrapper">
                         <h5> <span class="match-day">Saturday </span> 10 July - CELL C SHARKS </h5> 
                         <h6> JONNSON KINGS PARK | DURBAN</h6>   
                         <div class="form-row">
@@ -71,7 +71,7 @@
                             </div>
                         </div>        
                     </div>
-                    <div id="match-inner-wrapper">
+                    <div class="match-inner-wrapper">
                         <h5> <span class="match-day"> Wednesday </span> 14 July - SOUTH AFRICAN 'A' </h5> 
                         <h6> MBOMBELA STADIUM | NELSPRUIT</h6>   
                         <div class="form-row">
@@ -88,7 +88,7 @@
                             </div>
                         </div>        
                     </div>
-                    <div id="match-inner-wrapper">
+                    <div class="match-inner-wrapper">
                         <h5> <span class="match-day"> Saturday </span> 17 July - VODACOM BULLS </h5> 
                         <h6> LOFTUS VERSFELD | PRETORIA</h6>   
                         <div class="form-row">
@@ -105,7 +105,7 @@
                             </div>
                         </div>        
                     </div>
-                    <div id="match-inner-wrapper">
+                    <div class="match-inner-wrapper">
                         <h5> <span class="match-day"> Saturday </span> 24 July - SPRINGBOKS </h5> 
                         <h6> FNB NATIONAL STADIUM | JOHANNESBURG</h6>   
                         <div class="form-row">
@@ -122,7 +122,7 @@
                             </div>
                         </div>        
                     </div>
-                    <div id="match-inner-wrapper">
+                    <div class="match-inner-wrapper">
                         <h5> <span class="match-day">Saturday </span> 31 July - SPRINGBOKS </h5> 
                         <h6> CAPE TOWN STADIUM | CAPE TOWN</h6>   
                         <div class="form-row">
@@ -139,7 +139,7 @@
                             </div>
                         </div>        
                     </div>
-                    <div id="match-inner-wrapper">
+                    <div class="match-inner-wrapper">
                         <h5> <span class="match-day">Saturday </span> 7 August - SPRINGBOKS </h5> 
                         <h6> EMIRATES AIRLINE PARK | JOHANNESBURG</h6>   
                         <div class="form-row">
@@ -163,27 +163,24 @@
             </div>
         </div>
         <div class="col-md-4">
-            
-            
-
-            <div id="match-inner-wrapper">
-                        <span class="match-day"> Competition Statistics</span>
-                        <div class="list-group-item d-flex justify-content-between align-items-center">
-                Leader: <span class="justify-content-end checkout-right">{{highest_points.customer}}</span>
+            <div class="match-inner-wrapper">
+                <span class="match-day"> Competition Statistics</span>
+                <div class="list-group-item d-flex justify-content-between align-items-center">
+                    Leader: <span class="justify-content-end checkout-right">{{highest_points.customer}}</span>
+                </div>
+                <div class="list-group-item d-flex justify-content-between align-items-center">
+                    Leaders Points:<span class="justify-content-end checkout-right">{{highest_points.points_accrued}}</span>
+                </div>
+                <div class="list-group-item d-flex justify-content-between align-items-center">
+                    Your Points:  <span class="justify-content-end checkout-right"> {{points}}</span>
+                </div>
+                <div class="list-group-item d-flex justify-content-between align-items-center">
+                Total entries: <span class="justify-content-end checkout-right">{{total_entries}}</span>
+                </div>
+                <div style="text-align:center;">
+                    <a href="{% url 'competition-rules' %}" class="btn btn-info">Points Explained</a>
+                </div>        
             </div>
-            <div class="list-group-item d-flex justify-content-between align-items-center">
-                Leaders Points:<span class="justify-content-end checkout-right">{{highest_points.points_accrued}}</span>
-            </div>
-            <div class="list-group-item d-flex justify-content-between align-items-center">
-                Your Points:  <span class="justify-content-end checkout-right"> {{points}}</span>
-            </div>
-            <div class="list-group-item d-flex justify-content-between align-items-center">
-               Total entries: <span class="justify-content-end checkout-right">{{total_entries}}</span>
-            </div>
-            <div style="text-align:center;">
-                <a href="{% url 'competition-rules' %}" class="btn btn-info">Points Explained</a>
-            </div>        
-                    </div>
         
         </div>
     </div>

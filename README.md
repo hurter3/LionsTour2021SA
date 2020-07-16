@@ -1,7 +1,5 @@
 [![Build Status](https://travis-ci.org/hurter3/LionsTour2021SA.svg?branch=master)](https://travis-ci.org/hurter3/LionsTour2021SA)
 
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
-
 # **British and Irish Lions tour of South Africa 2021**<br>
 
 <div align="center">
@@ -532,6 +530,8 @@ The product images where sourced from google image search with no copyright rest
 
 
 <hr />
+
+<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
 
 
 [**To top**](#Table-of-Contents)

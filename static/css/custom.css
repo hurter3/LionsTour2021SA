@@ -246,7 +246,7 @@ h5 {
     display: block;
 }
 
-#match-inner-wrapper {
+.match-inner-wrapper {
     margin: 8px;
     background-color: #e3e6e6fa; 
     border-bottom : 2px solid #000;
