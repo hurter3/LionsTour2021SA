@@ -112,7 +112,7 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
 - Github: hosts the website
 - Git: version control
 - Heroku: app Deployment
-- Gunicorn - 20.0.4 : runs Python applications
+- Gunicorn - 20.0.4 : runs Python applications (web gunicorn LionsTour.wsgi:application)
 - Travis CI: continuous integration
 - AWS S3 Bucket: cloud storage
 - Boto3 - 1.13.1: for the usage of Amazon S3
