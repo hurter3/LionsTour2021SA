@@ -6,7 +6,6 @@
     <img src="documentation/images/readme-header.png" alt="Readme header pic" aria-label="readme header pic" />
 </div>
 
-
 - [**Table of Contents**](#table-of-contents)
 	- [**Lions Tour 2021 SA**](#lionstour2021sa)
 	- [**Project Overview**](#project-overview)
@@ -554,13 +553,20 @@ python manage.py test <app name here>
         <td>The badge counter is adjusted when the user make any updates to their cart.</td>
         <td>Successful</td>
     </tr>
+    <tr>
+        <td>The continue button will take the user back to shopping.</td>
+        <td>Successful</td>
+    </tr>
      <tr>
         <td>The checkout button will display a form to capture billing and card details.</td>
         <td>Successful</td>
     </tr>
-     <tr>
-      <tr>
-        <td>The continue button will take the user back to shopping.</td>
+    <tr>
+        <td>If the user has previously placed an order their billing details will be pre populated.</td>
+        <td>Successful</td>
+    </tr>
+    <tr>
+        <td>To process a payment you can use a test credit card 4242 4242 4242 4242 with 111 as test security code and a valid future date. </td>
         <td>Successful</td>
     </tr>
      <tr>
@@ -595,7 +601,7 @@ python manage.py test <app name here>
         <td>Successful</td>
     </tr>
     <tr>
-        <td>The 'Contact us' tab will display a form for the urer to email the company.</td>
+        <td>The 'Contact us' tab will display a form for the user to email the company.</td>
         <td>Successful</td>
     </tr>
 </table>
