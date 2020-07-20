@@ -652,6 +652,21 @@ Run the app with $ python3 manage.py runserver
 
 <hr />
 
+## ** Known issues ** 
+
+            remote: 
+            remote: GitHub found 3 vulnerabilities on hurter3/LionsTour2021SA's default branch (2 moderate, 1 low). To find out more, visit:
+            remote:      https://github.com/hurter3/LionsTour2021SA/network/alerts
+            remote: 
+
+            3 pillow vulnerabilities found in requirements.txt on May 5
+            Remediation
+            Upgrade pillow to version 6.2.2 or later. For example:
+
+            pillow>=6.2.2
+
+-   I investigated and found that Pillow was 5.4.1 in my requirements file but if i changed it to 6.2.2 then Travis failed so I left it at 5.4.1   
+
 ## **Future Enhancments**
 
 -   Expand on the product detail view to incorporate size selection and add additional thumbnails.
@@ -665,10 +680,11 @@ Run the app with $ python3 manage.py runserver
 
 ## **Credits**
 
-The code institute tutors must be mentioned for their valuable recomendations and patience. The guidance from my mentor Aaron Sinnott was valuable.<br>
-I used www.w3schools.com , www.stackoverflow and youtube tutorials from Corey Schafer and JustDjango in conjuction with the CI mini projects.
-The product images where sourced from google image search with no copyright restictions and i received approval from Cantebury the main product supplier. I also received approval from @Lionsrugby.com to use their badge logo for internal use.<br>
-All images in this project are for educational us only.  
+The code institute tutors must be mentioned for their valuable recomendations and patience. <br>
+The guidance from my mentor Aaron Sinnott was valuable.<br>
+I used www.w3schools.com , www.stackoverflow.com and youtube tutorials from Corey Schafer and JustDjango in conjuction with the CI mini projects. <br>
+The product images where sourced from google image searches with no copyright restictions that I could see. I received approval from Cantebury the main product supplier. I also received approval from @Lionsrugby.com to use their badge logo for internal use.<br>
+All images in this project are for educational use only.  
 
 
 <hr />
