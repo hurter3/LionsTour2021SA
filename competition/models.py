@@ -54,4 +54,3 @@ class Competition(models.Model):
 
     def __str__(self):
         return self.customer.username
-#        return f'{self.id}-{self.customer.username}'

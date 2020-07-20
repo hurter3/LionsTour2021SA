@@ -9,9 +9,10 @@
 
 - [**Table of Contents**](#table-of-contents)
 	- [**Lions Tour 2021 SA**](#lionstour2021sa)
-	- [**Project Requirement**](#project-requirement)
-	- [**UX**](#ux)
 	- [**Project Overview**](#project-overview)
+    - [**Project Requirement**](#project-requirement)
+	- [**UX**](#ux)
+	- [**Project Details**](#project-details)
         - [Utilised Technologies](#utilised-technologies)
         - [Pages](#pages)
         - [Database updates](#database-updates)
@@ -33,6 +34,19 @@ The github repository is: https://github.com/hurter3/LionsTour2021SA.<br>
 Heroku git URL is https://git.heroku.com/lionstour2021sa.git<br>
 Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
 <hr />
+
+## **Project overview**
+
+*The British and Irish Lions tours encapsulate all areas of the exciting rugby union game.*
+*I have chosen to do this project as there was a lack of sport through the Covid-19 pandemic and hence there would be a hunger from supporters to get involved.*
+*The idea is to get the user registered and involved by entering the free score prediction competition with prizes.*
+*They will need to register but not required to make any aditional purchases but as they get involved they might make an impulsive purchase.*
+*Once they are registered, the additional maketing via emails can commence to keep the users informed with Ticket sales and tour progress to encourage them to visit the website and hopefully make further purchases.*<br>
+*The landing page has a carousel of 4 images.*<br>
+*This project offers CRUD capability where the user can register, login, update their profile or even delete their profile which will CASCADE across the competition and order models.*<br>
+*There are 6 apps : accounts, cart, checkout, competition, home & products.*
+*The products are added via the Django admin panel and not accessed by any user other than viewing the items through the website.*
+
 
 ## **Project Requirements**
 
@@ -77,15 +91,7 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
 *If the user has entered the competition they can view their entry form and amend it until the start of the first match.*<br>
 *If the user has previously ordered something their billing details will be pre-populated when they purchase additional items.*<br>  
 
-
-## **Project overview**
-
-*The British and Irish Lions 2021 tour is to get the user involved with the excitement of this event and offer them the opportunity to puchase items.*
-*The landing page has a carousel of 4 images.*<br>
-*This project offers CRUD capability where the user can register, login, update their profile or even delete their profile which will CASCADE accross the competition and order models.*
-*There are 6 apps : accounts, cart, checkout, competition, home & products.*
-*The products are added via the Django admin panel and not accessed by any user other than viewing the items through the website.
-
+## **Project Details**
 
 ### Utilised Technologies
 
@@ -128,72 +134,119 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
 - There are 18 pages to the project.
 
   - **Navigation**
-    - The same Navbar and feel is used for all the pages
-    - The user does not need to register or login to explore the website.
-    - The user will need to register and login if they wish to enter the competition or make a purchase.
-    - The same background image and form styling is used to register, login, Contact Us or change their email
-    - Every page uses the base.html extended capability.
+    -   The same Navbar and feel is used for all the pages
+    -   The user does not need to register or login to explore the website.
+    -   The user will need to register and login if they wish to enter the competition or make a purchase.
+    -   The same background image and form styling is used to register, login, Contact Us or change their email
+    -   Every page uses the base.html extended capability.
     
 - **Home app.**
     - ***Landing page (home.html)***
-        - The user is presented a carousel of 4 images to remind them of the passion the lions tour encompasses. 
+        -   The user is presented a carousel of 4 images to remind them of the passion the lions tour encompasses. 
    
     - ***Fan Zone, is a drop down list.***
-        - History page (history.html) 
-            - Which provides the rugby union passion, past and present statistics sourced completely from Wikipedia.
-        - Fixtures page (fixtures.html) 
-            - 8 Match fixture table with some optional youtube footage.
-        - Tickets page (tickets.html)
-            - Although tickets are not available this is the latest update of the current status.
-        - Media page (Extenal link with a new tab) 
-            - An external link to build the excitment of the up and coming tour.
+        -   History page (history.html) 
+            -   Which provides the rugby union passion, past and present statistics sourced completely from Wikipedia.
+        -   Fixtures page (fixtures.html) 
+            -   8 Match fixture table with some optional youtube footage.
+        -   Tickets page (tickets.html)
+            -   Although tickets are not available this is the latest update of the current status.
+        -   Media page (Extenal link with a new tab) 
+            -   An external link to build the excitment of the up and coming tour.
 
     - ***Contact Us page (contact.html)***
-        - A form that sends an email to lionssa33@gmail.com (and it works).
-        - Same background and form styling as register, login and change email pages. 
+        -   A form that sends an email to lionssa33@gmail.com.
+        -   Same background and form styling as register, login and change email pages. 
     
 - **Accounts app.**
-    -    This app was cloned from the e-commerce mini-project and tailored accordingly. 
+    -   This app was cloned from the e-commerce mini-project and tailored accordingly. 
         - ***Register page (register.html)***
-            - A form that captures username, email and password.
-            - This tab is only displayed when the user has not logged in.
-            - Same background and form styling as login, change email & contact us pages. 
+            -   A form that captures username, email and password.
+            -   This tab is only displayed when the user has not logged in.
+            -   Same background and form styling as login, change email & contact us pages. 
         - ***Login page (login,html)***
-            - A form to enter your username and password.
-            - This tab is only displayed when the user has not logged in.
-            - Same background and form styling as register, change email and contact us pages. 
+            -   A form to enter your username and password.
+            -   This tab is only displayed when the user has not logged in.
+            -   Same background and form styling as register, change email and contact us pages. 
         - ***Account (profile.html)***
-            - A profile where the user can change their email and password. It will also list their order history which they can expand on. There is also a profile delete option which will CASCADE and delete any order, order items and competitions details.
-            - This tab is only displayed when the user is logged in.
+            -   A profile where the user can change their email and password. It will also list their order history which they can expand on. There is also a profile delete option which will CASCADE and delete any order, order items and competitions details.
+            -   This tab is only displayed when the user is logged in.
         - ***Change Email (profile_change_email.html)***
-            -  Same background and form styling as register, login and contact us pages.     
+            -   Same background and form styling as register, login and contact us pages.     
         - ***Order detail (order_detail.html)***
-            - This expands on an order with the order item listing.   
-        - ***Logout***
-            - Logs the user out and presents them with a screen similiar to the home page.
-            - This tab is only displayed when the user is logged in.
+            -   This expands on an order with the order item listing.   
+        - ***Logout (Logout.html)***
+            -   Logs the user out and presents them with a screen similiar to the home page.
+            -   This tab is only displayed when the user is logged in.
+        - ***Delete profile***
+            -   Deletes the users profile and any other models linked to the user (Competition, Order and OrderLineItem if applicable).
+            -   The delete process does have a Confirmation modal to prevent it accidentally being triggered.
 
     - **Cart app**
         - ***cart.html***
-            - The listing of intended items to be purchased. This is held in the users session memory and accessible from any page until they power down.
-            - The user can update or delete any item before going to checkout.
-            - If the cart is clicked when empty then it will provide a user message and take them to a listing of all the products.
+            -   The listing of intended items to be purchased. This is held in the users session memory and accessible from any page until they power down.
+            -   The user can update or delete any item before going to checkout.
+            -   If the cart is clicked when empty then it will provide a user message and take them to a listing of all the products.
 
     - **Checkout app**
         - ***checkout.html***
-            - This take billing and card details to be processed by stripe to finalise the purchase.
-            - In this transaction, the order and order line items models are populated if athe correct details are provided otherwise the relavent error messages are displayed. 
+            -   This take billing and card details to be processed by stripe to finalise the purchase.
+            -   In this transaction, the order and order line items models are populated if athe correct details are provided otherwise the relavent error messages are displayed. 
+            -   The checkout has 2 models.
+                                class Order(models.Model):
+                            
+                            SUBMITTED = 'Submitted'
+                            PROCESSED =  'Processed'
+                            SHIPPED = 'Shipped'
+                            CANCELLED = 'Cancelled'
+                        
+                            STATUS_CHOICES = [
+                                (SUBMITTED, 'Submitted'),
+                                (PROCESSED, 'Processed'),
+                                (SHIPPED, 'Shipped'),
+                                (CANCELLED, 'Cancelled'),
+                            ]    
+
+                            customer = models.ForeignKey(User, on_delete=models.CASCADE)
+                            full_name = models.CharField(max_length=50, blank=False)
+                            phone_number = models.CharField(max_length=20, blank=False)
+                            country = models.CharField(max_length=40, blank=False)
+                            postcode = models.CharField(max_length=20, blank=True)
+                            town_or_city = models.CharField(max_length=40, blank=False)
+                            street_address1 = models.CharField(max_length=40, blank=False)
+                            street_address2 = models.CharField(max_length=40, blank=False)
+                            county = models.CharField(max_length=40, blank=False)
+                            date_ordered = models.DateTimeField(default=datetime.datetime.today, null=True)
+                            total_quantity = models.IntegerField(blank=False)
+                            total_cost = models.IntegerField(blank=False)
+                            status = models.CharField(max_length=15,choices=STATUS_CHOICES,default=SUBMITTED)
+
+                            def __str__(self):
+                                return "{0}-{1}-{2}".format(self.id, self.customer, self.date_ordered)
+
+                            def get_absolute_url(self):
+                                return ('order_details', (), { 'order_id': self.id }) 
+
+                        class OrderLineItem(models.Model):
+                            order = models.ForeignKey(Order, null=False)
+                            product = models.ForeignKey(Product, null=False)
+                            quantity = models.IntegerField(blank=False)
+
+                            def __str__(self):
+                                return "{0} {1} @ {2}".format(
+                                    self.quantity, self.product.title, self.product.price)
 
     - **Competition App (the fun zone to attract users to enter with the incentive to make a purchase)**
         - ***competition-rules.html***
-            - This is the competition main page that describes what the user needs to do to complete an entry form and how point are allocated with links to the terms and conditions and the entry form.
+            -   This is the competition main page that describes what the user needs to do to complete an entry form and how point are allocated with links to the terms and conditions and the entry form.
         - ***competition-terms.html***
-            - This contains the terms and conditions of the competition.
+            -   This contains the terms and conditions of the competition.
+            -   The terms were used from last world cup but modified to the sites requirements.
         - ***competition.html***
-            - The user will need to have registered and logged in to enter the competition.
-            - If they have not entered before they will be presented with an empty form to add their score predictions.
-            - If they have enter the competition they will be presented with their predictions form which they can update until the day before the 1st match is played.
-            - There is date restriction by which all competition entries and changes need to be submitted by.<br>
+            -   The user will need to have registered and logged in to enter the competition.
+            -   If they have not entered before they will be presented with an empty form to add their score predictions.
+            -   If they have enter the competition they will be presented with their predictions form which they can update until the day before the 1st match is played.
+            -   There is date restriction by which all competition entries and changes need to be submitted by.<br>
                 (Midnight 2 July 2021)
 
                     submit_date = datetime.date.today()
@@ -204,15 +257,101 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
                             {'form': form, 'points':points,'highest_points':highest_points,'total_entries':total_entries})
                     else:    
                         if request.method == "POST":
+            -   I have added One entry form with newusers2 having 28 points to be displayed in the statistics section otherwise it won't look like it is required. Realistically this will be zero until the matches start.
+            -   There will be a backend process to be run after every match to aggregate the users accrued_points. 
+            -   In the model there is a home and away score for every match.
+            -   As well as the matchpoints per game and the aggregate of each match being add to points_accrued.  
+            -   First points scored is a selection list in the form in the Competition model
+
+                    FIRST_POINTS_SELECT = (
+                        ('NO POINTS SCORED', 'No Points Scored'),
+                        ('HOME TEAM TRY', 'Home Team Try'),
+                        ('HOME TEAM PENALTY', 'Home Team Penalty'),
+                        ('HOME TEAM DROP GOAL', 'Home Team Drop Goal'),
+                        ('LIONS TEAM TRY', 'Lions Try'),
+                        ('LIONS PENALTY', 'Lions Penalty'),
+                        ('LIONS DROP GOAL', 'Lions Drop Goal'),
+                    )
+
+
+                    class Competition(models.Model):
+
+                        customer = models.ForeignKey(User, on_delete=models.CASCADE)
+                        sascore1 = models.PositiveSmallIntegerField(default=0)
+                        lionsscore1 = models.PositiveSmallIntegerField(default=0)
+                        firstpoints1 = models.CharField(max_length=20, choices=FIRST_POINTS_SELECT)
+                        matchpoints1 = models.PositiveSmallIntegerField(default=0)
+                        sascore2 = models.PositiveSmallIntegerField(default=0)
+                        lionsscore2 = models.PositiveSmallIntegerField(default=0)
+                        firstpoints2 = models.CharField(max_length=20, choices=FIRST_POINTS_SELECT)
+                        matchpoints2 = models.PositiveSmallIntegerField(default=0)
+                        sascore3 = models.PositiveSmallIntegerField(default=0)
+                        lionsscore3 = models.PositiveSmallIntegerField(default=0)
+                        firstpoints3 = models.CharField(max_length=20, choices=FIRST_POINTS_SELECT)
+                        matchpoints3 = models.PositiveSmallIntegerField(default=0)
+                        sascore4 = models.PositiveSmallIntegerField(default=0)
+                        lionsscore4 = models.PositiveSmallIntegerField(default=0)
+                        firstpoints4 = models.CharField(max_length=20, choices=FIRST_POINTS_SELECT)
+                        matchpoints4 = models.PositiveSmallIntegerField(default=0)
+                        sascore5 = models.PositiveSmallIntegerField(default=0)
+                        lionsscore5 = models.PositiveSmallIntegerField(default=0)
+                        firstpoints5 = models.CharField(max_length=20, choices=FIRST_POINTS_SELECT)
+                        matchpoints5 = models.PositiveSmallIntegerField(default=0)
+                        sascore6 = models.PositiveSmallIntegerField(default=0)
+                        lionsscore6 = models.PositiveSmallIntegerField(default=0)
+                        firstpoints6 = models.CharField(max_length=20, choices=FIRST_POINTS_SELECT)
+                        matchpoints6 = models.PositiveSmallIntegerField(default=0)
+                        sascore7 = models.PositiveSmallIntegerField(default=0)
+                        lionsscore7 = models.PositiveSmallIntegerField(default=0)
+                        firstpoints7 = models.CharField(max_length=20, choices=FIRST_POINTS_SELECT)
+                        matchpoints7 = models.PositiveSmallIntegerField(default=0)
+                        sascore8 = models.PositiveSmallIntegerField(default=0)
+                        lionsscore8 = models.PositiveSmallIntegerField(default=0)
+                        firstpoints8 = models.CharField(max_length=20, choices=FIRST_POINTS_SELECT)
+                        matchpoints8 = models.PositiveSmallIntegerField(default=0)
+                        points_accrued = models.PositiveSmallIntegerField(default=0)
+                        
+                        submit_date = models.DateField(default=datetime.date.today)    
+
+                        def __str__(self):
+                            return self.customer.username
+                    
+
 
     - **Products App**
-        - ***products.html (which is the listView)***
-            - This is generic code that takes a category argument and filters on All products or Men products or Women products or Children products or Souviners.
-            - Pagination is used for the user to navigate through the products.
-        - ***product_detail.html (which is the DetailView)***
-            - This is expands on the selected item which the user can add to the cart.
+        - *** This is via the Shop tab on the navbar which has a drop down menu list of 5 categories.
+            -   All Categories, Men's, Woman, Children and Souvenir's.
+            - 
+                        class Product(models.Model):
+                        """ Model for product instances """
 
-        When a succesful order is placed it has a status of submitted. Pocessed, shipped and cancelled will be manually updated on the backend when staff process the orders. 
+                        MEN = "Men"
+                        WOMAN = "Woman"
+                        CHILDREN = "Children"
+                        SOUVENIRS = "Souvenirs"
+                        CATEGORY_CHOICES = [
+                            (MEN , "Men"),
+                            (WOMAN , "Woman"),
+                            (CHILDREN , "Children"),
+                            (SOUVENIRS , "Souvenirs"),
+                        ]
+                        category = models.CharField(
+                            max_length=20,
+                            choices=CATEGORY_CHOICES,
+                            default=MEN,
+                        )
+                        title = models.CharField(max_length=100,blank=True)
+                        product_image1 = models.ImageField(upload_to="images", blank=True)
+                        description = models.TextField()
+                        price = models.DecimalField(max_digits=6, decimal_places=2) 
+    
+    - ***products.html (which is the listView)***
+        -   This is generic code that takes a category argument and filters on All products or Men products or Women products or Children products or Souviners.
+        -   Pagination is used for the user to navigate through the products.
+    - ***product_detail.html (which is the DetailView)***
+        -   This is expands on the selected item which the user can add to the cart.
+
+    -   When a succesful order is placed it has a status of submitted. Pocessed, shipped and cancelled will be manually updated on the backend when staff process the orders. 
 
     
 ### Database updates (CRUD)
@@ -231,7 +370,7 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
         <td> Superuser and backend users </td>
         <td> - </td>
         <td> - </td>
-        <td> - </td>
+        <td> 1 sample form for competition statistics </td>
         <td></td>
     </tr>
     <tr>
@@ -340,7 +479,7 @@ Final deployed site is here: https://lionstour2021sa.herokuapp.com/<br>
             - The most complex function has a cyclomatic complexity value of 2 while the median is 1.
 
 - [CSS Validator](http://csslint.net/)
-    - Output - CSS lint found 0 errors and 15 warnings for "Disallow IDs in selectors" but they were working so have been left.
+    - Output - CSS lint found 0 errors and 13 warnings for "Disallow IDs in selectors" but the ID's were required and work so I have left them.
 
 ### Python Testing
 
@@ -498,6 +637,7 @@ The project is hosted on [Heroku](https://heroku.com) which was linked to Github
       - EMAIL_HOST_USER
       - EMAIL_PASSWORD
       - EMAIL_PORT
+      - DISABLE_COLLECTSTATIC
 
     - **Deploy**
 
@@ -514,8 +654,9 @@ Run the app with $ python3 manage.py runserver
 
 ## **Future Enhancments**
 
-Expand on the product detail view to incorporate size selection and add additional thumbnails.
-Incorporate stock management and control.
+-   Expand on the product detail view to incorporate size selection and add additional thumbnails.
+-   Incorporate stock management and control.
+-   Automate the backend process to aggregate each users accrued_points after every match played.
 
 <hr />
 
@@ -525,8 +666,9 @@ Incorporate stock management and control.
 ## **Credits**
 
 The code institute tutors must be mentioned for their valuable recomendations and patience. The guidance from my mentor Aaron Sinnott was valuable.<br>
-I used www.w3schools.com , www.stackoverflow and youtube tutorials in conjuction with the CI mini projects.
-The product images where sourced from google image search with no copyright restictions. I emailed Cantebury the official suppliers explaining I request permission to use the images for a CI project and I would not be selling the items. In turn I would mention them in my project, however they never responded.
+I used www.w3schools.com , www.stackoverflow and youtube tutorials from Corey Schafer and JustDjango in conjuction with the CI mini projects.
+The product images where sourced from google image search with no copyright restictions and i received approval from Cantebury the main product supplier. I also received approval from @Lionsrugby.com to use their badge logo for internal use.<br>
+All images in this project are for educational us only.  
 
 
 <hr />
