@@ -9,9 +9,15 @@ from products.models import Product
 import stripe
 import datetime
 
-# Create your views here.
 stripe.api_key = settings.STRIPE_SECRET
 
+""" 
+The checkout class loops through the cart twice 
+/ for id, quantity in cart.items() / 
+as I needed to add the total_cost and total_qty of all items to the Order and needed the Order
+to be created first as the order number is a foreign key on OrderLineItem.
+I tried to do it in one loop but could not work out how it was possible. 
+"""
 
 @login_required()
 def checkout(request):

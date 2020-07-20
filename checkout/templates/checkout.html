@@ -57,7 +57,7 @@
                 <div class="container container-wrapper my-5">
                     <p class="text-align-center"><i class="fa fa-shopping-cart"></i></p>
                     {% for item in cart_items %}
-                        <p>{{ item.quantity }} {{ item.product.description }} <span class="price">£ {{item.product.price}}</span></p>
+                        <p>{{ item.quantity }} {{ item.product.title }} <span class="price">£ {{item.product.price}}</span></p>
                     {% endfor %}
                     <p>Total: <span class="price">£ {{ total }}</span></p>
                 <div>       

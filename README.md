@@ -3,7 +3,7 @@
 # **British and Irish Lions tour of South Africa 2021**<br>
 
 <div align="center">
-    <img src="static/images/readme-header.png" alt="Readme header pic" aria-label="readme header pic" />
+    <img src="documentation/images/readme-header.png" alt="Readme header pic" aria-label="readme header pic" />
 </div>
 
 

@@ -3,7 +3,7 @@ from .models import Product
 from django.views.generic import DetailView, ListView
 
 class ProductListAll(ListView):
-    paginate_by = 4
+    paginate_by = 8
     queryset = list(Product.objects.all())
     model = Product
     template_name = 'products.html'
@@ -16,7 +16,7 @@ class ProductDetailView(DetailView):
     context_object_name = 'products'
 
 class ProductListView(ListView):
-    paginate_by = 4
+    paginate_by = 8
     model = Product
     template_name = 'products.html'
     context_object_name = 'products'
